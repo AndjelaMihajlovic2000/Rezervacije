@@ -2,6 +2,7 @@
 
 namespace App\Rules;
 
+use App\Models\UserRole;
 use Illuminate\Contracts\Validation\Rule;
 
 class PostojiUloga implements Rule
@@ -25,7 +26,7 @@ class PostojiUloga implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+        return UserRole::find($value)!=null;
     }
 
     /**
@@ -35,6 +36,6 @@ class PostojiUloga implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'User role does not exists';
     }
 }

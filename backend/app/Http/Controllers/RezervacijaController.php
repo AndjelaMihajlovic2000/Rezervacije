@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\RezervacijaCollection;
+use App\Http\Resources\RezervacijaResource;
 use App\Models\Rezervacija;
+use App\Rules\PostojiMesto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
-class RezervacijaController extends Controller
-{
+class RezervacijaController extends Controller {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+        return new RezervacijaCollection(Rezervacija::all());
     }
 
     /**
@@ -22,64 +24,86 @@ class RezervacijaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        $currentUser = auth()->user();
+
+        $validator = Validator::make($request->all(), [
+            'mestoID' => [new PostojiMesto()],
+            'datumIVreme' => 'required|string',
+            'komentar' => 'required',
+
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['success' => false, 'error' => strval($validator->errors())]);
+        }
+
+        $rezervacija = Rezervacija::create([
+            'mestoID' => $request->mestoID,
+            'userID' => $currentUser->id,
+            'datumIVreme' => $request->datumIVreme,
+            'komentar' => $request->komentar,
+            'uspesno' => false,
+        ]);
+
+        return response()->json(['success' => true, 'message' => 'Uspesno sacuvana rezervacija!', new RezervacijaResource($rezervacija)]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Rezervacija  $rezervacija
+     * @param \App\Models\Rezervacija $rezervacija
      * @return \Illuminate\Http\Response
      */
-    public function show(Rezervacija $rezervacija)
-    {
-        //
+    public function show(Rezervacija $rezervacija) {
+        return new RezervacijaResource($rezervacija);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Rezervacija  $rezervacija
+     * @param \App\Models\Rezervacija $rezervacija
      * @return \Illuminate\Http\Response
      */
-    public function edit(Rezervacija $rezervacija)
-    {
+    public function edit(Rezervacija $rezervacija) {
         //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Rezervacija  $rezervacija
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Rezervacija $rezervacija
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rezervacija $rezervacija)
-    {
+    public function update(Request $request, Rezervacija $rezervacija) {
         //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Rezervacija  $rezervacija
+     * @param \App\Models\Rezervacija $rezervacija
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Rezervacija $rezervacija)
-    {
-        //
+    public function destroy(Rezervacija $rezervacija) {
+
+        $currentUser = auth()->user();
+        if ($currentUser->userRole->slug != 'admin' && $currentUser->id != $rezervacija->userID->id) {
+            return response()->json(['success' => false, 'message' => 'You have not any permissions to do that!']);
+        }
+
+        $rezervacija->delete();
+        return response()->json(['success' => true, 'message' => 'Uspesno obrisana rezervacija!', new RezervacijaResource($rezervacija)]);
     }
 }

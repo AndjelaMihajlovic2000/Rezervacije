@@ -2,6 +2,7 @@
 
 namespace App\Rules;
 
+use App\Models\User;
 use Illuminate\Contracts\Validation\Rule;
 
 class PostojiKorisnik implements Rule
@@ -25,7 +26,7 @@ class PostojiKorisnik implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+        return User::find($value)!=null;
     }
 
     /**
@@ -35,6 +36,6 @@ class PostojiKorisnik implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'Korisnik ne postoji';
     }
 }

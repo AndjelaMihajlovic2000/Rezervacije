@@ -2,30 +2,29 @@
 
 namespace App\Rules;
 
+use App\Models\Mesto;
 use Illuminate\Contracts\Validation\Rule;
 
-class SlobodnoMesto implements Rule
-{
+class SlobodnoMesto implements Rule {
     /**
      * Create a new rule instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         //
     }
 
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string  $attribute
-     * @param  mixed  $value
+     * @param string $attribute
+     * @param mixed $value
      * @return bool
      */
-    public function passes($attribute, $value)
-    {
-        //
+    public function passes($attribute, $value) {
+        $mesto = Mesto::find($value);
+        return $mesto->dostupno;
     }
 
     /**
@@ -33,8 +32,7 @@ class SlobodnoMesto implements Rule
      *
      * @return string
      */
-    public function message()
-    {
-        return 'The validation error message.';
+    public function message() {
+        return 'Mesto je zauzeto!';
     }
 }

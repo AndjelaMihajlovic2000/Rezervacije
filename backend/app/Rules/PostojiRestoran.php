@@ -2,6 +2,7 @@
 
 namespace App\Rules;
 
+use App\Models\Restoran;
 use Illuminate\Contracts\Validation\Rule;
 
 class PostojiRestoran implements Rule
@@ -25,7 +26,7 @@ class PostojiRestoran implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+        return Restoran::find($value)!=null;
     }
 
     /**
@@ -35,6 +36,6 @@ class PostojiRestoran implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'Restoran ne postoji!';
     }
 }
