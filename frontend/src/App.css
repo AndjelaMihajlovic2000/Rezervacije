@@ -1,0 +1,25 @@
+body {
+    height: 100vh;
+}
+
+#root {
+    min-height: 100vh;
+    margin: 0;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+.App {
+    text-align: center;
+
+}
+
+nav {
+    min-height: 50px;
+}
+
+footer {
+    min-height: 50px;
+}
