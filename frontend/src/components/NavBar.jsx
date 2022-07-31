@@ -13,7 +13,7 @@ function NavBar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <LinkKartica putanja="/register" tekst="Naravi nalog"/>
+                                <LinkKartica putanja="/register" tekst="Napravi nalog"/>
                             </li>
                             <li className="nav-item">
                                 <LinkKartica putanja="/login" tekst="Uloguj se"/>

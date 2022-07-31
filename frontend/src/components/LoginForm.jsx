@@ -1,20 +1,28 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function LoginForm({}) {
     return (
         <div className="loginForm">
-
+            <h2>Prijavite se</h2>
             <div className="mb-3">
-                <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
-                <input type="email" className="form-control" id="exampleFormControlInput1"
-                       placeholder="name@example.com"/>
+                <label htmlFor="loginUsername" className="form-label">Username</label>
+                <input type="text" className="form-control" id="loginUsername"
+                       placeholder="pera99"/>
             </div>
             <div className="mb-3">
-                <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
-                <input type="email" className="form-control" id="exampleFormControlInput1"
-                       placeholder="name@example.com"/>
+                <label htmlFor="loginPassword" className="form-label">Password</label>
+                <input type="password" className="form-control" id="loginPassword"
+                       placeholder="*******"/>
             </div>
-
+            <div className="mb-3 d-flex justify-content-between">
+                <div>
+                    <Link to="/register">Nemas nalog? Registuj se</Link>
+                </div>
+                <div>
+                    <button className="loginBtn">Prijavi se</button>
+                </div>
+            </div>
 
         </div>
     );
