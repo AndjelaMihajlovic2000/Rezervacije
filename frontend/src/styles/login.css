@@ -1,0 +1,27 @@
+.loginPageContainer{
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 90%;
+}
+
+.loginImgContainer{
+
+    height: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+}
+.loginImg{
+    background-image: url("../img/login-img.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.loginFormContainer{
+    height: 100%;
+    display: grid;
+    align-items: center;
+}
