@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Rezervacija extends Model {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded = [''];
 
     public function mesto() {
         return $this->belongsTo(Mesto::class);

@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class UserRole extends Model {
     use HasFactory;
 
-    protected $guarded = [];
+
+    protected $guarded = [''];
+
+    public function user() {
+        return $this->hasMany(User::class);
+    }
 }

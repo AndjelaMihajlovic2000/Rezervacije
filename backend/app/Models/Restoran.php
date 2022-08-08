@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Restoran extends Model {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded = [''];
 
     public function user_that_made() {
         return $this->belongsTo(User::class);

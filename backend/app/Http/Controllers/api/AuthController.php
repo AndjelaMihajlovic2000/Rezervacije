@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserRoleResource;
 use App\Models\User;
 use App\Models\UserRole;
 use App\Rules\PostojiUloga;
@@ -30,22 +31,23 @@ class AuthController extends Controller {
             'prezime' => 'required|string|max:255',
             'datumRodjenja' => 'required|date',
             'adresa' => 'required|string|max:255',
-            'password' => 'string|min:5',
-            'userRole' => ['integer','nullable',new PostojiUloga()],
+            'password' => 'string|min:5'
         ]);
 
         if ($validator->fails()) {
             return response()->json(['success' => false, 'error' => strval($validator->errors())]);
         }
 
-        $userRole = UserRole::where('slug', 'gost')->firstOrFail()->id;
+        $user_role_id = UserRole::where('slug', 'gost')->firstOrFail()->id;
+
+
         $user = User::create([
             'username' => $request->username,
             'ime' => $request->ime,
             'prezime' => $request->prezime,
             'datumRodjenja' => $request->datumRodjenja,
             'adresa' => $request->adresa,
-            'userRole' => $userRole,
+            'userRole' => $user_role_id,
             'password' => Hash::make($request->password)
         ]);
 
@@ -77,7 +79,7 @@ class AuthController extends Controller {
             'datumRodjenja' => 'required|date',
             'adresa' => 'required|string|max:255',
             'password' => 'string|min:5',
-            'userRole' => ['integer','nullable',new PostojiUloga()],
+            'userRole' => ['integer', 'nullable', new PostojiUloga()],
         ]);
 
         if ($validator->fails()) {

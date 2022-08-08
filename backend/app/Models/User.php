@@ -23,6 +23,7 @@ class User extends Authenticatable {
         'password',
         'datumRodjenja',
         'adresa',
+        'userRole'
     ];
 
     /**
@@ -45,6 +46,10 @@ class User extends Authenticatable {
 
     public function rezervacije() {
         return $this->hasMany(Rezervacija::class);
+    }
+
+    public function uloga() {
+        return $this->belongsTo(UserRole::class);
     }
 
 }
