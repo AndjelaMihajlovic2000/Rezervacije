@@ -1,6 +1,7 @@
 import React from 'react';
 
-function MestoCard(props) {
+
+function MestoCard({setModalShow}) {
     const stil2 = {width: '85%',paddingLeft: '10px', marginTop :'30px', marginLeft:'auto',marginRight:'auto'}
 
     return (
@@ -10,7 +11,7 @@ function MestoCard(props) {
                     <h5 className="card-title">Card title</h5>
                     <p className="card-text">Some quick example text to build on the card title and make
                         up the bulk of the card's content.</p>
-                    <button className="btn-96 "><span>Rezervisi!</span></button>
+                    <button className="btn-96"  onClick={() => setModalShow(true)}><span>Rezervisi!</span></button>
                 </div>
             </div>
         </div>
