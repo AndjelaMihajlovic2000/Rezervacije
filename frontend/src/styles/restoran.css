@@ -1,0 +1,15 @@
+body{
+    height: 100vh;
+    overflow-y: auto;
+}
+.restoranPageContainerBody {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.restoranPageBodyContent {
+    height: 50vh;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

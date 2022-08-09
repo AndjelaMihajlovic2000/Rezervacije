@@ -4,10 +4,10 @@ import RestoranCard from "../components/RestoranCard";
 
 function Pocetna() {
     return (
-        <div className="pocetnaPage">
-            <div className="pocetnaContainer">
+        <div className="page">
+            <div className="pageContainer">
 
-                <div className="pocetnaContainerHead container">
+                <div className="pageContainerHead container">
                     <div className="row d-flex justify-content-between">
                         <div className="col-4">
                             <h2>Pronadji omiljeni restoran</h2>
@@ -29,7 +29,7 @@ function Pocetna() {
                     </div>
                 </div>
 
-                <div className="pocetnaContainerBody container">
+                <div className="pageContainerBody container">
                     <div className="row g-2 pageBodyContent">
 
                         <RestoranCard/>

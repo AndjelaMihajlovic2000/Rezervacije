@@ -1,4 +1,4 @@
-.pocetnaContainer {
+.pageContainer {
 
     margin-top: 70px;
     margin-left: auto;
@@ -8,12 +8,12 @@
     border-radius: 20px;
 }
 
-.pocetnaContainerHead {
+.pageContainerHead {
     padding-top: 30px;
     margin-bottom: 50px;
 }
 
-.pocetnaContainerBody {
+.pageContainerBody {
     padding-bottom: 50px;
 }
 
