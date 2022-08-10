@@ -1,0 +1,47 @@
+.adminPage {
+    padding-bottom: 20px;
+}
+
+.adminPageContainer {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+    height: 85vh;
+    background-color: rgba(255, 255, 255, 0.38);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.adminPageContainerMenu {
+    height: 95%;
+    background: rgba(0, 0, 0, 0.11);
+    padding-top: 30px;
+    border-radius: 25px;
+}
+.adminMenuCard{
+    margin-top: 10px;
+}
+.adminMenuCard:hover{
+    cursor: pointer;
+    background: white;
+}
+
+.adminPageContainerBody{
+    width: 95%;
+    height: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0, 0, 0, 0.11);
+    padding-top: 30px;
+    border-radius: 25px;
+    display: grid;
+    grid-template-rows: 1fr 8fr;
+
+}
+.adminPageContainerBodyHeader{
+    margin-left: 30px;
+}

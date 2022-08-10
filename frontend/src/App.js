@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Register from "./pages/Register";
 import Pocetna from "./pages/Pocetna";
 import Restoran from "./pages/Restoran";
+import Admin from "./pages/Admin";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
                 <Route path='/restoran/:id' element={<Restoran/>}/>
+                <Route path='/admin' element={<Admin/>}/>
             </Routes>
 
             <Footer/>
