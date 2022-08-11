@@ -8,6 +8,9 @@ import Pocetna from "./pages/Pocetna";
 import Restoran from "./pages/Restoran";
 import Admin from "./pages/Admin";
 import ARestorani from "./pages/ARestorani";
+import AMesta from "./pages/AMesta";
+import AKorisnici from "./pages/AKorisnici";
+import ARezervacije from "./pages/ARezervacije";
 
 function App() {
     return (
@@ -20,6 +23,9 @@ function App() {
                 <Route path='/restoran/:id' element={<Restoran/>}/>
                 <Route path='/admin' element={<Admin/>}/>
                 <Route path='/admin/restorani' element={<ARestorani/>}/>
+                <Route path='/admin/mesta' element={<AMesta/>}/>
+                <Route path='/admin/korisnici' element={<AKorisnici/>}/>
+                <Route path='/admin/rezervacije' element={<ARezervacije/>}/>
             </Routes>
 
             <Footer/>

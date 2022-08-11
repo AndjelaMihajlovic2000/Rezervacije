@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-function LoginForm({}) {
+function LoginForm() {
     return (
         <div className="loginForm">
             <h2>Prijavite se</h2>

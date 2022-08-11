@@ -2,7 +2,7 @@ import React from 'react';
 import "../styles/register.css";
 import RegisterForm from "../components/RegisterForm";
 
-function Register({}) {
+function Register() {
     return (
         <div className="registerPage container">
             <div className="registerPageContainer row">
