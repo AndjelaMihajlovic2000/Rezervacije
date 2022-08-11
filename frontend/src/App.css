@@ -1,18 +1,18 @@
 body {
     height: 100vh;
     overflow-y: hidden;
+    background-image: url("img/background4.jpeg");
+    background-repeat: repeat-y;
+    background-size: cover;
 }
 
 #root {
-    min-height: 100vh;
+    min-height: 100%;
     margin: 0;
-
     display: grid;
     grid-template-rows: auto 1fr auto;
-    height: 100vh;
-    background-image: url("img/background4.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100%;
+
 }
 
 .App {

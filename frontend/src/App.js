@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import Pocetna from "./pages/Pocetna";
 import Restoran from "./pages/Restoran";
 import Admin from "./pages/Admin";
+import ARestorani from "./pages/ARestorani";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/register" element={<Register/>}/>
                 <Route path='/restoran/:id' element={<Restoran/>}/>
                 <Route path='/admin' element={<Admin/>}/>
+                <Route path='/admin/restorani' element={<ARestorani/>}/>
             </Routes>
 
             <Footer/>

@@ -1,0 +1,37 @@
+.aPages {
+}
+
+.aPagesContainer {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.38);
+    border-radius: 20px;
+
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.aPagesContainerHead {
+    padding-top: 30px;
+}
+
+.aRestoraniPageContainerBody {
+    background: rgba(0, 0, 0, 0.11);
+    border-radius: 25px;
+    height: 95%;
+    width: 100%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.aTabele{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}

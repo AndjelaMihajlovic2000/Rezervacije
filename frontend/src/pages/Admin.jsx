@@ -1,5 +1,8 @@
 import React from 'react';
 import "../styles/admin.css";
+import StatsCard from "../components/admin/StatsCard";
+import AdminChart from "../components/admin/AdminChart";
+import {Link} from "react-router-dom";
 
 function Admin(props) {
     return (
@@ -11,7 +14,16 @@ function Admin(props) {
                         <h3>Admin panel</h3>
                     </div>
                     <div className="adminPageContainerBodyContent">
-
+                        <StatsCard/>
+                        <StatsCard/>
+                        <StatsCard/>
+                        <StatsCard/>
+                        <StatsCard/>
+                        <StatsCard/>
+                    </div>
+                    <div className="adminPageContainerBodyGraphWrapper">
+                        <AdminChart className="adminGraph" />
+                        <h4> Broj rezervacija na dnevnom nivou</h4>
                     </div>
                 </div>
 
@@ -22,19 +34,16 @@ function Admin(props) {
                         </div>
                     </div>
                     <div className="row adminMenuCard">
-                        <div className="col">Restorani</div>
+                        <div className="col"><Link style={{ textDecoration: 'none', color:'black'}} to="/admin/restorani">Restorani</Link></div>
                     </div>
-
                     <div className="row adminMenuCard">
-                        <div className="col">Mesta</div>
+                        <div className="col"><Link style={{ textDecoration: 'none', color:'black'}} to="/admin/mesta">Mesta</Link></div>
                     </div>
-
                     <div className="row adminMenuCard">
-                        <div className="col">Rezervacije</div>
+                        <div className="col"><Link style={{ textDecoration: 'none', color:'black'}} to="/admin/rezervacije">Rezervacije</Link></div>
                     </div>
-
                     <div className="row adminMenuCard">
-                        <div className="col">Korisnici</div>
+                        <div className="col"><Link style={{ textDecoration: 'none', color:'black'}} to="/admin/korisnici">Korisnici</Link></div>
                     </div>
 
                 </div>

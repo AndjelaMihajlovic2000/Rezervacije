@@ -12,5 +12,6 @@ body{
     overflow-y: scroll;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 20px;
     padding-bottom: 50px;
 }
