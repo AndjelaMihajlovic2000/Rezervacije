@@ -32,7 +32,7 @@ Route::resource('mesto', MestoController::class)->only(['index', 'show']);
 Route::resource('restoran', RestoranController::class)->only(['index', 'show']);
 Route::resource('rezervacija', RezervacijaController::class)->only(['index', 'show']);
 
-    Route::resource('user', UserController::class)->only(['index', 'show', 'update', 'destroy']);
+Route::resource('user', UserController::class)->only(['index', 'show', 'update', 'destroy']);
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::get('/profile', function (Request $request) {

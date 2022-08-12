@@ -1,8 +1,21 @@
 import React from 'react';
+import TabelaHeader from "./tabele/TabelaHeader";
+import TabelaKorisniciRow from "./tabele/TabelaKorisniciRow";
 
-function TabelaKorisnika(props) {
+function TabelaKorisnika({users}) {
     return (
-        <div></div>
+        <table className="aTabele">
+            <TabelaHeader header={
+                ["Korisnicko ime", "Ime", "Prezime",
+                    "Datum rodjenja", "Korisnicka uloga", "Adresa", ""]
+            }/>
+            <tbody>
+            {users == null ? <></> : users.map(user => (
+                <TabelaKorisniciRow key={user.id} user={user}/>
+            ))}
+            </tbody>
+
+        </table>
     );
 }
 
