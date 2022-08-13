@@ -15,6 +15,8 @@ import UnosP from "./pages/UnosP";
 import RestoranForm from "./components/admin/forme/RestoranForm";
 import MestoForm from "./components/admin/forme/MestoForm";
 import KorisnikForm from "./components/admin/forme/KorisnikForm";
+import MojeRezervacije from "./pages/MojeRezervacije";
+import Profil from "./pages/Profil";
 
 function App() {
     return (
@@ -25,6 +27,8 @@ function App() {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
                 <Route path='/restoran/:id' element={<Restoran/>}/>
+                <Route path='/moje-rezervacije' element={<MojeRezervacije/>}/>
+                <Route path='/profil/:id' element={<Profil/>}/>
                 <Route path='/admin' element={<Admin/>}/>
                 <Route path='/admin/restorani' element={<ARestorani/>}/>
                 <Route path='/admin/mesta' element={<AMesta/>}/>
@@ -32,15 +36,27 @@ function App() {
                 <Route path='/admin/rezervacije' element={<ARezervacije/>}/>
                 <Route path='/admin/unos/restoran' element={
                     <UnosP naslovStrane={"Unos restorana"}
-                           forma={<RestoranForm />}
+                           forma={<RestoranForm/>}
+                    />}/>
+                <Route path='/admin/unos/restoran/:id' element={
+                    <UnosP naslovStrane={"Unos restorana"}
+                           forma={<RestoranForm/>}
                     />}/>
                 <Route path='/admin/unos/mesto' element={
                     <UnosP naslovStrane={"Unos mesta"}
-                           forma={<MestoForm />}
+                           forma={<MestoForm/>}
+                    />}/>
+                <Route path='/admin/unos/mesto/:id' element={
+                    <UnosP naslovStrane={"Unos mesta"}
+                           forma={<MestoForm/>}
                     />}/>
                 <Route path='/admin/unos/korisnik' element={
                     <UnosP naslovStrane={"Korisnicki nalog"}
-                           forma={<KorisnikForm />}
+                           forma={<KorisnikForm/>}
+                    />}/>
+                <Route path='/admin/unos/korisnik/:id' element={
+                    <UnosP naslovStrane={"Korisnicki nalog"}
+                           forma={<KorisnikForm/>}
                     />}/>
             </Routes>
 

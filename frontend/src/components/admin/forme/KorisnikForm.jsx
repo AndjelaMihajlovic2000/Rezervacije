@@ -1,13 +1,12 @@
 import React from 'react';
 import Unos from "./components/Unos";
 import UnosSelect from "./components/UnosSelect";
-import UnosTextArea from "./components/UnosTextArea";
 import DugmeLink from "../../DugmeLink";
 import Dugme from "../../Dugme";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-function KorisnikForm(props) {
+function KorisnikForm() {
     const [uloge, setUloge] = useState(null);
 
     useEffect(() => {
@@ -28,9 +27,17 @@ function KorisnikForm(props) {
             <Unos nameUnos={"prezime"} nameLabel={"Prezime"}/>
             <Unos nameUnos={"datumRodjenja"} nameLabel={"Datum rodjenja"}/>
             <Unos nameUnos={"adresa"} nameLabel={"Adresa"}/>
-            <UnosSelect nameUnos={"userRole"} nameLabel={"Korisnicka uloga"} opcije={uloge}/>
+            {window.sessionStorage.getItem('userRole') === 'admin'
+                ? <>
+                    <UnosSelect nameUnos={"userRole"} nameLabel={"Korisnicka uloga"} opcije={uloge}/>
+                </> :
+                <></>}
             <div className="form-btn-group">
-                <DugmeLink putanja={"/admin/korisnici"} tekst={"Otkazi"}/>
+                {window.sessionStorage.getItem('userRole') === 'admin' ?
+                    <DugmeLink putanja={"/admin/korisnici"} tekst={"Otkazi"}/>
+                    :
+                    <DugmeLink putanja={"/"} tekst={"Otkazi"}/>
+                }
                 <Dugme tekst={"Sacuvaj"}/>
             </div>
         </div>

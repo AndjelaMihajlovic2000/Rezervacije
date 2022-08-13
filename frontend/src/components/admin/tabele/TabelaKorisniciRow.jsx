@@ -3,7 +3,7 @@ import React from 'react';
 function TabelaKorisniciRow({user}) {
     return (
         <tr>
-            <td scope="row">{user.username}</td>
+            <th scope="row">{user.username}</th>
             <td>{user.ime}</td>
             <td>{user.prezime}</td>
             <td>{user.datumRodjenja}</td>

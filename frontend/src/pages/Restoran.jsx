@@ -11,9 +11,7 @@ function Restoran(props) {
     const stil = {width: "30%"};
     const [modalShow, setModalShow] = useState(false);
 
-    if (window.sessionStorage.getItem('userName') == null
-        || window.sessionStorage.getItem('userRole') != 'admin'
-        || window.sessionStorage.getItem('userRole') != 'zaposleni') {
+    if (window.sessionStorage.getItem('userName') == null) {
         return <Navigate to='/login'/>
     }
 

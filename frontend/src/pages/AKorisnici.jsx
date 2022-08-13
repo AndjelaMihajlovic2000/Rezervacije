@@ -7,10 +7,7 @@ import {Navigate} from "react-router-dom";
 
 function AKorisnici(props) {
 
-    if (window.sessionStorage.getItem('userName') == null
-        || window.sessionStorage.getItem('userRole') != 'admin') {
-        return <Navigate to='/admin'/>
-    }
+
     const [users, setUsers] = useState(null);
 
     useEffect(() => {
@@ -24,6 +21,11 @@ function AKorisnici(props) {
             })
         }
     }, [users])
+
+    if (window.sessionStorage.getItem('userName') == null
+        || window.sessionStorage.getItem('userRole') !== 'admin') {
+        return <Navigate to='/'/>
+    }
 
     return (
         <div className="aPages">

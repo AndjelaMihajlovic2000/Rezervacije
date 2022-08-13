@@ -3,7 +3,7 @@ import React from 'react';
 function TabelaMestaRow({mesto}) {
     return (
         <tr>
-            <td scope="row">{mesto.naziv}</td>
+            <th scope="row">{mesto.naziv}</th>
             <td>{mesto.brojStolica}</td>
             <td>{mesto.opis}</td>
             <td>{mesto.dostupno}</td>

@@ -3,7 +3,7 @@ import React from 'react';
 function TabelaRestoraniRow({restoran}) {
     return (
         <tr>
-            <td scope="row">{restoran.naziv}</td>
+            <th scope="row">{restoran.naziv}</th>
             <td>{restoran.adresa}</td>
             <td>{restoran.radnoVreme}</td>
             <td>{restoran.telefon}</td>

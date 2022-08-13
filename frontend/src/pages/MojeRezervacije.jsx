@@ -1,11 +1,10 @@
 import React from 'react';
-import TabelaRezervacija from "../components/admin/TabelaRezervacija";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {Navigate} from "react-router-dom";
+import TabelaRezervacija from "../components/admin/TabelaRezervacija";
 
-function ARezervacije(props) {
-
+function MojeRezervacije(props) {
 
     const [rezervacije, setRezervacije] = useState(null);
 
@@ -21,9 +20,8 @@ function ARezervacije(props) {
     }, [rezervacije])
 
 
-    if (window.sessionStorage.getItem('userName') == null
-        || window.sessionStorage.getItem('userRole') === 'gost') {
-        return <Navigate to='/'/>
+    if (window.sessionStorage.getItem('userName') == null) {
+        return <Navigate to='/login'/>
     }
 
     return (
@@ -33,12 +31,7 @@ function ARezervacije(props) {
                 <div className="aPagesContainerHead container">
                     <div className="row d-flex justify-content-between">
                         <div className="col-4">
-                            <h2>Sve rezervacije</h2>
-                        </div>
-                        <div className="col-2">
-                            <button className="btn-96">
-                                <span>Dodaj novu rezervaciju?</span>
-                            </button>
+                            <h2>Moje rezervacije</h2>
                         </div>
                     </div>
                 </div>
@@ -52,4 +45,4 @@ function ARezervacije(props) {
     );
 }
 
-export default ARezervacije;
+export default MojeRezervacije;
