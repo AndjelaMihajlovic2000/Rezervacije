@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import "../styles/aPages.css";
 import TabelaRestorana from "../components/admin/TabelaRestorana";
 import axios from "axios";
+import {Link} from "react-router-dom";
+import DugmeLink from "../components/DugmeLink";
 
 function ARestorani(props) {
 
@@ -28,9 +30,7 @@ function ARestorani(props) {
                             <h2>Restorani</h2>
                         </div>
                         <div className="col-2">
-                            <button className="btn-96">
-                                <span>Dodaj novi restoran</span>
-                            </button>
+                            <DugmeLink putanja={"/admin/unos/restoran"} tekst={"Dodaj novi restoran"}/>
                         </div>
                     </div>
                 </div>

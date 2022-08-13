@@ -3,6 +3,7 @@ import "../styles/aPages.css";
 import TabelaMesta from "../components/admin/TabelaMesta";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import DugmeLink from "../components/DugmeLink";
 
 function AMesta(props) {
 
@@ -30,9 +31,7 @@ function AMesta(props) {
                             <h2>Sva mesta</h2>
                         </div>
                         <div className="col-2">
-                            <button className="btn-96">
-                                <span>Dodaj novo mesto</span>
-                            </button>
+                            <DugmeLink tekst={"Dodaj novo mesto"} putanja={"/admin/unos/mesto"}/>
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import React from 'react';
 function TabelaRezervacijeRow({rezervacija}) {
     return (
         <tr>
-            <td>{rezervacija.mestoID.naziv}</td>
+            <td scope="row">{rezervacija.mestoID.naziv}</td>
             <td>{rezervacija.mestoID.restoranID.naziv}</td>
             <td>{rezervacija.mestoID.restoranID.adresa}</td>
             <td>{rezervacija.userID.ime} {rezervacija.userID.prezime}</td>
@@ -11,7 +11,7 @@ function TabelaRezervacijeRow({rezervacija}) {
             <td>{rezervacija.uspesno}</td>
             <td>{rezervacija.restoranID.adresa}</td>
             <td>
-                <button>Obrisi</button>
+                <button className="btn  btn-danger">Obrisi</button>
             </td>
         </tr>
 

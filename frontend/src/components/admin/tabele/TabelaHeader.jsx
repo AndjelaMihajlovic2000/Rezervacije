@@ -6,7 +6,7 @@ function TabelaHeader({header}) {
         <thead>
         <tr>
             {header.map(element => (
-                <th key={i++}>{element}</th>
+                <th scope="col" key={i++}>{element}</th>
             ))}
         </tr>
         </thead>

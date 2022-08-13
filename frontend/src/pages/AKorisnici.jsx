@@ -2,6 +2,7 @@ import React from 'react';
 import {useEffect, useState} from "react";
 import axios from "axios";
 import TabelaKorisnika from "../components/admin/TabelaKorisnika";
+import DugmeLink from "../components/DugmeLink";
 
 function AKorisnici(props) {
     const [users, setUsers] = useState(null);
@@ -28,9 +29,7 @@ function AKorisnici(props) {
                             <h2>Svi korisnici</h2>
                         </div>
                         <div className="col-2">
-                            <button className="btn-96">
-                                <span>Kreiraj nalog novom korisniku</span>
-                            </button>
+                            <DugmeLink tekst={"Kreiraj nalog novom korisniku"} putanja={"/admin/unos/korisnik"}/>
                         </div>
                     </div>
                 </div>

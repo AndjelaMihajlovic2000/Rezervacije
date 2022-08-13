@@ -4,7 +4,7 @@ import TabelaRestoraniRow from "./tabele/TabelaRestoraniRow";
 
 function TabelaRestorana({restorani}) {
     return (
-        <table className="aTabele">
+        <table className="aTabele table table-striped table-light table-hover">
             <TabelaHeader header={
                 ["Naziv restorana", "Adresa", "Radno vreme",
                     "Telefon", "Email", "Broj zvezdica", ""]

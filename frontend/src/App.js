@@ -11,6 +11,10 @@ import ARestorani from "./pages/ARestorani";
 import AMesta from "./pages/AMesta";
 import AKorisnici from "./pages/AKorisnici";
 import ARezervacije from "./pages/ARezervacije";
+import UnosP from "./pages/UnosP";
+import RestoranForm from "./components/admin/forme/RestoranForm";
+import MestoForm from "./components/admin/forme/MestoForm";
+import KorisnikForm from "./components/admin/forme/KorisnikForm";
 
 function App() {
     return (
@@ -26,6 +30,18 @@ function App() {
                 <Route path='/admin/mesta' element={<AMesta/>}/>
                 <Route path='/admin/korisnici' element={<AKorisnici/>}/>
                 <Route path='/admin/rezervacije' element={<ARezervacije/>}/>
+                <Route path='/admin/unos/restoran' element={
+                    <UnosP naslovStrane={"Unos restorana"}
+                           forma={<RestoranForm />}
+                    />}/>
+                <Route path='/admin/unos/mesto' element={
+                    <UnosP naslovStrane={"Unos mesta"}
+                           forma={<MestoForm />}
+                    />}/>
+                <Route path='/admin/unos/korisnik' element={
+                    <UnosP naslovStrane={"Korisnicki nalog"}
+                           forma={<KorisnikForm />}
+                    />}/>
             </Routes>
 
             <Footer/>
