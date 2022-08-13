@@ -14,7 +14,7 @@ class Restoran extends Model {
         return $this->belongsTo(User::class);
     }
 
-    public function mesto() {
+    public function mesta() {
         return $this->hasMany(Mesto::class);
     }
 }

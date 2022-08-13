@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\RestoranCollection;
 use App\Http\Resources\RestoranResource;
+use App\Models\Mesto;
 use App\Models\Restoran;
 use App\Rules\PostojiKorisnik;
 use App\Rules\PostojiUloga;
@@ -79,7 +80,8 @@ class RestoranController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show(Restoran $restoran) {
-        return new RestoranResource($restoran);
+        $mesta = Mesto::all()->where('restoranID', '=', $restoran->id);
+        return response()->json(['restoran'=>$restoran,'mesta'=>$mesta]);
     }
 
     /**

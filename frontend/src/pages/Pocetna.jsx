@@ -1,9 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "../styles/page.css";
+import axios from "axios";
 import RestoranCard from "../components/RestoranCard";
 import {Navigate} from "react-router-dom";
 
 function Pocetna() {
+
+
+    const [restorani, setRestorani] = useState(null);
+    useEffect(() => {
+        console.log("All posts" + 123)
+        if (restorani === null) {
+            axios.get('http://localhost:8000/api/restoran')
+                .then((res) => {
+                    setRestorani(res.data.restorani)
+                }).catch((e) => {
+            })
+        }
+    }, [restorani])
 
     if (window.sessionStorage.getItem('userName') == null) {
         return <Navigate to='/login'/>
@@ -38,18 +52,9 @@ function Pocetna() {
                 <div className="pageContainerBody container">
                     <div className="row g-2 pageBodyContent">
 
-                        <RestoranCard/>
-                        <RestoranCard/>
-                        <RestoranCard/>
-                        <RestoranCard/>
-                        <RestoranCard/>
-                        <RestoranCard/>
-                        <RestoranCard/>
-                        <RestoranCard/>
-                        <RestoranCard/>
-                        <RestoranCard/>
-                        <RestoranCard/>
-                        <RestoranCard/>
+                        {restorani === null ? <></> : restorani.map((restoran) => (
+                            <RestoranCard key={restoran.id} restoran={restoran}/>
+                        ))}
 
                     </div>
                 </div>

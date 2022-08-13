@@ -3,13 +3,34 @@ import "../styles/page.css";
 import "../styles/restoran.css";
 import MestoCard from "../components/MestoCard";
 import RezervacijaModal from "../components/RezervacijaModal";
-import {Navigate} from "react-router-dom";
+import {Navigate, useParams} from "react-router-dom";
+import {useEffect} from "react";
+import axios from "axios";
 
 function Restoran(props) {
 
-
     const stil = {width: "30%"};
     const [modalShow, setModalShow] = useState(false);
+
+    let params = useParams();
+
+    const [restoran, setRestoran] = useState(null);
+    const [mesta, setMesta] = useState(null);
+    useEffect(() => {
+        if (restoran === null) {
+            axios.get('http://localhost:8000/api/restoran/'.concat(params.id))
+                .then((res) => {
+                    console.log(res.data)
+                    setRestoran(res.data.restoran)
+                    setMesta(res.data.mesta)
+                }).catch((e) => {
+                    console.log(e)
+            })
+        }
+    }, [restoran,mesta,params.id])
+
+
+
 
     if (window.sessionStorage.getItem('userName') == null) {
         return <Navigate to='/login'/>
