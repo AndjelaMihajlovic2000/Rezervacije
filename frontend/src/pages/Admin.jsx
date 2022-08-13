@@ -2,9 +2,16 @@ import React from 'react';
 import "../styles/admin.css";
 import StatsCard from "../components/admin/StatsCard";
 import AdminChart from "../components/admin/AdminChart";
-import {Link} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 
 function Admin(props) {
+
+    if (window.sessionStorage.getItem('userName') == null
+        || window.sessionStorage.getItem('userRole') != 'admin'
+        || window.sessionStorage.getItem('userRole') != 'zaposleni') {
+        return <Navigate to='/'/>
+    }
+
     return (
         <div className="adminPage">
             <div className="adminPageContainer">
@@ -22,7 +29,7 @@ function Admin(props) {
                         <StatsCard/>
                     </div>
                     <div className="adminPageContainerBodyGraphWrapper">
-                        <AdminChart className="adminGraph" />
+                        <AdminChart className="adminGraph"/>
                         <h4> Broj rezervacija na dnevnom nivou</h4>
                     </div>
                 </div>
@@ -34,16 +41,20 @@ function Admin(props) {
                         </div>
                     </div>
                     <div className="row adminMenuCard">
-                        <div className="col"><Link style={{ textDecoration: 'none', color:'black'}} to="/admin/restorani">Restorani</Link></div>
+                        <div className="col"><Link style={{textDecoration: 'none', color: 'black'}}
+                                                   to="/admin/restorani">Restorani</Link></div>
                     </div>
                     <div className="row adminMenuCard">
-                        <div className="col"><Link style={{ textDecoration: 'none', color:'black'}} to="/admin/mesta">Mesta</Link></div>
+                        <div className="col"><Link style={{textDecoration: 'none', color: 'black'}}
+                                                   to="/admin/mesta">Mesta</Link></div>
                     </div>
                     <div className="row adminMenuCard">
-                        <div className="col"><Link style={{ textDecoration: 'none', color:'black'}} to="/admin/rezervacije">Rezervacije</Link></div>
+                        <div className="col"><Link style={{textDecoration: 'none', color: 'black'}}
+                                                   to="/admin/rezervacije">Rezervacije</Link></div>
                     </div>
                     <div className="row adminMenuCard">
-                        <div className="col"><Link style={{ textDecoration: 'none', color:'black'}} to="/admin/korisnici">Korisnici</Link></div>
+                        <div className="col"><Link style={{textDecoration: 'none', color: 'black'}}
+                                                   to="/admin/korisnici">Korisnici</Link></div>
                     </div>
 
                 </div>

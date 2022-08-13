@@ -3,10 +3,20 @@ import "../styles/page.css";
 import "../styles/restoran.css";
 import MestoCard from "../components/MestoCard";
 import RezervacijaModal from "../components/RezervacijaModal";
+import {Navigate} from "react-router-dom";
 
 function Restoran(props) {
+
+
     const stil = {width: "30%"};
     const [modalShow, setModalShow] = useState(false);
+
+    if (window.sessionStorage.getItem('userName') == null
+        || window.sessionStorage.getItem('userRole') != 'admin'
+        || window.sessionStorage.getItem('userRole') != 'zaposleni') {
+        return <Navigate to='/login'/>
+    }
+
     return (
         <>
             <div className="page">

@@ -1,6 +1,12 @@
 import React from 'react';
+import {Navigate} from "react-router-dom";
 
 function UnosP({naslovStrane,forma}) {
+    if (window.sessionStorage.getItem('userName') == null
+        || window.sessionStorage.getItem('userRole') != 'admin'
+        || window.sessionStorage.getItem('userRole') != 'zaposleni') {
+        return <Navigate to='/login'/>
+    }
     return (
         <div className="aPages">
             <div className="aPagesContainer">

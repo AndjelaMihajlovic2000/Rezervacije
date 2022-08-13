@@ -4,9 +4,9 @@ import TabelaMesta from "../components/admin/TabelaMesta";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import DugmeLink from "../components/DugmeLink";
+import {Navigate} from "react-router-dom";
 
 function AMesta(props) {
-
 
     const [mesta, setMesta] = useState(null);
 
@@ -20,6 +20,12 @@ function AMesta(props) {
             })
         }
     }, [mesta])
+
+    if (window.sessionStorage.getItem('userName') == null
+        || window.sessionStorage.getItem('userRole') != 'admin'
+        || window.sessionStorage.getItem('userRole') != 'zaposleni') {
+        return <Navigate to='/login'/>
+    }
 
     return (
         <div className="aPages">

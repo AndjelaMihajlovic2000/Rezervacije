@@ -3,8 +3,14 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import TabelaKorisnika from "../components/admin/TabelaKorisnika";
 import DugmeLink from "../components/DugmeLink";
+import {Navigate} from "react-router-dom";
 
 function AKorisnici(props) {
+
+    if (window.sessionStorage.getItem('userName') == null
+        || window.sessionStorage.getItem('userRole') != 'admin') {
+        return <Navigate to='/admin'/>
+    }
     const [users, setUsers] = useState(null);
 
     useEffect(() => {

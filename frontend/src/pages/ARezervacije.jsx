@@ -2,6 +2,7 @@ import React from 'react';
 import TabelaRezervacija from "../components/admin/TabelaRezervacija";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {Navigate} from "react-router-dom";
 
 function ARezervacije(props) {
 
@@ -18,6 +19,13 @@ function ARezervacije(props) {
             })
         }
     }, [rezervacije])
+
+
+    if (window.sessionStorage.getItem('userName') == null
+        || window.sessionStorage.getItem('userRole') != 'admin'
+        || window.sessionStorage.getItem('userRole') != 'zaposleni') {
+        return <Navigate to='/login'/>
+    }
 
     return (
         <div className="aPages">

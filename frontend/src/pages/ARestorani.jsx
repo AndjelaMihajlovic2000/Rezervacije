@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "../styles/aPages.css";
 import TabelaRestorana from "../components/admin/TabelaRestorana";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import DugmeLink from "../components/DugmeLink";
 
 function ARestorani(props) {
@@ -19,6 +19,12 @@ function ARestorani(props) {
             })
         }
     }, [restorani])
+
+    if (window.sessionStorage.getItem('userName') == null
+        || window.sessionStorage.getItem('userRole') != 'admin'
+        || window.sessionStorage.getItem('userRole') != 'zaposleni') {
+        return <Navigate to='/login'/>
+    }
 
     return (
         <div className="aPages">

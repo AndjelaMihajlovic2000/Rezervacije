@@ -46,10 +46,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::resource('mesto', MestoController::class)->only(['store', 'update', 'destroy']);
     Route::resource('restoran', RestoranController::class)->only(['store', 'update', 'destroy']);
     Route::resource('rezervacija', RezervacijaController::class)->only(['index', 'show', 'store', 'update', 'destroy']);
-
+    Route::resource('user-role', UserRoleController::class)->only(['index', 'show']);
 
 
     Route::post('logout', [AuthController::class, 'logout']);
 
 });
-    Route::resource('user-role', UserRoleController::class)->only(['index', 'show']);

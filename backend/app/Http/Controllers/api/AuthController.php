@@ -53,7 +53,7 @@ class AuthController extends Controller {
 
         $token = $user->createToken('auth_token')->plainTextToken;
         return response()->json(['message' => 'New user successfully created.', 'data' => $user, 'access_token' => $token,
-            'token_type' => 'Bearer', 'success' => true, 'user_type' => 'gost', 'user_id' => $user->id]);
+            'token_type' => 'Bearer', 'success' => true, 'user_type' => 'gost', 'user_id' => $user->id,'user_name'=>$user->username]);
     }
 
     /**
@@ -127,7 +127,7 @@ class AuthController extends Controller {
 
         return response()->json(['message' => 'Successfully logged in ' . $user->ime . " " . $user->prezime,
             'access_token' => $token, 'token_type' => 'Bearer', 'success' => true,
-            'user_type' => $userRole, 'user_id' => $user->id]);
+            'user_type' => $userRole, 'user_id' => $user->id,'user_name'=>$user->username]);
 
     }
 

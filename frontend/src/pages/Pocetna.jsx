@@ -1,8 +1,14 @@
 import React from 'react';
 import "../styles/page.css";
 import RestoranCard from "../components/RestoranCard";
+import {Navigate} from "react-router-dom";
 
 function Pocetna() {
+
+    if (window.sessionStorage.getItem('userName') == null) {
+        return <Navigate to='/login'/>
+    }
+
     return (
         <div className="page">
             <div className="pageContainer">
