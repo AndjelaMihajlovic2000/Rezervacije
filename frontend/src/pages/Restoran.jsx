@@ -16,6 +16,7 @@ function Restoran(props) {
 
     const [restoran, setRestoran] = useState(null);
     const [mesta, setMesta] = useState(null);
+    const [mesto, setMesto] = useState(null);
     useEffect(() => {
         if (restoran === null) {
             axios.get('http://localhost:8000/api/restoran/'.concat(params.id))
@@ -24,13 +25,15 @@ function Restoran(props) {
                     setRestoran(res.data.restoran)
                     setMesta(res.data.mesta)
                 }).catch((e) => {
-                    console.log(e)
+                console.log(e)
             })
         }
-    }, [restoran,mesta,params.id])
+    }, [restoran, mesta, params.id])
 
-
-
+    function prikaziModal(mesto) {
+        setModalShow(true);
+        setMesto(mesto);
+    }
 
     if (window.sessionStorage.getItem('userName') == null) {
         return <Navigate to='/login'/>
@@ -62,22 +65,9 @@ function Restoran(props) {
                             <h3>Rezervisite mesto</h3>
                         </div>
                         <div className="restoranPageBodyContent">
-
-                            <MestoCard setModalShow={setModalShow}/>
-                            <MestoCard setModalShow={setModalShow}/>
-                            <MestoCard setModalShow={setModalShow}/>
-                            <MestoCard setModalShow={setModalShow}/>
-                            <MestoCard setModalShow={setModalShow}/>
-                            <MestoCard setModalShow={setModalShow}/>
-                            <MestoCard setModalShow={setModalShow}/>
-                            <MestoCard setModalShow={setModalShow}/>
-                            <MestoCard setModalShow={setModalShow}/>
-                            <MestoCard setModalShow={setModalShow}/>
-                            <MestoCard setModalShow={setModalShow}/>
-                            <MestoCard setModalShow={setModalShow}/>
-
-
-
+                            {mesta === null ? <></> : mesta.map((mesto) => (
+                                <MestoCard key={mesto.id} mesto={mesto} prikaziModal={prikaziModal}/>
+                            ))}
                         </div>
                     </div>
 
@@ -85,7 +75,11 @@ function Restoran(props) {
             </div>
             <RezervacijaModal
                 show={modalShow}
-                onHide={() => setModalShow(false)}
+                onHide={() => {
+                    setModalShow(false);
+                    setMesto(null);
+                }}
+                mesto={mesto}
             />
         </>
     );

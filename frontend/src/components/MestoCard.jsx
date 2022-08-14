@@ -1,17 +1,19 @@
 import React from 'react';
 
 
-function MestoCard({setModalShow}) {
+function MestoCard({mesto,prikaziModal}) {
     const stil2 = {width: '85%',paddingLeft: '10px', marginTop :'30px', marginLeft:'auto',marginRight:'auto'}
 
     return (
         <div className="mestoCard">
             <div className="card" style={stil2}>
                 <div className="card-body p-3">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make
-                        up the bulk of the card's content.</p>
-                    <button className="btn-96"  onClick={() => setModalShow(true)}><span>Rezervisi!</span></button>
+                    <h5 className="card-title">{mesto.naziv}</h5>
+                    <p className="card-text">{mesto.opis}</p>
+                    {mesto.dostupno===1
+                        ?<button className="btn-96"  onClick={() => prikaziModal(mesto)}><span>Rezervisi!</span></button>:
+                        <p className="btn-96"><span>Mesto je rezervisano</span></p>
+                    }
                 </div>
             </div>
         </div>

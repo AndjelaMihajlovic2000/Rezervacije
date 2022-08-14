@@ -31,7 +31,7 @@ Route::post('login', [AuthController::class, 'login']);
 Route::resource('mesto', MestoController::class)->only(['index', 'show']);
 Route::resource('restoran', RestoranController::class)->only(['index', 'show']);
 Route::resource('rezervacija', RezervacijaController::class)->only(['index', 'show']);
-    Route::get('mesto-restoran/{id}',[MestoController::class,'getMestaByRestoran']);
+Route::get('mesto-restoran/{id}', [MestoController::class, 'getMestaByRestoran']);
 
 Route::resource('user', UserController::class)->only(['index', 'show', 'update', 'destroy']);
 Route::group(['middleware' => ['auth:sanctum']], function () {
@@ -41,6 +41,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     });
 
 
+    Route::get('moje-rezervacije', [RezervacijaController::class, 'mojeRezervacije']);
     Route::post('kreirajNalog', [AuthController::class, 'registerWithoutToken']);
 
 

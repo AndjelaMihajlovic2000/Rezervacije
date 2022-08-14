@@ -10,7 +10,11 @@ function MojeRezervacije(props) {
 
     useEffect(() => {
         if (rezervacije == null) {
-            axios.get('http://localhost:8000/api/rezervacija')
+            axios.get('http://localhost:8000/api/moje-rezervacije',{
+                headers: {
+                    'Authorization': 'Bearer ' + window.sessionStorage.getItem('auth_token'),
+                }
+            })
                 .then((res) => {
                     setRezervacije(res.data.rezervacije)
                     console.log((res.data.rezervacije))

@@ -69,6 +69,15 @@ class RezervacijaController extends Controller {
         return new RezervacijaResource($rezervacija);
     }
 
+    public function mojeRezervacije() {
+
+        $currentUser = auth()->user();
+
+        $rezervacije = Rezervacija::all()->where('userID', '=', $currentUser->id);
+        return new RezervacijaCollection($rezervacije);
+
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

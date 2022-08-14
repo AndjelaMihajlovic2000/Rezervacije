@@ -17,13 +17,15 @@ function RezervacijaModal(props) {
             <Modal.Body>
                 <label htmlFor="mestoRezervacije" className="form-label">Mesto</label>
                 <div className="input-group mb-3">
-                    <input type="text" readOnly id="mestoRezervacije" className="form-control" aria-label="Mesto"/>
+                    <input type="text" readOnly id="mestoRezervacije" className="form-control"
+                           aria-label="Mesto"
+                           value={props.mesto!==null?props.mesto.naziv:""}/>
                 </div>
 
                 <label htmlFor="korisnikRezervacije" className="form-label">Korisnik</label>
                 <div className="input-group mb-3">
                     <input type="text" readOnly id="korisnikRezervacije" className="form-control"
-                           aria-label="Korisnik"/>
+                           aria-label="Korisnik" value={window.sessionStorage.getItem('userName')}/>
                 </div>
 
                 <label htmlFor="datumRezervacije" className="form-label">Unesite datum i vreme rezervacije</label>
