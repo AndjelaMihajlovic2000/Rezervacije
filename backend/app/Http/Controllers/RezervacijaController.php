@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\RezervacijaCollection;
 use App\Http\Resources\RezervacijaResource;
 use App\Models\Rezervacija;
+use App\Models\UserRole;
 use App\Rules\PostojiMesto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -108,7 +109,7 @@ class RezervacijaController extends Controller {
     public function destroy(Rezervacija $rezervacija) {
 
         $currentUser = auth()->user();
-        if ($currentUser->userRole->slug != 'admin' && $currentUser->id != $rezervacija->userID->id) {
+        if (UserRole::find($currentUser->userRole)->slug != 'admin' && $currentUser->id != $rezervacija->userID->id) {
             return response()->json(['success' => false, 'message' => 'You have not any permissions to do that!']);
         }
 

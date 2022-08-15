@@ -6,8 +6,10 @@ use App\Http\Resources\MestoCollection;
 use App\Http\Resources\MestoResource;
 use App\Models\Mesto;
 use App\Models\Restoran;
+use App\Models\UserRole;
 use App\Rules\PostojiRestoran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class MestoController extends Controller {
     /**
@@ -36,7 +38,8 @@ class MestoController extends Controller {
      */
     public function store(Request $request) {
         $currentUser = auth()->user();
-        if ($currentUser->userRole->slug != 'admin' && !$currentUser->userRole->can_manage) {
+
+        if (UserRole::find($currentUser->userRole)->slug != 'admin' && !UserRole::find($currentUser->userRole)->can_manage) {
             return response()->json(['success' => false, 'message' => 'You have not any permissions to do that!']);
         }
 
@@ -44,7 +47,6 @@ class MestoController extends Controller {
             'naziv' => 'required|string|max:255',
             'brojStolica' => 'required|string|max:255',
             'opis' => 'required|string|max:255',
-            'dostupno' => 'required',
             'restoranID' => [new PostojiRestoran()],
 
         ]);
@@ -57,7 +59,7 @@ class MestoController extends Controller {
             'naziv' => $request->naziv,
             'brojStolica' => $request->brojStolica,
             'opis' => $request->opis,
-            'dostupno' => $request->dostupno,
+            'dostupno' => 1,
             'restoranID' => $request->restoranID,
         ]);
 
@@ -93,7 +95,7 @@ class MestoController extends Controller {
      */
     public function update(Request $request, Mesto $mesto) {
         $currentUser = auth()->user();
-        if ($currentUser->userRole->slug != 'admin' && !$currentUser->userRole->can_manage) {
+        if (UserRole::find($currentUser->userRole)->slug != 'admin' && !UserRole::find($currentUser->userRole)->can_manage) {
             return response()->json(['success' => false, 'message' => 'You have not any permissions to do that!']);
         }
 
@@ -101,7 +103,6 @@ class MestoController extends Controller {
             'naziv' => 'required|string|max:255',
             'brojStolica' => 'required|string|max:255',
             'opis' => 'required|string|max:255',
-            'dostupno' => 'required',
             'restoranID' => [new PostojiRestoran()],
 
         ]);
@@ -114,7 +115,6 @@ class MestoController extends Controller {
         $mesto->naziv = $request->naziv;
         $mesto->brojStolica = $request->brojStolica;
         $mesto->opis = $request->opis;
-        $mesto->dostupno = $request->dostupno;
         $mesto->restoranID = $request->restoranID;
         $mesto->save();
 
@@ -129,7 +129,7 @@ class MestoController extends Controller {
      */
     public function destroy(Mesto $mesto) {
         $currentUser = auth()->user();
-        if ($currentUser->userRole->slug != 'admin' && !$currentUser->userRole->can_manage) {
+        if (UserRole::find($currentUser->userRole)->slug != 'admin' && !UserRole::find($currentUser->userRole)->can_manage) {
             return response()->json(['success' => false, 'message' => 'You have not any permissions to do that!']);
         }
 

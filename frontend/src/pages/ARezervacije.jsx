@@ -11,7 +11,11 @@ function ARezervacije(props) {
 
     useEffect(() => {
         if (rezervacije == null) {
-            axios.get('http://localhost:8000/api/rezervacija')
+            axios.get('http://localhost:8000/api/rezervacija',{
+                headers: {
+                    'Authorization': 'Bearer ' + window.sessionStorage.getItem('auth_token'),
+                }
+            })
                 .then((res) => {
                     setRezervacije(res.data.rezervacije)
                     console.log((res.data.rezervacije))
@@ -36,9 +40,7 @@ function ARezervacije(props) {
                             <h2>Sve rezervacije</h2>
                         </div>
                         <div className="col-2">
-                            <button className="btn-96">
-                                <span>Dodaj novu rezervaciju?</span>
-                            </button>
+
                         </div>
                     </div>
                 </div>

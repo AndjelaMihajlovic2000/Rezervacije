@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Dugme({tekst}) {
+function Dugme({tekst,funkcija}) {
     return (
-        <button className="btn-96">
+        <button className="btn-96" onClick={funkcija}>
             <span>{tekst}</span>
         </button>
     );

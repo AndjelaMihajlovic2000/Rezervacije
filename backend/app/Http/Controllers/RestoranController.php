@@ -6,6 +6,7 @@ use App\Http\Resources\RestoranCollection;
 use App\Http\Resources\RestoranResource;
 use App\Models\Mesto;
 use App\Models\Restoran;
+use App\Models\UserRole;
 use App\Rules\PostojiKorisnik;
 use App\Rules\PostojiUloga;
 use Illuminate\Http\Request;
@@ -39,7 +40,7 @@ class RestoranController extends Controller {
     public function store(Request $request) {
 
         $currentUser = auth()->user();
-        if ($currentUser->userRole->slug != 'admin') {
+        if (UserRole::find($currentUser->userRole)->slug != 'admin') {
             return response()->json(['success' => false, 'message' => 'You have not any permissions to do that!']);
         }
 
@@ -47,12 +48,10 @@ class RestoranController extends Controller {
             'naziv' => 'required|string|max:255',
             'adresa' => 'required|string|max:255',
             'radnoVreme' => 'required|string|max:255',
-            'telefon' => 'required|date',
+            'telefon' => 'required|string',
             'email' => 'required|string|max:255',
             'brojZvezdica' => 'integer',
             'opis' => 'string|max:255',
-            'userID' => [new PostojiKorisnik()],
-
         ]);
 
         if ($validator->fails()) {
@@ -67,7 +66,7 @@ class RestoranController extends Controller {
             'email' => $request->email,
             'brojZvezdica' => $request->brojZvezdica,
             'opis' => $request->opis,
-            'userID' => $request->userID
+            'userID' => $currentUser->id
         ]);
 
         return response()->json(['success' => true, 'message' => 'Uspesno sacuvan restoran!', new RestoranResource($restoran)]);
@@ -81,7 +80,7 @@ class RestoranController extends Controller {
      */
     public function show(Restoran $restoran) {
         $mesta = Mesto::all()->where('restoranID', '=', $restoran->id);
-        return response()->json(['restoran'=>$restoran,'mesta'=>$mesta]);
+        return response()->json(['restoran' => $restoran, 'mesta' => $mesta]);
     }
 
     /**
@@ -104,7 +103,7 @@ class RestoranController extends Controller {
     public function update(Request $request, Restoran $restoran) {
 
         $currentUser = auth()->user();
-        if ($currentUser->userRole->slug != 'admin') {
+        if (UserRole::find($currentUser->userRole)->slug != 'admin') {
             return response()->json(['success' => false, 'message' => 'You have not any permissions to do that!']);
         }
 
@@ -115,8 +114,7 @@ class RestoranController extends Controller {
             'telefon' => 'required|date',
             'email' => 'required|string|max:255',
             'brojZvezdica' => 'integer',
-            'opis' => 'string|max:255',
-            'userID' => [new PostojiKorisnik()],
+            'opis' => 'string|max:255'
 
         ]);
 
@@ -132,7 +130,6 @@ class RestoranController extends Controller {
         $restoran->email = $request->email;
         $restoran->brojZvezdica = $request->brojZvezdica;
         $restoran->opis = $request->opis;
-        $restoran->userID = $request->userID;
         $restoran->save();
 
 
@@ -148,7 +145,7 @@ class RestoranController extends Controller {
     public function destroy(Restoran $restoran) {
 
         $currentUser = auth()->user();
-        if ($currentUser->userRole->slug != 'admin') {
+        if (UserRole::find($currentUser->userRole)->slug != 'admin') {
             return response()->json(['success' => false, 'message' => 'You have not any permissions to do that!']);
         }
 

@@ -1,10 +1,10 @@
 import React from 'react';
 
-function UnosSelect({nameUnos, nameLabel, opcije}) {
+function UnosSelect({nameUnos, nameLabel, opcije, handleInput}) {
     return (
         <div className="mb-3">
             <label htmlFor={nameUnos.concat("ID")} className="form-label">{nameLabel}</label>
-            <select className="form-select" id={nameUnos.concat("ID")} name={nameUnos}>
+            <select className="form-select" id={nameUnos.concat("ID")} name={nameUnos} onChange={handleInput}>
                 <option>Odaberi</option>
                 {opcije == null ? <></> : opcije.map((opcija) => (
                     <option key={opcija.id} value={opcija.id}>
