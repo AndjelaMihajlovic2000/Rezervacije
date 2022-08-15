@@ -12,7 +12,7 @@ function AKorisnici(props) {
 
     useEffect(() => {
         if (users == null) {
-            axios.get('http://localhost:8000/api/user',{
+            axios.get('http://localhost:8000/api/user', {
                 headers: {
                     'Authorization': 'Bearer ' + window.sessionStorage.getItem('auth_token'),
                 }
@@ -47,7 +47,7 @@ function AKorisnici(props) {
                 </div>
 
                 <div className="aRestoraniPageContainerBody">
-                    <TabelaKorisnika  users={users}/>
+                    <TabelaKorisnika users={users}/>
                 </div>
 
             </div>

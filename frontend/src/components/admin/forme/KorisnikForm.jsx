@@ -5,31 +5,78 @@ import DugmeLink from "../../DugmeLink";
 import Dugme from "../../Dugme";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 function KorisnikForm() {
     const [uloge, setUloge] = useState(null);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         if (uloge == null) {
-            axios.get('http://localhost:8000/api/user-role')
+            axios.get('http://localhost:8000/api/user-role',{
+                headers: {
+                    'Authorization': 'Bearer ' + window.sessionStorage.getItem('auth_token'),
+                }
+            })
                 .then((res) => {
                     setUloge(res.data.user_roles)
                     console.log((res.data.user_roles))
                 }).catch((e) => {
             })
         }
-    }, [uloge])
+    }, [uloge]);
+
+    const [korisnikInput, setKorisnikInput] = useState({
+        username: "",
+        password: "",
+        ime: "",
+        prezime: "",
+        datumRodjenja: "",
+        adresa: "",
+        userRole: ""
+    });
+
+    const handleInput = (e) => {
+        e.persist();
+        setKorisnikInput({
+            ...korisnikInput,
+            [e.target.name]: e.target.value,
+        });
+        console.log(korisnikInput)
+    };
+
+    function dodajKorisnika() {
+
+        axios.post('http://localhost:8000/api/kreirajNalog', korisnikInput, {
+            headers: {
+                'Authorization': 'Bearer ' + window.sessionStorage.getItem('auth_token'),
+            }
+        })
+            .then((res) => {
+                console.log((res.data))
+
+                alert((res.data.message))
+                console.log((res.data.message))
+                if (res.data.success) {
+                    navigate('/admin/korisnici')
+                }
+            }).catch((e) => {
+        })
+
+    }
+
     return (
         <div className="forma korisnikForm">
-            <Unos nameUnos={"username"} nameLabel={"Username"}/>
-            <Unos nameUnos={"password"} nameLabel={"Password"}/>
-            <Unos nameUnos={"ime"} nameLabel={"Ime"}/>
-            <Unos nameUnos={"prezime"} nameLabel={"Prezime"}/>
-            <Unos nameUnos={"datumRodjenja"} nameLabel={"Datum rodjenja"}/>
-            <Unos nameUnos={"adresa"} nameLabel={"Adresa"}/>
+            <Unos nameUnos={"username"} nameLabel={"Username"} handleInput={handleInput}/>
+            <Unos nameUnos={"password"} nameLabel={"Password"} tip={"password"} handleInput={handleInput}/>
+            <Unos nameUnos={"ime"} nameLabel={"Ime"} handleInput={handleInput}/>
+            <Unos nameUnos={"prezime"} nameLabel={"Prezime"} handleInput={handleInput}/>
+            <Unos nameUnos={"datumRodjenja"} tip={"date"} nameLabel={"Datum rodjenja"} handleInput={handleInput}/>
+            <Unos nameUnos={"adresa"} nameLabel={"Adresa"} handleInput={handleInput}/>
             {window.sessionStorage.getItem('userRole') === 'admin'
                 ? <>
-                    <UnosSelect nameUnos={"userRole"} nameLabel={"Korisnicka uloga"} opcije={uloge}/>
+                    <UnosSelect nameUnos={"userRole"} nameLabel={"Korisnicka uloga"} opcije={uloge} handleInput={handleInput}/>
                 </> :
                 <></>}
             <div className="form-btn-group">
@@ -38,7 +85,7 @@ function KorisnikForm() {
                     :
                     <DugmeLink putanja={"/"} tekst={"Otkazi"}/>
                 }
-                <Dugme tekst={"Sacuvaj"}/>
+                <Dugme tekst={"Sacuvaj"} funkcija={dodajKorisnika}/>
             </div>
         </div>
     );

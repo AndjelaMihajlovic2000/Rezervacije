@@ -79,7 +79,7 @@ class AuthController extends Controller {
             'datumRodjenja' => 'required|date',
             'adresa' => 'required|string|max:255',
             'password' => 'string|min:5',
-            'userRole' => ['integer', 'nullable', new PostojiUloga()],
+            'userRole' => ['integer', new PostojiUloga()],
         ]);
 
         if ($validator->fails()) {
