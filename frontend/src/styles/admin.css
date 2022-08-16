@@ -48,6 +48,7 @@
 
 .adminPageContainerBodyHeader {
     margin-left: 30px;
+    margin-bottom: 10px;
 }
 
 .adminPageContainerBodyContent {
@@ -73,4 +74,9 @@
 
 .adminGraph {
     background-color: rgba(255, 255, 255, 0.69);
+}
+
+.vrednostStatCard{
+    font-size: 1.5em;
+    font-family: "Segoe UI Emoji";
 }

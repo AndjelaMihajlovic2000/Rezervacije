@@ -38,11 +38,6 @@ function Pocetna() {
                                        aria-label="Unesi naziv restorana" aria-describedby="basic-addon2"/>
                             </div>
                             <div>
-                                <button className="btn-96">
-                                    <span>Pretraga</span>
-                                </button>
-                            </div>
-                            <div>
                                 <button className="btn-96"><span>Sortiraj</span></button>
                             </div>
                         </div>

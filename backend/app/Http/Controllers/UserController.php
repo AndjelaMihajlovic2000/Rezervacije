@@ -92,7 +92,6 @@ class UserController extends Controller {
             'datumRodjenja' => 'required|date',
             'adresa' => 'required|string|max:255',
             'password' => 'string|min:5',
-            'userRole' => [new PostojiUloga()],
         ]);
 
         if ($validator->fails()) {

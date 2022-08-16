@@ -7,7 +7,7 @@ import {Navigate, useParams} from "react-router-dom";
 import {useEffect} from "react";
 import axios from "axios";
 
-function Restoran(props) {
+function Restoran() {
 
     const stil = {width: "30%"};
     const [modalShow, setModalShow] = useState(false);
@@ -18,7 +18,7 @@ function Restoran(props) {
     const [mesta, setMesta] = useState(null);
     const [mesto, setMesto] = useState(null);
     useEffect(() => {
-        if (restoran === null) {
+        if (restoran === null && mesta ===null) {
             axios.get('http://localhost:8000/api/restoran/'.concat(params.id))
                 .then((res) => {
                     console.log(res.data)
@@ -65,9 +65,9 @@ function Restoran(props) {
                             <h3>Rezervisite mesto</h3>
                         </div>
                         <div className="restoranPageBodyContent">
-                            {mesta === null ? <></> : mesta.map((mesto) => (
-                                <MestoCard key={mesto.id} mesto={mesto} prikaziModal={prikaziModal}/>
-                            ))}
+                            {mesta !== null ? mesta.map((e,index) => (
+                                <MestoCard key={index} mesto={e} prikaziModal={prikaziModal}/>
+                            )):<></>}
                         </div>
                     </div>
 

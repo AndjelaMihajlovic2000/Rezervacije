@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\MestoController;
 use App\Http\Controllers\RestoranController;
@@ -50,6 +51,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::resource('user-role', UserRoleController::class)->only(['index', 'show']);
     Route::resource('user', UserController::class)->only(['index', 'show', 'update', 'destroy']);
 
+    Route::get('adminData', [AdminPanelController::class, 'adminPanelData']);
+    Route::get('getReport', [AdminPanelController::class, 'kreirajIzvestaj']);
 
     Route::post('logout', [AuthController::class, 'logout']);
 

@@ -1,13 +1,16 @@
 import React from 'react';
 
-function StatsCard(props) {
+function StatsCard({naslov,opis,vrednost}) {
     return (
         <div className="card text-center">
             <div className="card-header">
-                <h5 className="card-title">Special title treatment</h5>
+                <h5 className="card-title">{naslov}</h5>
             </div>
             <div className="card-body">
-                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <p className="card-text vrednostStatCard">{vrednost}</p>
+            </div>
+            <div className="card-footer">
+                {opis}
             </div>
         </div>
     );

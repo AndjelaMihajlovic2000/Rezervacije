@@ -10,7 +10,7 @@ class Mesto extends Model {
 
     protected $guarded = [''];
 
-    public function user_that_created() {
+    public function userID() {
         return $this->belongsTo(User::class);
     }
 

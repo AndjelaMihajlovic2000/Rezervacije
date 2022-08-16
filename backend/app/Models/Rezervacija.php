@@ -14,7 +14,7 @@ class Rezervacija extends Model {
         return $this->belongsTo(Mesto::class);
     }
 
-    public function user_that_reserved() {
+    public function userID() {
         return $this->belongsTo(User::class);
     }
 
