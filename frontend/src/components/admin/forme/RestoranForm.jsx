@@ -42,10 +42,13 @@ function RestoranForm() {
             .then((res) => {
                 console.log((res.data))
 
-                alert((res.data.message))
                 console.log((res.data.message))
                 if (res.data.success) {
+                alert((res.data.message))
                     navigate('/admin/restorani')
+                }else{
+                alert((res.data.error))
+
                 }
             }).catch((e) => {
         })

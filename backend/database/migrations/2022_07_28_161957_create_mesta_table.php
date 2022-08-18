@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('brojStolica');
             $table->string('opis');
             $table->boolean('dostupno')->default(false);
-            $table->foreignId('restoranID');
+            $table->foreignId('restoranID')->references('id')->on('restorans')->onDelete('restrict');
             $table->timestamps();
         });
     }

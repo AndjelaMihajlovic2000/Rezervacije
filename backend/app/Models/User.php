@@ -49,7 +49,7 @@ class User extends Authenticatable {
     }
 
     public function uloga() {
-        return $this->belongsTo(UserRole::class);
+        return $this->hasOne(UserRole::class);
     }
 
 }

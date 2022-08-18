@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function MestoCard({mesto,prikaziModal}) {
-    const stil2 = {width: '85%',paddingLeft: '10px', marginTop :'30px', marginLeft:'auto',marginRight:'auto'}
+    const stil2 = {width: '85%',paddingLeft: '10px',height:'fit-content' ,marginTop :'30px', marginLeft:'auto',marginRight:'auto'}
 
     return (
         <div className="mestoCard">

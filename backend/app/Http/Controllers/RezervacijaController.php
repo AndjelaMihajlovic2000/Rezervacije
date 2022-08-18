@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\RezervacijaCollection;
 use App\Http\Resources\RezervacijaResource;
+use App\Models\Mesto;
 use App\Models\Rezervacija;
 use App\Models\UserRole;
 use App\Rules\PostojiMesto;
@@ -47,6 +48,12 @@ class RezervacijaController extends Controller {
 
         if ($validator->fails()) {
             return response()->json(['success' => false, 'error' => strval($validator->errors())]);
+        }
+
+        $rezervacijeProvera = Rezervacija::where('datumIVreme', $request->datumIVreme)->where('mestoID', $request->mestoID)->get();
+
+        if (count($rezervacijeProvera) > 0) {
+            return response()->json(['success' => false, 'error' => "Neupesna rezervacija, mesto je vec rezervisano za uneti datum!"]);
         }
 
         $rezervacija = Rezervacija::create([

@@ -17,7 +17,7 @@ function TabelaRestoraniRow({restoran}) {
                     window.location.reload()
                 }
             }).catch((e) => {
-            console.log(e)
+            alert('Nije moguce obrisati restoran')
         })
     }
 

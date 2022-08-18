@@ -1,6 +1,7 @@
 import React from 'react';
 import RezervacijaViewModal from "../../RezervacijaViewModal";
 import {useState} from "react";
+import axios from "axios";
 
 function TabelaRezervacijeRow({rezervacija}) {
 
@@ -10,6 +11,22 @@ function TabelaRezervacijeRow({rezervacija}) {
             setModalShow(true);
     }
 
+    function obrisiRezervaciju(){
+        axios.delete('http://localhost:8000/api/rezervacija/' + rezervacija.id, {
+            headers: {
+                'Authorization': 'Bearer ' + window.sessionStorage.getItem('auth_token'),
+            }
+        })
+            .then((res) => {
+                alert(res.data.message)
+                if (res.data.success) {
+                    window.location.reload()
+                }
+
+            }).catch((e) => {
+            alert('Nije moguce obrisati rezervaciju')
+        })
+    }
 
     return (
         <>
@@ -22,7 +39,7 @@ function TabelaRezervacijeRow({rezervacija}) {
                 <td>{rezervacija.datumIVreme}</td>
                 {window.sessionStorage.getItem('userRole') === 'gost' ? <></> : <td>{rezervacija.uspesno}</td>}
                 <td>
-                    <button className="btn  btn-danger">Obrisi</button>
+                    <button className="btn  btn-danger" onClick={obrisiRezervaciju}>Obrisi</button>
                 </td>
             </tr>
             <RezervacijaViewModal

@@ -2,7 +2,7 @@ import React from 'react';
 import DugmeLink from "./DugmeLink";
 
 function RestoranCard({restoran}) {
-    const stil2 = {width: '85%', paddingLeft: '10px', marginTop: '30px', marginLeft: 'auto', marginRight: 'auto'}
+    const stil2 = {width: '85%',height: 'fit-content' ,paddingLeft: '10px', marginTop: '30px', marginLeft: 'auto', marginRight: 'auto'}
     return (
         <div className="restoranCard" style={stil2}>
             <div className="card">

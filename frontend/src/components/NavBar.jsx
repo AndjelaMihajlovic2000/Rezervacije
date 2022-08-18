@@ -38,7 +38,7 @@ function NavBar() {
                             </li>
                             {window.sessionStorage.getItem('userRole') === 'admin' || window.sessionStorage.getItem('userRole') === 'zaposleni'  ?
                                 <li className="nav-item">
-                                    <LinkKartica putanja="/admin" tekst="Admin"/>
+                                    <LinkKartica putanja="/admin" tekst="Admin panel"/>
                                 </li> :
                                 <></>}
                             <li className="nav-item">

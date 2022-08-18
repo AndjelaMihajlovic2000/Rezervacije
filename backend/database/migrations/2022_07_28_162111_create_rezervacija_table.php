@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('rezervacijas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('mestoID');
-            $table->foreignId('userID');
+            $table->foreignId('mestoID')->references('id')->on('mestos')->onDelete('restrict');
+            $table->foreignId('userID')->references('id')->on('users')->onDelete('restrict');
             $table->dateTime('datumIVreme');
             $table->string('komentar');
             $table->boolean('uspesno')->default(false);

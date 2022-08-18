@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('brojZvezdica');
             $table->string('opis');
-            $table->foreignId('userID');
+            $table->foreignId('userID')->references('id')->on('users')->onDelete('restrict');
             $table->timestamps();
         });
     }

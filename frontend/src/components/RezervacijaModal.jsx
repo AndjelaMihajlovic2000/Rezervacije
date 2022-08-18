@@ -77,7 +77,7 @@ function RezervacijaModal(props) {
 
                 <label htmlFor="datumRezervacije" className="form-label">Unesite datum i vreme rezervacije</label>
                 <div className="input-group mb-3">
-                    <input type="datetime-local" className="form-control" id="datumRezervacije"
+                    <input type="date" className="form-control" id="datumRezervacije"
                            aria-describedby="basic-addon3"
                            onChange={handleInput}
                            name="datumIVreme"/>
