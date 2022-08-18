@@ -1,19 +1,32 @@
 import React from 'react';
 import DugmeLink from "./DugmeLink";
+import "../styles/restoranCard.css"
 
 function RestoranCard({restoran}) {
-    const stil2 = {width: '85%',height: 'fit-content' ,paddingLeft: '10px', marginTop: '30px', marginLeft: 'auto', marginRight: 'auto'}
+
     return (
-        <div className="restoranCard" style={stil2}>
-            <div className="card">
-                <img src="" className="card-img-top" alt=""/>
-                <div className="card-body p-3">
-                    <h5 className="card-title">{restoran.naziv}</h5>
-                    <p className="card-text">{restoran.opis}</p>
-                    <DugmeLink tekst={"Pogledaj restoran"} putanja={"/restoran/".concat(restoran.id)}/>
+        <div className="big">
+            <article className="recipe">
+                <div className="pizza-box">
+
                 </div>
-            </div>
+                <div className="recipe-content">
+
+                    <h1 className="recipe-title"><p>{restoran.naziv}</p></h1>
+
+                    <p className="recipe-metadata">
+                        <span className="recipe-rating">Broj zvezdica :{restoran.brojZvezdica}★</span>
+                    </p>
+
+                    <p className="recipe-desc">Radno vreme: {restoran.radnoVreme}</p>
+                    <p className="recipe-desc">Adresa: {restoran.adresa}</p>
+
+                    <DugmeLink tekst={"Pogledaj restoran"} putanja={"/restoran/".concat(restoran.id)}/>
+
+                </div>
+            </article>
         </div>
+
     );
 }
 

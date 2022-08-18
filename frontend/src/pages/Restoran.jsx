@@ -73,7 +73,7 @@ function Restoran() {
 
                     <div className="restoranPageContainerBody">
                         <div className="restoranPageHeaderContent">
-                            <h3>Rezervisite mesto</h3>
+                            <h3>Odaberite svoje mesto</h3>
                         </div>
                         <div className="restoranPageBodyContent">
                             {mesta !== null ? mesta.map((e, index) => (

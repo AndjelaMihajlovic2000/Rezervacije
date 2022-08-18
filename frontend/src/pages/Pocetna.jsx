@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import "../styles/page.css";
+import "../styles/restoranCard.css"
 import axios from "axios";
 import RestoranCard from "../components/RestoranCard";
 import {Navigate} from "react-router-dom";
@@ -50,6 +51,8 @@ function Pocetna() {
                         {restorani === null ? <></> : restorani.map((restoran) => (
                             <RestoranCard key={restoran.id} restoran={restoran}/>
                         ))}
+
+
 
                     </div>
                 </div>

@@ -37,7 +37,6 @@ function TabelaRezervacijeRow({rezervacija}) {
                 {window.sessionStorage.getItem('userRole') === 'gost' ? <></> :
                     <td>{rezervacija.userID.ime} {rezervacija.userID.prezime}</td>}
                 <td>{rezervacija.datumIVreme}</td>
-                {window.sessionStorage.getItem('userRole') === 'gost' ? <></> : <td>{rezervacija.uspesno}</td>}
                 <td>
                     <button className="btn  btn-danger" onClick={obrisiRezervaciju}>Obrisi</button>
                 </td>

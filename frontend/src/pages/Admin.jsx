@@ -37,13 +37,13 @@ function Admin() {
         return <Navigate to='/'/>
     }
 
-    function downloadReport(){
+    function downloadReport() {
         axios.get('http://localhost:8000/api/getReport', {
             headers: {
                 'Authorization': 'Bearer ' + window.sessionStorage.getItem('auth_token'),
 
             },
-            responseType:'blob'
+            responseType: 'blob'
         })
             .then((res) => {
                 console.log(res)
@@ -73,19 +73,21 @@ function Admin() {
                         </div>
                     </div>
 
-                    <div className="adminPageContainerBodyContent">
-                        <StatsCard naslov={"Ukupan broj restorana"} opis={"Restoran"}
-                                   vrednost={panelData === null ? "" : panelData.brojRestorana}/>
-                        <StatsCard naslov={"Broj trenutno slobodnih mesta"} opis={"Mesta"}
-                                   vrednost={panelData === null ? "" : panelData.brojMesta}/>
-                        <StatsCard naslov={"Broj trenutno zauzetih mesta"} opis={"Mesta"}
-                                   vrednost={panelData === null ? "" : panelData.brojMesta}/>
-                        <StatsCard naslov={"Ukupan broj rezevacija"} opis={"Rezevacije"}
-                                   vrednost={panelData === null ? "" : panelData.brojRezervacija}/>
-                        <StatsCard naslov={"Ukupan broj korisnika"} opis={"Korisnici"}
-                                   vrednost={panelData === null ? "" : panelData.brojKorisnika}/>
-                        <StatsCard naslov={"Broj trenutno aktivnih korisnika"} opis={"Korisnici"}
-                                   vrednost={panelData === null ? "" : panelData.aktivniKorisnici}/>
+                    <div className="container pt-5">
+                        <div className="row align-items-stretch">
+                            <StatsCard naslov={"Ukupan broj restorana"} opis={"Restoran"}
+                                       vrednost={panelData === null ? "" : panelData.brojRestorana}/>
+                            <StatsCard naslov={"Trenutno sloboda mesta"} opis={"Mesta"}
+                                       vrednost={panelData === null ? "" : panelData.brojMesta}/>
+                            <StatsCard naslov={"Trenutno zauzeta mesta"} opis={"Mesta"}
+                                       vrednost={panelData === null ? "" : panelData.brojMesta}/>
+                            <StatsCard naslov={"Ukupan broj rezevacija"} opis={"Rezevacije"}
+                                       vrednost={panelData === null ? "" : panelData.brojRezervacija}/>
+                            <StatsCard naslov={"Registrovani korisnici"} opis={"Korisnici"}
+                                       vrednost={panelData === null ? "" : panelData.brojKorisnika}/>
+                            <StatsCard naslov={"Trenutno aktivni korisnici"} opis={"Korisnici"}
+                                       vrednost={panelData === null ? "" : panelData.aktivniKorisnici}/>
+                        </div>
                     </div>
                     <div className="adminPageContainerBodyGraphWrapper">
                         <AdminChart className="adminGraph" data={chartData}/>
