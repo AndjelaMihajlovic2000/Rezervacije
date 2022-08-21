@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\MestoResource;
 use App\Models\Mesto;
 use App\Models\Restoran;
 use App\Models\Rezervacija;
@@ -36,7 +37,8 @@ class AdminPanelController extends Controller {
         if ($tip == 'xml') {
             return response()->xml([
                 'brojRestorana' => $ukupanBrojRestorana,
-                'brojMesta' => $ukupanBrojMesta,
+                'brojSlobodnihMesta' => $ukupanBrojMesta - $danasnjeRezervacije,
+                'brojZauzetihMesta' => $danasnjeRezervacije,
                 'brojKorisnika' => $ukupanBrojKorisnika,
                 'brojRezervacija' => $ukupanBrojRezervacija,
                 'aktivniKorisnici' => $aktivniKorisnici,
@@ -46,7 +48,8 @@ class AdminPanelController extends Controller {
 
         return response()->json([
             'brojRestorana' => $ukupanBrojRestorana,
-            'brojMesta' => $ukupanBrojMesta,
+            'brojSlobodnihMesta' => $ukupanBrojMesta - $danasnjeRezervacije,
+            'brojZauzetihMesta' => $danasnjeRezervacije,
             'brojKorisnika' => $ukupanBrojKorisnika,
             'brojRezervacija' => $ukupanBrojRezervacija,
             'aktivniKorisnici' => $aktivniKorisnici,
@@ -73,15 +76,15 @@ class AdminPanelController extends Controller {
 
         $section->addTitle('Izvestaj o radu restorana');
         $section->addText('');
-        $section->addText('Ukupan broj restorana '.$ukupanBrojRestorana);
+        $section->addText('Ukupan broj restorana ' . $ukupanBrojRestorana);
         $section->addText('');
-        $section->addText('Ukupan broj mesta '.$ukupanBrojMesta);
+        $section->addText('Ukupan broj mesta ' . $ukupanBrojMesta);
         $section->addText('');
-        $section->addText('Ukupan broj korisnika '.$ukupanBrojKorisnika);
+        $section->addText('Ukupan broj korisnika ' . $ukupanBrojKorisnika);
         $section->addText('');
-        $section->addText('Ukupan broj rezervacija '.$ukupanBrojRezervacija);
+        $section->addText('Ukupan broj rezervacija ' . $ukupanBrojRezervacija);
         $section->addText('');
-        $section->addText('Prosecan korisnik rezervise mesto '.round($rezervacijaPoKorisniku,2).' puta');
+        $section->addText('Prosecan korisnik rezervise mesto ' . round($rezervacijaPoKorisniku, 2) . ' puta');
 
         try {
             $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($dokument, 'Word2007');
@@ -90,6 +93,36 @@ class AdminPanelController extends Controller {
         } catch (\PhpOffice\PhpWord\Exception\Exception $e) {
 
             return response()->json(['Nije moguce skinuti izvestaj']);
+        }
+    }
+
+    public function printRezervacija(Request $request) {
+
+        $rezervacija = Rezervacija::find($request->id);
+        $mesto = Mesto::find($rezervacija->mestoID);
+        $korisnik = User::find($rezervacija->userID);
+
+        $fileName = 'Rezervacija.docx';
+
+        $dokument = new PhpWord();
+
+        $section = $dokument->addSection();
+
+        $section->addTitle("Rezervacija - ".$korisnik->ime.' '.$korisnik->prezime);
+        $section->addText("Sifra rezervacije: $rezervacija->id-$mesto->id-$korisnik->id");
+        $section->addText("");
+        $section->addText("Mesto: " .$mesto->naziv);
+        $section->addText("Opis mesta: " .$mesto->opis);
+        $section->addText("Vreme : " .$rezervacija->datumIVreme);
+        $section->addText("Komentar : " .$rezervacija->komentar);
+
+        try {
+            $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($dokument, 'Word2007');
+            $objWriter->save($fileName);
+            return response()->file($fileName);
+        } catch (\PhpOffice\PhpWord\Exception\Exception $e) {
+
+            return response()->json(['Nije moguce skinuti rezervaciju']);
         }
     }
 

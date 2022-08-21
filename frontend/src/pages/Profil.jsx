@@ -31,7 +31,7 @@ function Profil(props) {
                     if (res.data.success) {
                         setUser(res.data.user)
                     } else {
-                        window.alert(res.data.error)
+                        window.alert(res.data.message)
                         return window.location.href = '/';
                     }
                 }).catch((e) => {

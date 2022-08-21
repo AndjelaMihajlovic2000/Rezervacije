@@ -9,49 +9,79 @@ function Pocetna() {
 
 
     const [restorani, setRestorani] = useState(null);
+    const [restoraniView, setRestoraniView] = useState(null);
     useEffect(() => {
         console.log("All posts" + 123)
         if (restorani === null) {
             axios.get('http://localhost:8000/api/restoran')
                 .then((res) => {
                     setRestorani(res.data.restorani)
+                    setRestoraniView(res.data.restorani)
                 }).catch((e) => {
             })
         }
     }, [restorani])
 
+    const [vreme, setVreme] = useState(null);
+    useEffect(() => {
+        console.log("Weather")
+        if (vreme === null) {
+            axios.get('https://api.openweathermap.org/data/2.5/weather?q=Belgrade&units=metric&appid=1117016046b7aabe079a554097370528')
+                .then((res) => {
+                    console.log(res.data)
+                    setVreme(res.data)
+                }).catch((e) => {
+            })
+        }
+    }, [vreme])
+
+
     if (window.sessionStorage.getItem('userName') == null) {
         return <Navigate to='/login'/>
     }
+
+    function pretraga(e) {
+        let temp = [];
+        restorani.forEach((restoran) => {
+            if (restoran.naziv.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1) {
+                temp.push(restoran)
+            }
+        })
+        setRestoraniView(temp);
+    }
+
 
     return (
         <div className="page">
             <div className="pageContainer">
 
                 <div className="pageContainerHead container">
-                    <div className="row d-flex justify-content-between">
-                        <div className="col-4">
+                    <div className="row d-flex justify-content-around">
+                        <div className="col-5">
                             <h2>Pronadji omiljeni restoran</h2>
                         </div>
-                        <div className="pageHeadDivs col-10 d-flex justify-content-evenly">
+                        <div className="pageHeadDivs col-10">
                             <div className="input-group mb-3">
-                                <input type="text" className="form-control" placeholder="Unesi naziv restorana"
-                                       aria-label="Unesi naziv restorana" aria-describedby="basic-addon2"/>
+                                <input  type="text" className="form-control" placeholder="Unesi naziv restorana"
+                                       aria-label="Unesi naziv restorana" aria-describedby="basic-addon2"
+                                       onChange={pretraga}/>
                             </div>
-                            <div>
-                                <button className="btn-96"><span>Sortiraj</span></button>
+                        </div>
+                        <div className="pageHeadDivs col-5">
+                            <div className="weatherDiv">
+                                Grad: {vreme==null?"":vreme.name},
+                                temperatura:{vreme==null?"":vreme.main.temp}C
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="pageContainerBody container">
-                    <div className="row g-2 pageBodyContent">
+                    <div className="row g-3 pageBodyContent">
 
-                        {restorani === null ? <></> : restorani.map((restoran) => (
+                        {restorani === null ? <></> : restoraniView.map((restoran) => (
                             <RestoranCard key={restoran.id} restoran={restoran}/>
                         ))}
-
 
 
                     </div>

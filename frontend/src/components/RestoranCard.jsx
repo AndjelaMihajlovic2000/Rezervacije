@@ -5,7 +5,7 @@ import "../styles/restoranCard.css"
 function RestoranCard({restoran}) {
 
     return (
-        <div className="big">
+        <div className="col big restoranCard">
             <article className="recipe">
                 <div className="pizza-box">
 

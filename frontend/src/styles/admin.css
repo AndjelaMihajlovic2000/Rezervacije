@@ -24,6 +24,8 @@
 }
 
 .adminMenuCard {
+    border-radius: 15px;
+    font-size: 1.2em;
     margin-top: 10px;
 }
 
@@ -70,6 +72,7 @@
     display: grid;
     grid-template-rows: 7fr 1fr;
     justify-items: center;
+    background-color: white;
 }
 
 .adminGraph {

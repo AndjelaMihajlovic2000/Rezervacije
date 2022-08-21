@@ -9,7 +9,6 @@ import axios from "axios";
 
 function Restoran() {
 
-    const stil = {width: "30%"};
     const [modalShow, setModalShow] = useState(false);
 
     let params = useParams();
@@ -44,33 +43,34 @@ function Restoran() {
             <div className="page">
                 <div className="pageContainer">
 
-                    <div className="pageContainerHead container">
-                        <div className="row d-flex justify-content-evenly">
-                            <div className="col-4">
-                                <h2>{restoran != null ? restoran.naziv : ""}</h2>
-                            </div>
-                            <div className="card" style={stil}>
-                                <div className="card-body">
-                                    <h5 className="card-title">Radno
-                                        vreme: {restoran != null ? restoran.radnoVreme : ""}</h5>
-                                    <p className="card-text">
+                    <div className="restoranHead container">
+                        <div className={"restoranInfoWrapper"}>
+                            <div className={"restoranInfoDiv"}>
+                                <div className={"restoranInfoNaslov"}>
+                                    <h2>{restoran != null ? restoran.naziv : ""}</h2>
+                                </div>
+                                <div className={"restoranInfoBody"}>
+                                    <div className="">Radno
+                                        vreme: {restoran != null ? restoran.radnoVreme : ""}</div>
+                                    <div className="">
                                         Adresa restorana: {restoran != null ? restoran.adresa : ""}
-                                    </p>
-                                    <p className="card-text">
+                                    </div>
+                                    <div className="">
                                         Email: {restoran != null ? restoran.email : ""}
-                                    </p>
-                                    <p className="card-text">
+                                    </div>
+                                    <div className="">
                                         Kontakt telefon: {restoran != null ? restoran.adresa : ""}
-                                    </p>
-                                    <p className="card-text">
+                                    </div>
+                                    <div className="">
                                         Broj zvezdica: {restoran != null ? restoran.brojZvezdica : ""}
+                                    </div>
+                                    <div>
                                         Opis: {restoran != null ? restoran.opis : ""}
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div className="restoranPageContainerBody">
                         <div className="restoranPageHeaderContent">
                             <h3>Odaberite svoje mesto</h3>

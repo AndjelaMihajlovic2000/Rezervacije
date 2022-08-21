@@ -8,8 +8,11 @@ function MestoCard({mesto,prikaziModal}) {
         <div className="mestoCard">
             <div className="card mestoBackgroudCard" style={stil2}>
                 <div className="card-body p-3">
-                    <h5 className="card-title mestoNaslov">{mesto.naziv}</h5>
-                    <p className="card-text mestoText">{mesto.opis}</p>
+                    <div className={"mestoDiv"}>
+                        <h5 className="card-title mestoNaslov">{mesto.naziv}</h5>
+                        <p className="card-text mestoText">{mesto.opis}</p>
+                    </div>
+                    <br/>
                     {mesto.dostupno===1
                         ?<button className="btn-96"  onClick={() => prikaziModal(mesto)}><span>Rezervisi!</span></button>:
                         <p className="btn-96"><span>Mesto je rezervisano</span></p>

@@ -32,7 +32,6 @@ Route::post('login', [AuthController::class, 'login']);
 Route::resource('mesto', MestoController::class)->only(['index', 'show']);
 Route::resource('restoran', RestoranController::class)->only(['index', 'show']);
 Route::resource('rezervacija', RezervacijaController::class)->only(['index', 'show']);
-Route::get('mesto-restoran/{id}', [MestoController::class, 'getMestaByRestoran']);
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
@@ -53,6 +52,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::get('adminData', [AdminPanelController::class, 'adminPanelData']);
     Route::get('getReport', [AdminPanelController::class, 'kreirajIzvestaj']);
+    Route::get('printRezervacija/{id}', [AdminPanelController::class, 'printRezervacija']);
 
     Route::post('logout', [AuthController::class, 'logout']);
 

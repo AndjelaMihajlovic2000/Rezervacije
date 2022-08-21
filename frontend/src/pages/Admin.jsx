@@ -5,8 +5,6 @@ import AdminChart from "../components/admin/AdminChart";
 import {Link, Navigate} from "react-router-dom";
 import {useEffect} from "react";
 import axios from "axios";
-import data from "bootstrap/js/src/dom/data";
-import DugmeLink from "../components/DugmeLink";
 import Dugme from "../components/Dugme";
 
 function Admin() {
@@ -77,10 +75,10 @@ function Admin() {
                         <div className="row align-items-stretch">
                             <StatsCard naslov={"Ukupan broj restorana"} opis={"Restoran"}
                                        vrednost={panelData === null ? "" : panelData.brojRestorana}/>
-                            <StatsCard naslov={"Trenutno sloboda mesta"} opis={"Mesta"}
-                                       vrednost={panelData === null ? "" : panelData.brojMesta}/>
+                            <StatsCard naslov={"Trenutno slobodna mesta"} opis={"Mesta"}
+                                       vrednost={panelData === null ? "" : panelData.brojSlobodnihMesta}/>
                             <StatsCard naslov={"Trenutno zauzeta mesta"} opis={"Mesta"}
-                                       vrednost={panelData === null ? "" : panelData.brojMesta}/>
+                                       vrednost={panelData === null ? "" : panelData.brojZauzetihMesta}/>
                             <StatsCard naslov={"Ukupan broj rezevacija"} opis={"Rezevacije"}
                                        vrednost={panelData === null ? "" : panelData.brojRezervacija}/>
                             <StatsCard naslov={"Registrovani korisnici"} opis={"Korisnici"}
@@ -98,11 +96,11 @@ function Admin() {
                 <div className="adminPageContainerMenu container">
                     <div className="row">
                         <div className="col">
-                            <h4>Menu</h4>
+                            <h3>Menu</h3>
                         </div>
                     </div>
                     <div className="row adminMenuCard">
-                        <div className="col"><Link style={{textDecoration: 'none', color: 'black'}}
+                        <div className="col "><Link style={{textDecoration: 'none', color: 'black'}}
                                                    to="/admin/restorani">Restorani</Link></div>
                     </div>
                     <div className="row adminMenuCard">

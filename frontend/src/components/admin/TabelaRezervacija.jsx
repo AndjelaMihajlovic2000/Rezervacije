@@ -8,7 +8,7 @@ function TabelaRezervacija({rezervacije}) {
 
             <TabelaHeader header={
                 ["Naziv mesta", "Naziv restorana", "Adresa restorana","Gost",
-                    "Datum i vreme", ""]
+                    "Datum i vreme", "",""]
             }/>
 
             <tbody>

@@ -28,15 +28,40 @@ function TabelaRezervacijeRow({rezervacija}) {
         })
     }
 
+    function downloadRezervaciju(){
+        axios.get('http://localhost:8000/api/printRezervacija/'+rezervacija.id, {
+            headers: {
+                'Authorization': 'Bearer ' + window.sessionStorage.getItem('auth_token'),
+
+            },
+            responseType: 'blob'
+        })
+            .then((res) => {
+                console.log(res)
+                console.log(res.data)
+                const url = window.URL.createObjectURL(new Blob([res.data]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', 'Rezervacija -'+rezervacija.userID.ime+' '+rezervacija.userID.prezime+'.docx');
+                document.body.appendChild(link);
+                link.click();
+
+            }).catch((e) => {
+        })
+    }
+
     return (
         <>
-            <tr onClick={prikaziRezervaciju}>
-                <th scope="row">{rezervacija.mestoID.naziv}</th>
-                <td>{rezervacija.mestoID.restoranID.naziv}</td>
-                <td>{rezervacija.mestoID.restoranID.adresa}</td>
+            <tr>
+                <th scope="row" onClick={prikaziRezervaciju}>{rezervacija.mestoID.naziv}</th>
+                <td onClick={prikaziRezervaciju}>{rezervacija.mestoID.restoranID.naziv}</td>
+                <td onClick={prikaziRezervaciju}>{rezervacija.mestoID.restoranID.adresa}</td>
                 {window.sessionStorage.getItem('userRole') === 'gost' ? <></> :
-                    <td>{rezervacija.userID.ime} {rezervacija.userID.prezime}</td>}
-                <td>{rezervacija.datumIVreme}</td>
+                    <td onClick={prikaziRezervaciju}>{rezervacija.userID.ime} {rezervacija.userID.prezime}</td>}
+                <td onClick={prikaziRezervaciju}>{rezervacija.datumIVreme}</td>
+                <td>
+                    <button className="btn  btn-success" onClick={downloadRezervaciju}>Download</button>
+                </td>
                 <td>
                     <button className="btn  btn-danger" onClick={obrisiRezervaciju}>Obrisi</button>
                 </td>
