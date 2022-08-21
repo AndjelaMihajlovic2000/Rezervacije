@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import LinkKartica from "./LinkKartica";
 import axios from "axios";
 import "../styles/footer.css"
 
