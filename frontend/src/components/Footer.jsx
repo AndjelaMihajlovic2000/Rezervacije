@@ -32,14 +32,14 @@ function Footer(props) {
                 </div>
                 <div>
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <LinkKartica putanja="/" tekst="Linkovi drustene mreze"/>
+                        <li className="nav-item socialNetworkLink">
+                            <a href="https://www.facebook.com">Facebook</a>
                         </li>
-                        <li className="nav-item">
-                            <LinkKartica putanja="/" tekst="Linkovi drustene mreze"/>
+                        <li className="nav-item socialNetworkLink">
+                            <a href="https://twitter.com">Twitter</a>
                         </li>
-                        <li className="nav-item">
-                            <LinkKartica putanja="/" tekst="Linkovi drustene mreze"/>
+                        <li className="nav-item socialNetworkLink">
+                            <a href="https://www.instagram.com">Instagram</a>
                         </li>
                     </ul>
                 </div>

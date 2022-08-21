@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>RestoranRezervacije Documentation</title>
+    <title>Rezervacija mesta</title>
 
     <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
 
@@ -70,6 +70,82 @@
                                                 </ul>
                     
                     <ul id="tocify-header-2" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="adminpanel">
+                    <a href="#adminpanel">AdminPanel</a>
+                </li>
+                                    <ul id="tocify-subheader-adminpanel" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="adminpanel-GETapi-adminData">
+                        <a href="#adminpanel-GETapi-adminData">GET api/adminData</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="adminpanel-GETapi-getReport">
+                        <a href="#adminpanel-GETapi-getReport">Kreiranje izvestaja</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="adminpanel-GETapi-printRezervacija--id-">
+                        <a href="#adminpanel-GETapi-printRezervacija--id-">GET api/printRezervacija/{id}</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-3" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="mesto">
+                    <a href="#mesto">Mesto</a>
+                </li>
+                                    <ul id="tocify-subheader-mesto" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="mesto-GETapi-mesto">
+                        <a href="#mesto-GETapi-mesto">Prikaz svih mesta u sistemu</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="mesto-GETapi-mesto--id-">
+                        <a href="#mesto-GETapi-mesto--id-">Prikaz mesta sa prosledjenim ID-jem</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="mesto-POSTapi-mesto">
+                        <a href="#mesto-POSTapi-mesto">Kreiranje mesta.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="mesto-PUTapi-mesto--id-">
+                        <a href="#mesto-PUTapi-mesto--id-">Azuriranje mesta</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="mesto-DELETEapi-mesto--id-">
+                        <a href="#mesto-DELETEapi-mesto--id-">Brisanje mesta</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-4" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="restoran">
+                    <a href="#restoran">Restoran</a>
+                </li>
+                                    <ul id="tocify-subheader-restoran" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="restoran-GETapi-restoran">
+                        <a href="#restoran-GETapi-restoran">Prikaz svih restorana u sistemu</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="restoran-POSTapi-restoran">
+                        <a href="#restoran-POSTapi-restoran">Kreiranje novog restorana</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="restoran-PUTapi-restoran--id-">
+                        <a href="#restoran-PUTapi-restoran--id-">Azuriranje restorana</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="restoran-DELETEapi-restoran--id-">
+                        <a href="#restoran-DELETEapi-restoran--id-">Brisanje restorana</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-5" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="rezervacija">
+                    <a href="#rezervacija">Rezervacija</a>
+                </li>
+                                    <ul id="tocify-subheader-rezervacija" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="rezervacija-GETapi-rezervacija">
+                        <a href="#rezervacija-GETapi-rezervacija">Prikaz svih restorana</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="rezervacija-GETapi-moje-rezervacije">
+                        <a href="#rezervacija-GETapi-moje-rezervacije">Lista korisnikovih rezervacija</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="rezervacija-POSTapi-rezervacija">
+                        <a href="#rezervacija-POSTapi-rezervacija">Kreiranje rezervacije</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="rezervacija-DELETEapi-rezervacija--id-">
+                        <a href="#rezervacija-DELETEapi-rezervacija--id-">Brisanje rezervacije</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-6" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="authentication">
                     <a href="#authentication">Authentication</a>
                 </li>
@@ -88,7 +164,7 @@
                     </li>
                                                     </ul>
                             </ul>
-                    <ul id="tocify-header-3" class="tocify-header">
+                    <ul id="tocify-header-7" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="endpoints">
                     <a href="#endpoints">Endpoints</a>
                 </li>
@@ -96,56 +172,17 @@
                                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
                         <a href="#endpoints-GETapi-user">Display a listing of the resource.</a>
                     </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-mesto">
-                        <a href="#endpoints-GETapi-mesto">Display a listing of the resource.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-mesto--id-">
-                        <a href="#endpoints-GETapi-mesto--id-">Display the specified resource.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-restoran">
-                        <a href="#endpoints-GETapi-restoran">Display a listing of the resource.</a>
-                    </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-restoran--id-">
-                        <a href="#endpoints-GETapi-restoran--id-">Display the specified resource.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-rezervacija">
-                        <a href="#endpoints-GETapi-rezervacija">Display a listing of the resource.</a>
+                        <a href="#endpoints-GETapi-restoran--id-">Prikaz restorana</a>
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-rezervacija--id-">
-                        <a href="#endpoints-GETapi-rezervacija--id-">Display the specified resource.</a>
+                        <a href="#endpoints-GETapi-rezervacija--id-">Prikaz rezervacije</a>
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-profile">
                         <a href="#endpoints-GETapi-profile">GET api/profile</a>
                     </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-moje-rezervacije">
-                        <a href="#endpoints-GETapi-moje-rezervacije">GET api/moje-rezervacije</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-mesto">
-                        <a href="#endpoints-POSTapi-mesto">Store a newly created resource in storage.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-PUTapi-mesto--id-">
-                        <a href="#endpoints-PUTapi-mesto--id-">Update the specified resource in storage.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-mesto--id-">
-                        <a href="#endpoints-DELETEapi-mesto--id-">Remove the specified resource from storage.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-restoran">
-                        <a href="#endpoints-POSTapi-restoran">Store a newly created resource in storage.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-PUTapi-restoran--id-">
-                        <a href="#endpoints-PUTapi-restoran--id-">Update the specified resource in storage.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-restoran--id-">
-                        <a href="#endpoints-DELETEapi-restoran--id-">Remove the specified resource from storage.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-rezervacija">
-                        <a href="#endpoints-POSTapi-rezervacija">Store a newly created resource in storage.</a>
-                    </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-PUTapi-rezervacija--id-">
-                        <a href="#endpoints-PUTapi-rezervacija--id-">Update the specified resource in storage.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-rezervacija--id-">
-                        <a href="#endpoints-DELETEapi-rezervacija--id-">Remove the specified resource from storage.</a>
+                        <a href="#endpoints-PUTapi-rezervacija--id-">PUT api/rezervacija/{id}</a>
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-user-role">
                         <a href="#endpoints-GETapi-user-role">Display a listing of the resource.</a>
@@ -161,15 +198,6 @@
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-user--id-">
                         <a href="#endpoints-DELETEapi-user--id-">Remove the specified resource from storage.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-adminData">
-                        <a href="#endpoints-GETapi-adminData">GET api/adminData</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-getReport">
-                        <a href="#endpoints-GETapi-getReport">GET api/getReport</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-printRezervacija--id-">
-                        <a href="#endpoints-GETapi-printRezervacija--id-">GET api/printRezervacija/{id}</a>
                     </li>
                                                     </ul>
                             </ul>
@@ -191,9 +219,9 @@
     <div class="dark-box"></div>
     <div class="content">
         <h1 id="introduction">Introduction</h1>
-<p>This documentation aims to provide all the information you need to work with our API.</p>
-<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
-You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<p>Aplikacija za rezervisanje mesta u restoranima</p>
+<p>Dokumentacija obezbeđuje neophodne informacije za ispravno korišćenje API-ja</p>
+<aside>U nastavku dokumenta, nalaze se opisi ruta koje Rezervacija mesta API nudi</aside>
 <blockquote>
 <p>Base URL</p>
 </blockquote>
@@ -202,519 +230,31 @@ You can switch the language used with the tabs at the top right (or from the nav
         <h1 id="authenticating-requests">Authenticating requests</h1>
 <p>This API is not authenticated.</p>
 
-        <h1 id="authentication">Authentication</h1>
+        <h1 id="adminpanel">AdminPanel</h1>
 
     
 
-            <h2 id="authentication-POSTapi-register">Creating new account</h2>
+            <h2 id="adminpanel-GETapi-adminData">GET api/adminData</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-register">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://backend.test/api/register" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"username\": \"wznwnezgfxzvaolkaznmhwtxilaoyeewxebxqghezzmkaker\",
-    \"ime\": \"ppuilzouhpttkuxkzrolsjpyuwebokxioujlzmyvzjrwcxwznmfldelsr\",
-    \"prezime\": \"qevbuyhbcdscqhtgoupfhqdiufsbcupmofeparjzwfaipaxbnkfmcuhftkwfesxadkoqcmkbtebhoyhjjdssdmhdndcxmzegjbvszlgxuwvyaqlotzbnfqqnpftkefnipsssfiwsjtpkkczqgkunfzcsohdawoy\",
-    \"datumRodjenja\": \"2022-08-21T22:35:14\",
-    \"adresa\": \"mtlqgszhlfcba\",
-    \"password\": \"\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/register"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "username": "wznwnezgfxzvaolkaznmhwtxilaoyeewxebxqghezzmkaker",
-    "ime": "ppuilzouhpttkuxkzrolsjpyuwebokxioujlzmyvzjrwcxwznmfldelsr",
-    "prezime": "qevbuyhbcdscqhtgoupfhqdiufsbcupmofeparjzwfaipaxbnkfmcuhftkwfesxadkoqcmkbtebhoyhjjdssdmhdndcxmzegjbvszlgxuwvyaqlotzbnfqqnpftkefnipsssfiwsjtpkkczqgkunfzcsohdawoy",
-    "datumRodjenja": "2022-08-21T22:35:14",
-    "adresa": "mtlqgszhlfcba",
-    "password": ""
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-register">
-</span>
-<span id="execution-results-POSTapi-register" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-register"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-register"></code></pre>
-</span>
-<span id="execution-error-POSTapi-register" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-register"></code></pre>
-</span>
-<form id="form-POSTapi-register" data-method="POST"
-      data-path="api/register"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-register', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-register"
-                    onclick="tryItOut('POSTapi-register');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-register"
-                    onclick="cancelTryOut('POSTapi-register');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-register" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/register</code></b>
-        </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="username"
-               data-endpoint="POSTapi-register"
-               value="wznwnezgfxzvaolkaznmhwtxilaoyeewxebxqghezzmkaker"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>ime</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="ime"
-               data-endpoint="POSTapi-register"
-               value="ppuilzouhpttkuxkzrolsjpyuwebokxioujlzmyvzjrwcxwznmfldelsr"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>prezime</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="prezime"
-               data-endpoint="POSTapi-register"
-               value="qevbuyhbcdscqhtgoupfhqdiufsbcupmofeparjzwfaipaxbnkfmcuhftkwfesxadkoqcmkbtebhoyhjjdssdmhdndcxmzegjbvszlgxuwvyaqlotzbnfqqnpftkefnipsssfiwsjtpkkczqgkunfzcsohdawoy"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>datumRodjenja</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="datumRodjenja"
-               data-endpoint="POSTapi-register"
-               value="2022-08-21T22:35:14"
-               data-component="body" hidden>
-    <br>
-<p>Must be a valid date.</p>
-        </p>
-                <p>
-            <b><code>adresa</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="adresa"
-               data-endpoint="POSTapi-register"
-               value="mtlqgszhlfcba"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-                <input type="text"
-               name="password"
-               data-endpoint="POSTapi-register"
-               value=""
-               data-component="body" hidden>
-    <br>
-<p>Must be at least 5 characters.</p>
-        </p>
-        </form>
-
-            <h2 id="authentication-POSTapi-login">Login on application</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-login">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://backend.test/api/login" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/login"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-login">
-</span>
-<span id="execution-results-POSTapi-login" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-login"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-login"></code></pre>
-</span>
-<span id="execution-error-POSTapi-login" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-login"></code></pre>
-</span>
-<form id="form-POSTapi-login" data-method="POST"
-      data-path="api/login"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-login', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-login"
-                    onclick="tryItOut('POSTapi-login');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-login"
-                    onclick="cancelTryOut('POSTapi-login');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-login" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/login</code></b>
-        </p>
-                    </form>
-
-            <h2 id="authentication-POSTapi-kreirajNalog">Creating new account without getting access token</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-kreirajNalog">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://backend.test/api/kreirajNalog" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"username\": \"mdmlmwhlkzmtixeuyaczztibzoaviqmrnuqmhstjqmqergaedmajiwuletppvomuxvaypujkemkkbumsuwvcbpvsghyqxyseehkqvwpozilalyygontfqlzjbhhgpsylhfuhrimqfccuxjtodxgj\",
-    \"ime\": \"atutmmkstnqmtwqt\",
-    \"prezime\": \"tcomoljlxuwqzoklvnjmvcqwyqmekamraauwtnmflsorytokotwconeuakrrrfkliuvmszwyilawfardnigttcielsejdjuwxaphramgeqazofqnsbtqyrjntxnakmcpsdvgqyycknhxxtqzkoqiazzaqxaujszpqunjgiyevpdjsdmjfrmxkauirqlmbffgffqxqohxrskerbwlxzvdwyopftscrqunxfpqbhumhkrqlknfjofmaxzw\",
-    \"datumRodjenja\": \"2022-08-21T22:35:14\",
-    \"adresa\": \"sddw\",
-    \"password\": \"iow\",
-    \"userRole\": 12
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/kreirajNalog"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "username": "mdmlmwhlkzmtixeuyaczztibzoaviqmrnuqmhstjqmqergaedmajiwuletppvomuxvaypujkemkkbumsuwvcbpvsghyqxyseehkqvwpozilalyygontfqlzjbhhgpsylhfuhrimqfccuxjtodxgj",
-    "ime": "atutmmkstnqmtwqt",
-    "prezime": "tcomoljlxuwqzoklvnjmvcqwyqmekamraauwtnmflsorytokotwconeuakrrrfkliuvmszwyilawfardnigttcielsejdjuwxaphramgeqazofqnsbtqyrjntxnakmcpsdvgqyycknhxxtqzkoqiazzaqxaujszpqunjgiyevpdjsdmjfrmxkauirqlmbffgffqxqohxrskerbwlxzvdwyopftscrqunxfpqbhumhkrqlknfjofmaxzw",
-    "datumRodjenja": "2022-08-21T22:35:14",
-    "adresa": "sddw",
-    "password": "iow",
-    "userRole": 12
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-kreirajNalog">
-</span>
-<span id="execution-results-POSTapi-kreirajNalog" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-kreirajNalog"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-kreirajNalog"></code></pre>
-</span>
-<span id="execution-error-POSTapi-kreirajNalog" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-kreirajNalog"></code></pre>
-</span>
-<form id="form-POSTapi-kreirajNalog" data-method="POST"
-      data-path="api/kreirajNalog"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-kreirajNalog', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-kreirajNalog"
-                    onclick="tryItOut('POSTapi-kreirajNalog');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-kreirajNalog"
-                    onclick="cancelTryOut('POSTapi-kreirajNalog');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-kreirajNalog" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/kreirajNalog</code></b>
-        </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="username"
-               data-endpoint="POSTapi-kreirajNalog"
-               value="mdmlmwhlkzmtixeuyaczztibzoaviqmrnuqmhstjqmqergaedmajiwuletppvomuxvaypujkemkkbumsuwvcbpvsghyqxyseehkqvwpozilalyygontfqlzjbhhgpsylhfuhrimqfccuxjtodxgj"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>ime</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="ime"
-               data-endpoint="POSTapi-kreirajNalog"
-               value="atutmmkstnqmtwqt"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>prezime</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="prezime"
-               data-endpoint="POSTapi-kreirajNalog"
-               value="tcomoljlxuwqzoklvnjmvcqwyqmekamraauwtnmflsorytokotwconeuakrrrfkliuvmszwyilawfardnigttcielsejdjuwxaphramgeqazofqnsbtqyrjntxnakmcpsdvgqyycknhxxtqzkoqiazzaqxaujszpqunjgiyevpdjsdmjfrmxkauirqlmbffgffqxqohxrskerbwlxzvdwyopftscrqunxfpqbhumhkrqlknfjofmaxzw"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>datumRodjenja</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="datumRodjenja"
-               data-endpoint="POSTapi-kreirajNalog"
-               value="2022-08-21T22:35:14"
-               data-component="body" hidden>
-    <br>
-<p>Must be a valid date.</p>
-        </p>
-                <p>
-            <b><code>adresa</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="adresa"
-               data-endpoint="POSTapi-kreirajNalog"
-               value="sddw"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-                <input type="text"
-               name="password"
-               data-endpoint="POSTapi-kreirajNalog"
-               value="iow"
-               data-component="body" hidden>
-    <br>
-<p>Must be at least 5 characters.</p>
-        </p>
-                <p>
-            <b><code>userRole</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-                <input type="number"
-               name="userRole"
-               data-endpoint="POSTapi-kreirajNalog"
-               value="12"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-        </form>
-
-            <h2 id="authentication-POSTapi-logout">Logout</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-logout">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://backend.test/api/logout" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/logout"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-logout">
-</span>
-<span id="execution-results-POSTapi-logout" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-logout"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-logout"></code></pre>
-</span>
-<span id="execution-error-POSTapi-logout" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-logout"></code></pre>
-</span>
-<form id="form-POSTapi-logout" data-method="POST"
-      data-path="api/logout"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-logout', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-logout"
-                    onclick="tryItOut('POSTapi-logout');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-logout"
-                    onclick="cancelTryOut('POSTapi-logout');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-logout" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/logout</code></b>
-        </p>
-                    </form>
-
-        <h1 id="endpoints">Endpoints</h1>
-
-    
-
-            <h2 id="endpoints-GETapi-user">Display a listing of the resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-user">
+<span id="example-requests-GETapi-adminData">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://backend.test/api/user" \
+    --get "http://backend.test/api/adminData" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/user"
+    "http://backend.test/api/adminData"
 );
 
 const headers = {
@@ -729,7 +269,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-user">
+<span id="example-responses-GETapi-adminData">
             <blockquote>
             <p>Example response (401):</p>
         </blockquote>
@@ -748,48 +288,253 @@ access-control-allow-origin: *
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-user" hidden>
+<span id="execution-results-GETapi-adminData" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-user"></span>:
+                id="execution-response-status-GETapi-adminData"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-user"></code></pre>
+    <pre class="json"><code id="execution-response-content-GETapi-adminData"></code></pre>
 </span>
-<span id="execution-error-GETapi-user" hidden>
+<span id="execution-error-GETapi-adminData" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-user"></code></pre>
+    <pre><code id="execution-error-message-GETapi-adminData"></code></pre>
 </span>
-<form id="form-GETapi-user" data-method="GET"
-      data-path="api/user"
+<form id="form-GETapi-adminData" data-method="GET"
+      data-path="api/adminData"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-adminData', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-user"
-                    onclick="tryItOut('GETapi-user');">Try it out ⚡
+                    id="btn-tryout-GETapi-adminData"
+                    onclick="tryItOut('GETapi-adminData');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-user"
-                    onclick="cancelTryOut('GETapi-user');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-adminData"
+                    onclick="cancelTryOut('GETapi-adminData');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-user" hidden>Send Request 💥
+                    id="btn-executetryout-GETapi-adminData" hidden>Send Request 💥
             </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/user</code></b>
+            <b><code>api/adminData</code></b>
         </p>
                     </form>
 
-            <h2 id="endpoints-GETapi-mesto">Display a listing of the resource.</h2>
+            <h2 id="adminpanel-GETapi-getReport">Kreiranje izvestaja</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-getReport">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://backend.test/api/getReport" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/getReport"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-getReport">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-getReport" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-getReport"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-getReport"></code></pre>
+</span>
+<span id="execution-error-GETapi-getReport" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-getReport"></code></pre>
+</span>
+<form id="form-GETapi-getReport" data-method="GET"
+      data-path="api/getReport"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-getReport', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-getReport"
+                    onclick="tryItOut('GETapi-getReport');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-getReport"
+                    onclick="cancelTryOut('GETapi-getReport');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-getReport" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/getReport</code></b>
+        </p>
+                    </form>
+
+            <h2 id="adminpanel-GETapi-printRezervacija--id-">GET api/printRezervacija/{id}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-printRezervacija--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://backend.test/api/printRezervacija/omnis" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/printRezervacija/omnis"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-printRezervacija--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-printRezervacija--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-printRezervacija--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-printRezervacija--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-printRezervacija--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-printRezervacija--id-"></code></pre>
+</span>
+<form id="form-GETapi-printRezervacija--id-" data-method="GET"
+      data-path="api/printRezervacija/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-printRezervacija--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-printRezervacija--id-"
+                    onclick="tryItOut('GETapi-printRezervacija--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-printRezervacija--id-"
+                    onclick="cancelTryOut('GETapi-printRezervacija--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-printRezervacija--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/printRezervacija/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="GETapi-printRezervacija--id-"
+               value="omnis"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the printRezervacija.</p>
+            </p>
+                    </form>
+
+        <h1 id="mesto">Mesto</h1>
+
+    
+
+            <h2 id="mesto-GETapi-mesto">Prikaz svih mesta u sistemu</h2>
 
 <p>
 </p>
@@ -1115,7 +860,7 @@ access-control-allow-origin: *
         </p>
                     </form>
 
-            <h2 id="endpoints-GETapi-mesto--id-">Display the specified resource.</h2>
+            <h2 id="mesto-GETapi-mesto--id-">Prikaz mesta sa prosledjenim ID-jem</h2>
 
 <p>
 </p>
@@ -1634,7 +1379,379 @@ access-control-allow-origin: *
             </p>
                     </form>
 
-            <h2 id="endpoints-GETapi-restoran">Display a listing of the resource.</h2>
+            <h2 id="mesto-POSTapi-mesto">Kreiranje mesta.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-mesto">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://backend.test/api/mesto" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"naziv\": \"auqhhesqbemquscisjlzogkhmmomcmtuoyuaigteqwxlbtfhoginsmqdfahchasaleclyfwujjyjfmjlroeuthgwfxif\",
+    \"brojStolica\": \"tlqohfisdcaqjtmrcyjzrydmdmdpuouoyyygcgjqbzzungyqlftadrmobogmgmaxjjukcighhcembxmnadaribbvrwzmuzwiugotlwnzsbpeeuspbgbonlwnnbzruvbyirhnfdigjlfaetfkflppyjdejojnrynnavicdfjbjrhdsjqbkre\",
+    \"opis\": \"ejgurgtjoluqabwsbicxbzdrwbvdxzviriqrtureoquqjkssoxernrfxxueqibgorqmopcsrrvjqzendxjkrcnrfhtdhyaefgvzlbrwwvjw\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/mesto"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "naziv": "auqhhesqbemquscisjlzogkhmmomcmtuoyuaigteqwxlbtfhoginsmqdfahchasaleclyfwujjyjfmjlroeuthgwfxif",
+    "brojStolica": "tlqohfisdcaqjtmrcyjzrydmdmdpuouoyyygcgjqbzzungyqlftadrmobogmgmaxjjukcighhcembxmnadaribbvrwzmuzwiugotlwnzsbpeeuspbgbonlwnnbzruvbyirhnfdigjlfaetfkflppyjdejojnrynnavicdfjbjrhdsjqbkre",
+    "opis": "ejgurgtjoluqabwsbicxbzdrwbvdxzviriqrtureoquqjkssoxernrfxxueqibgorqmopcsrrvjqzendxjkrcnrfhtdhyaefgvzlbrwwvjw"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-mesto">
+</span>
+<span id="execution-results-POSTapi-mesto" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-mesto"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-mesto"></code></pre>
+</span>
+<span id="execution-error-POSTapi-mesto" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-mesto"></code></pre>
+</span>
+<form id="form-POSTapi-mesto" data-method="POST"
+      data-path="api/mesto"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-mesto', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-mesto"
+                    onclick="tryItOut('POSTapi-mesto');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-mesto"
+                    onclick="cancelTryOut('POSTapi-mesto');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-mesto" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/mesto</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>naziv</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="naziv"
+               data-endpoint="POSTapi-mesto"
+               value="auqhhesqbemquscisjlzogkhmmomcmtuoyuaigteqwxlbtfhoginsmqdfahchasaleclyfwujjyjfmjlroeuthgwfxif"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>brojStolica</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="brojStolica"
+               data-endpoint="POSTapi-mesto"
+               value="tlqohfisdcaqjtmrcyjzrydmdmdpuouoyyygcgjqbzzungyqlftadrmobogmgmaxjjukcighhcembxmnadaribbvrwzmuzwiugotlwnzsbpeeuspbgbonlwnnbzruvbyirhnfdigjlfaetfkflppyjdejojnrynnavicdfjbjrhdsjqbkre"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>opis</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="opis"
+               data-endpoint="POSTapi-mesto"
+               value="ejgurgtjoluqabwsbicxbzdrwbvdxzviriqrtureoquqjkssoxernrfxxueqibgorqmopcsrrvjqzendxjkrcnrfhtdhyaefgvzlbrwwvjw"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>restoranID</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="restoranID"
+               data-endpoint="POSTapi-mesto"
+               value=""
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="mesto-PUTapi-mesto--id-">Azuriranje mesta</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-mesto--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://backend.test/api/mesto/2" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"naziv\": \"cugfrlvtgzcnrmtdljqqrbhzxdhq\",
+    \"brojStolica\": \"xhzhvmdqglvnquvainchxxfmkzpuxnbhlxwgmsytslmdrenhjlhxfcnqvtklrvgtngaujpmskormtkhkcvovajerltkmgqsabciiomwbckqztkx\",
+    \"opis\": \"jovozqqpvafcnajorakxoqfqwaxelflvstchrtvskxfiyculicmewqhmbalkruxextdbppgaanubhswsfr\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/mesto/2"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "naziv": "cugfrlvtgzcnrmtdljqqrbhzxdhq",
+    "brojStolica": "xhzhvmdqglvnquvainchxxfmkzpuxnbhlxwgmsytslmdrenhjlhxfcnqvtklrvgtngaujpmskormtkhkcvovajerltkmgqsabciiomwbckqztkx",
+    "opis": "jovozqqpvafcnajorakxoqfqwaxelflvstchrtvskxfiyculicmewqhmbalkruxextdbppgaanubhswsfr"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-mesto--id-">
+</span>
+<span id="execution-results-PUTapi-mesto--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-mesto--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-mesto--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-mesto--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-mesto--id-"></code></pre>
+</span>
+<form id="form-PUTapi-mesto--id-" data-method="PUT"
+      data-path="api/mesto/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-mesto--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-mesto--id-"
+                    onclick="tryItOut('PUTapi-mesto--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-mesto--id-"
+                    onclick="cancelTryOut('PUTapi-mesto--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-mesto--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/mesto/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/mesto/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTapi-mesto--id-"
+               value="2"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the mesto.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>naziv</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="naziv"
+               data-endpoint="PUTapi-mesto--id-"
+               value="cugfrlvtgzcnrmtdljqqrbhzxdhq"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>brojStolica</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="brojStolica"
+               data-endpoint="PUTapi-mesto--id-"
+               value="xhzhvmdqglvnquvainchxxfmkzpuxnbhlxwgmsytslmdrenhjlhxfcnqvtklrvgtngaujpmskormtkhkcvovajerltkmgqsabciiomwbckqztkx"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>opis</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="opis"
+               data-endpoint="PUTapi-mesto--id-"
+               value="jovozqqpvafcnajorakxoqfqwaxelflvstchrtvskxfiyculicmewqhmbalkruxextdbppgaanubhswsfr"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>restoranID</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="restoranID"
+               data-endpoint="PUTapi-mesto--id-"
+               value=""
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="mesto-DELETEapi-mesto--id-">Brisanje mesta</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-mesto--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://backend.test/api/mesto/2" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/mesto/2"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-mesto--id-">
+</span>
+<span id="execution-results-DELETEapi-mesto--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-mesto--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-mesto--id-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-mesto--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-mesto--id-"></code></pre>
+</span>
+<form id="form-DELETEapi-mesto--id-" data-method="DELETE"
+      data-path="api/mesto/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-mesto--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-mesto--id-"
+                    onclick="tryItOut('DELETEapi-mesto--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-mesto--id-"
+                    onclick="cancelTryOut('DELETEapi-mesto--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-mesto--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/mesto/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEapi-mesto--id-"
+               value="2"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the mesto.</p>
+            </p>
+                    </form>
+
+        <h1 id="restoran">Restoran</h1>
+
+    
+
+            <h2 id="restoran-GETapi-restoran">Prikaz svih restorana u sistemu</h2>
 
 <p>
 </p>
@@ -1935,7 +2052,1441 @@ access-control-allow-origin: *
         </p>
                     </form>
 
-            <h2 id="endpoints-GETapi-restoran--id-">Display the specified resource.</h2>
+            <h2 id="restoran-POSTapi-restoran">Kreiranje novog restorana</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-restoran">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://backend.test/api/restoran" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"naziv\": \"ryqiwhtrqkwiufvwqjjeqmfgylmfibrlelngtjujmwuhqragaxwdyhatbkulunecrsppwvrfieapctrhayeqtaroyhok\",
+    \"adresa\": \"tqghqjsacxuvozbptyhiirxgdnmopkgxmsfptgunmfqvbamldfxczbajabiemcgc\",
+    \"radnoVreme\": \"vktgwvvvppvttrpzilhtfumngwqerykxydfadsqrhmkydkelwbabocnjjjagwvqhuvnamnpmpjfwxlkckyjlxmixikamjalgdcppsqbaxdlwhktwgniaryoxcuyfxymwyylvwyqlnvhoettlmuinsfrltkmuutwkbuencncbpedllopeqrckkhtmptvktolmpblznqzxtcsxcfhm\",
+    \"telefon\": \"deserunt\",
+    \"email\": \"wmvxvlbazzyrftzzdyqcuvqhexiirsfvfownnrjsprvsxvkewostvtsvmsjuaqkxpuyrgmttmdddvcwvenmushbxfazytkxcvexyyfaikqruvauaiukqgpibnibylgiacngzlqlmhqbzrlsrtflgmsdfpgyyowsynjvjdwyitbnjfmzyzqjvgzfteywcqjlbldrhjwidupdswfiuvrnvwgjyaxcrwfdskceygupfksbvfkl\",
+    \"brojZvezdica\": 14,
+    \"opis\": \"vorzyiqayzvgapgecekaauzfbpzhmqfqvdmelrfblukgymdhdzmidlubhwimhaihjhyukxmkqaiwhahfcerhkyzkkpbzldvirlzbrhkdbaxpwldsqmspqzygglyaorooxuogr\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/restoran"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "naziv": "ryqiwhtrqkwiufvwqjjeqmfgylmfibrlelngtjujmwuhqragaxwdyhatbkulunecrsppwvrfieapctrhayeqtaroyhok",
+    "adresa": "tqghqjsacxuvozbptyhiirxgdnmopkgxmsfptgunmfqvbamldfxczbajabiemcgc",
+    "radnoVreme": "vktgwvvvppvttrpzilhtfumngwqerykxydfadsqrhmkydkelwbabocnjjjagwvqhuvnamnpmpjfwxlkckyjlxmixikamjalgdcppsqbaxdlwhktwgniaryoxcuyfxymwyylvwyqlnvhoettlmuinsfrltkmuutwkbuencncbpedllopeqrckkhtmptvktolmpblznqzxtcsxcfhm",
+    "telefon": "deserunt",
+    "email": "wmvxvlbazzyrftzzdyqcuvqhexiirsfvfownnrjsprvsxvkewostvtsvmsjuaqkxpuyrgmttmdddvcwvenmushbxfazytkxcvexyyfaikqruvauaiukqgpibnibylgiacngzlqlmhqbzrlsrtflgmsdfpgyyowsynjvjdwyitbnjfmzyzqjvgzfteywcqjlbldrhjwidupdswfiuvrnvwgjyaxcrwfdskceygupfksbvfkl",
+    "brojZvezdica": 14,
+    "opis": "vorzyiqayzvgapgecekaauzfbpzhmqfqvdmelrfblukgymdhdzmidlubhwimhaihjhyukxmkqaiwhahfcerhkyzkkpbzldvirlzbrhkdbaxpwldsqmspqzygglyaorooxuogr"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-restoran">
+</span>
+<span id="execution-results-POSTapi-restoran" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-restoran"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-restoran"></code></pre>
+</span>
+<span id="execution-error-POSTapi-restoran" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-restoran"></code></pre>
+</span>
+<form id="form-POSTapi-restoran" data-method="POST"
+      data-path="api/restoran"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-restoran', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-restoran"
+                    onclick="tryItOut('POSTapi-restoran');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-restoran"
+                    onclick="cancelTryOut('POSTapi-restoran');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-restoran" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/restoran</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>naziv</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="naziv"
+               data-endpoint="POSTapi-restoran"
+               value="ryqiwhtrqkwiufvwqjjeqmfgylmfibrlelngtjujmwuhqragaxwdyhatbkulunecrsppwvrfieapctrhayeqtaroyhok"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>adresa</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="adresa"
+               data-endpoint="POSTapi-restoran"
+               value="tqghqjsacxuvozbptyhiirxgdnmopkgxmsfptgunmfqvbamldfxczbajabiemcgc"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>radnoVreme</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="radnoVreme"
+               data-endpoint="POSTapi-restoran"
+               value="vktgwvvvppvttrpzilhtfumngwqerykxydfadsqrhmkydkelwbabocnjjjagwvqhuvnamnpmpjfwxlkckyjlxmixikamjalgdcppsqbaxdlwhktwgniaryoxcuyfxymwyylvwyqlnvhoettlmuinsfrltkmuutwkbuencncbpedllopeqrckkhtmptvktolmpblznqzxtcsxcfhm"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>telefon</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="telefon"
+               data-endpoint="POSTapi-restoran"
+               value="deserunt"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-restoran"
+               value="wmvxvlbazzyrftzzdyqcuvqhexiirsfvfownnrjsprvsxvkewostvtsvmsjuaqkxpuyrgmttmdddvcwvenmushbxfazytkxcvexyyfaikqruvauaiukqgpibnibylgiacngzlqlmhqbzrlsrtflgmsdfpgyyowsynjvjdwyitbnjfmzyzqjvgzfteywcqjlbldrhjwidupdswfiuvrnvwgjyaxcrwfdskceygupfksbvfkl"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>brojZvezdica</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+                <input type="number"
+               name="brojZvezdica"
+               data-endpoint="POSTapi-restoran"
+               value="14"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>opis</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="opis"
+               data-endpoint="POSTapi-restoran"
+               value="vorzyiqayzvgapgecekaauzfbpzhmqfqvdmelrfblukgymdhdzmidlubhwimhaihjhyukxmkqaiwhahfcerhkyzkkpbzldvirlzbrhkdbaxpwldsqmspqzygglyaorooxuogr"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+        </form>
+
+            <h2 id="restoran-PUTapi-restoran--id-">Azuriranje restorana</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-restoran--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://backend.test/api/restoran/2" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"naziv\": \"hgsdztlzdconicuf\",
+    \"adresa\": \"uwagbryzfasmqqccwhfgsfburkjfyxfaxhyzhxruoweqcvrrzlfi\",
+    \"radnoVreme\": \"jqniqighebrwawemqjjfoitlmiogqgliiwukofhwvjynznrflvhqtoykmryhszihwwgielgwphuwlzeeykrlthdqfwollreawwiobubcupvmmvuawwtpyznhoxkepsgtfgzzuuyghbnphgcmlgitbhdtdqhqsdaoflzqyoptedjdmhkwcpvxotilsxzthkljbpjavdih\",
+    \"telefon\": \"2022-08-21T22:53:19\",
+    \"email\": \"iprzfvymteoczjqlviuufrazamvpdbhnzbzaabjwerncfqoizcsrnczxinwaaectzrqlfsqzvcpjxrydb\",
+    \"brojZvezdica\": 9,
+    \"opis\": \"pkfynbfbfkfwseyzsdeaxccr\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/restoran/2"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "naziv": "hgsdztlzdconicuf",
+    "adresa": "uwagbryzfasmqqccwhfgsfburkjfyxfaxhyzhxruoweqcvrrzlfi",
+    "radnoVreme": "jqniqighebrwawemqjjfoitlmiogqgliiwukofhwvjynznrflvhqtoykmryhszihwwgielgwphuwlzeeykrlthdqfwollreawwiobubcupvmmvuawwtpyznhoxkepsgtfgzzuuyghbnphgcmlgitbhdtdqhqsdaoflzqyoptedjdmhkwcpvxotilsxzthkljbpjavdih",
+    "telefon": "2022-08-21T22:53:19",
+    "email": "iprzfvymteoczjqlviuufrazamvpdbhnzbzaabjwerncfqoizcsrnczxinwaaectzrqlfsqzvcpjxrydb",
+    "brojZvezdica": 9,
+    "opis": "pkfynbfbfkfwseyzsdeaxccr"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-restoran--id-">
+</span>
+<span id="execution-results-PUTapi-restoran--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-restoran--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-restoran--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-restoran--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-restoran--id-"></code></pre>
+</span>
+<form id="form-PUTapi-restoran--id-" data-method="PUT"
+      data-path="api/restoran/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-restoran--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-restoran--id-"
+                    onclick="tryItOut('PUTapi-restoran--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-restoran--id-"
+                    onclick="cancelTryOut('PUTapi-restoran--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-restoran--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/restoran/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/restoran/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTapi-restoran--id-"
+               value="2"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the restoran.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>naziv</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="naziv"
+               data-endpoint="PUTapi-restoran--id-"
+               value="hgsdztlzdconicuf"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>adresa</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="adresa"
+               data-endpoint="PUTapi-restoran--id-"
+               value="uwagbryzfasmqqccwhfgsfburkjfyxfaxhyzhxruoweqcvrrzlfi"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>radnoVreme</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="radnoVreme"
+               data-endpoint="PUTapi-restoran--id-"
+               value="jqniqighebrwawemqjjfoitlmiogqgliiwukofhwvjynznrflvhqtoykmryhszihwwgielgwphuwlzeeykrlthdqfwollreawwiobubcupvmmvuawwtpyznhoxkepsgtfgzzuuyghbnphgcmlgitbhdtdqhqsdaoflzqyoptedjdmhkwcpvxotilsxzthkljbpjavdih"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>telefon</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="telefon"
+               data-endpoint="PUTapi-restoran--id-"
+               value="2022-08-21T22:53:19"
+               data-component="body" hidden>
+    <br>
+<p>Must be a valid date.</p>
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="PUTapi-restoran--id-"
+               value="iprzfvymteoczjqlviuufrazamvpdbhnzbzaabjwerncfqoizcsrnczxinwaaectzrqlfsqzvcpjxrydb"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>brojZvezdica</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+                <input type="number"
+               name="brojZvezdica"
+               data-endpoint="PUTapi-restoran--id-"
+               value="9"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>opis</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="opis"
+               data-endpoint="PUTapi-restoran--id-"
+               value="pkfynbfbfkfwseyzsdeaxccr"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+        </form>
+
+            <h2 id="restoran-DELETEapi-restoran--id-">Brisanje restorana</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-restoran--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://backend.test/api/restoran/2" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/restoran/2"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-restoran--id-">
+</span>
+<span id="execution-results-DELETEapi-restoran--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-restoran--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-restoran--id-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-restoran--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-restoran--id-"></code></pre>
+</span>
+<form id="form-DELETEapi-restoran--id-" data-method="DELETE"
+      data-path="api/restoran/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-restoran--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-restoran--id-"
+                    onclick="tryItOut('DELETEapi-restoran--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-restoran--id-"
+                    onclick="cancelTryOut('DELETEapi-restoran--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-restoran--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/restoran/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEapi-restoran--id-"
+               value="2"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the restoran.</p>
+            </p>
+                    </form>
+
+        <h1 id="rezervacija">Rezervacija</h1>
+
+    
+
+            <h2 id="rezervacija-GETapi-rezervacija">Prikaz svih restorana</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-rezervacija">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://backend.test/api/rezervacija" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/rezervacija"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-rezervacija">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-rezervacija" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-rezervacija"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-rezervacija"></code></pre>
+</span>
+<span id="execution-error-GETapi-rezervacija" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-rezervacija"></code></pre>
+</span>
+<form id="form-GETapi-rezervacija" data-method="GET"
+      data-path="api/rezervacija"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-rezervacija', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-rezervacija"
+                    onclick="tryItOut('GETapi-rezervacija');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-rezervacija"
+                    onclick="cancelTryOut('GETapi-rezervacija');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-rezervacija" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/rezervacija</code></b>
+        </p>
+                    </form>
+
+            <h2 id="rezervacija-GETapi-moje-rezervacije">Lista korisnikovih rezervacija</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-moje-rezervacije">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://backend.test/api/moje-rezervacije" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/moje-rezervacije"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-moje-rezervacije">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-moje-rezervacije" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-moje-rezervacije"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-moje-rezervacije"></code></pre>
+</span>
+<span id="execution-error-GETapi-moje-rezervacije" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-moje-rezervacije"></code></pre>
+</span>
+<form id="form-GETapi-moje-rezervacije" data-method="GET"
+      data-path="api/moje-rezervacije"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-moje-rezervacije', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-moje-rezervacije"
+                    onclick="tryItOut('GETapi-moje-rezervacije');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-moje-rezervacije"
+                    onclick="cancelTryOut('GETapi-moje-rezervacije');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-moje-rezervacije" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/moje-rezervacije</code></b>
+        </p>
+                    </form>
+
+            <h2 id="rezervacija-POSTapi-rezervacija">Kreiranje rezervacije</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-rezervacija">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://backend.test/api/rezervacija" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"datumIVreme\": \"doloribus\",
+    \"komentar\": \"et\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/rezervacija"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "datumIVreme": "doloribus",
+    "komentar": "et"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-rezervacija">
+</span>
+<span id="execution-results-POSTapi-rezervacija" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-rezervacija"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-rezervacija"></code></pre>
+</span>
+<span id="execution-error-POSTapi-rezervacija" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-rezervacija"></code></pre>
+</span>
+<form id="form-POSTapi-rezervacija" data-method="POST"
+      data-path="api/rezervacija"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-rezervacija', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-rezervacija"
+                    onclick="tryItOut('POSTapi-rezervacija');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-rezervacija"
+                    onclick="cancelTryOut('POSTapi-rezervacija');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-rezervacija" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/rezervacija</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>mestoID</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="mestoID"
+               data-endpoint="POSTapi-rezervacija"
+               value=""
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>datumIVreme</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="datumIVreme"
+               data-endpoint="POSTapi-rezervacija"
+               value="doloribus"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>komentar</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="komentar"
+               data-endpoint="POSTapi-rezervacija"
+               value="et"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="rezervacija-DELETEapi-rezervacija--id-">Brisanje rezervacije</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-rezervacija--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://backend.test/api/rezervacija/4" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/rezervacija/4"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-rezervacija--id-">
+</span>
+<span id="execution-results-DELETEapi-rezervacija--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-rezervacija--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-rezervacija--id-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-rezervacija--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-rezervacija--id-"></code></pre>
+</span>
+<form id="form-DELETEapi-rezervacija--id-" data-method="DELETE"
+      data-path="api/rezervacija/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-rezervacija--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-rezervacija--id-"
+                    onclick="tryItOut('DELETEapi-rezervacija--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-rezervacija--id-"
+                    onclick="cancelTryOut('DELETEapi-rezervacija--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-rezervacija--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/rezervacija/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEapi-rezervacija--id-"
+               value="4"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the rezervacija.</p>
+            </p>
+                    </form>
+
+        <h1 id="authentication">Authentication</h1>
+
+    
+
+            <h2 id="authentication-POSTapi-register">Creating new account</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-register">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://backend.test/api/register" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"username\": \"dskfxzupqjldzfrrmbomiddpssljtkzcgyjykzmnqnngtryqqhjwlybhbdhykbsvmnthfhdnwkbtjceokbabsmophoynwzpcoanuhzgvyhnodswrxskifakyyflpzhwfcxnmnrmpxbsckuyqcwtcxgojgadibinpqpuyflzplaxgpwuivb\",
+    \"ime\": \"qguhwkaoyqegxxoywalqcujpanyyekrrlvgihzucptlpcswgumgxlainnqkucljrzmrczmrbacwhfkqmezdsctrrjwqbteqsztaoekdegaquwgclzcofnexzusmaqzvnpsvilnlseofkmgwdidfivqzrdlzcaflnnkdhhnv\",
+    \"prezime\": \"aqbjzvnpopxfgrwsccxqiuptfgmuqjuadivubfpyuvjzrormewkjpokaeuknhcsghxuahdqgvqetyakpxqcaovowoeqimgdywkprtkqnogpnsjmuuuzyutqhfwrcjctalkiqqnkhpanypfggyaseqbbplolagoftrsodlokkgpfxzvdmoschpbvmeyovs\",
+    \"datumRodjenja\": \"2022-08-21T22:53:19\",
+    \"adresa\": \"wvnltpxcnxmubobdbhvvbubbslxfeamebnloucblqhrwzqtfjfdukageavgagzzplntlfvfnkmuojkkrdlzxfgvefygavjggrxukojflwizsfgnrxvfrixluyutyddpokpxrhowdpfwohxzbemzgtwxvrvylcuqdyhiztiqharlhkbrtqgmvowpxomnpaquyxluyfbcgkzqcacpvexuxrrcoxiivrbqjtwoknyzqdcitpyxjsnsqic\",
+    \"password\": \"\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/register"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "username": "dskfxzupqjldzfrrmbomiddpssljtkzcgyjykzmnqnngtryqqhjwlybhbdhykbsvmnthfhdnwkbtjceokbabsmophoynwzpcoanuhzgvyhnodswrxskifakyyflpzhwfcxnmnrmpxbsckuyqcwtcxgojgadibinpqpuyflzplaxgpwuivb",
+    "ime": "qguhwkaoyqegxxoywalqcujpanyyekrrlvgihzucptlpcswgumgxlainnqkucljrzmrczmrbacwhfkqmezdsctrrjwqbteqsztaoekdegaquwgclzcofnexzusmaqzvnpsvilnlseofkmgwdidfivqzrdlzcaflnnkdhhnv",
+    "prezime": "aqbjzvnpopxfgrwsccxqiuptfgmuqjuadivubfpyuvjzrormewkjpokaeuknhcsghxuahdqgvqetyakpxqcaovowoeqimgdywkprtkqnogpnsjmuuuzyutqhfwrcjctalkiqqnkhpanypfggyaseqbbplolagoftrsodlokkgpfxzvdmoschpbvmeyovs",
+    "datumRodjenja": "2022-08-21T22:53:19",
+    "adresa": "wvnltpxcnxmubobdbhvvbubbslxfeamebnloucblqhrwzqtfjfdukageavgagzzplntlfvfnkmuojkkrdlzxfgvefygavjggrxukojflwizsfgnrxvfrixluyutyddpokpxrhowdpfwohxzbemzgtwxvrvylcuqdyhiztiqharlhkbrtqgmvowpxomnpaquyxluyfbcgkzqcacpvexuxrrcoxiivrbqjtwoknyzqdcitpyxjsnsqic",
+    "password": ""
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-register">
+</span>
+<span id="execution-results-POSTapi-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-register"></code></pre>
+</span>
+<span id="execution-error-POSTapi-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-register"></code></pre>
+</span>
+<form id="form-POSTapi-register" data-method="POST"
+      data-path="api/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-register"
+                    onclick="tryItOut('POSTapi-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-register"
+                    onclick="cancelTryOut('POSTapi-register');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-register" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/register</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="username"
+               data-endpoint="POSTapi-register"
+               value="dskfxzupqjldzfrrmbomiddpssljtkzcgyjykzmnqnngtryqqhjwlybhbdhykbsvmnthfhdnwkbtjceokbabsmophoynwzpcoanuhzgvyhnodswrxskifakyyflpzhwfcxnmnrmpxbsckuyqcwtcxgojgadibinpqpuyflzplaxgpwuivb"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>ime</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="ime"
+               data-endpoint="POSTapi-register"
+               value="qguhwkaoyqegxxoywalqcujpanyyekrrlvgihzucptlpcswgumgxlainnqkucljrzmrczmrbacwhfkqmezdsctrrjwqbteqsztaoekdegaquwgclzcofnexzusmaqzvnpsvilnlseofkmgwdidfivqzrdlzcaflnnkdhhnv"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>prezime</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="prezime"
+               data-endpoint="POSTapi-register"
+               value="aqbjzvnpopxfgrwsccxqiuptfgmuqjuadivubfpyuvjzrormewkjpokaeuknhcsghxuahdqgvqetyakpxqcaovowoeqimgdywkprtkqnogpnsjmuuuzyutqhfwrcjctalkiqqnkhpanypfggyaseqbbplolagoftrsodlokkgpfxzvdmoschpbvmeyovs"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>datumRodjenja</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="datumRodjenja"
+               data-endpoint="POSTapi-register"
+               value="2022-08-21T22:53:19"
+               data-component="body" hidden>
+    <br>
+<p>Must be a valid date.</p>
+        </p>
+                <p>
+            <b><code>adresa</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="adresa"
+               data-endpoint="POSTapi-register"
+               value="wvnltpxcnxmubobdbhvvbubbslxfeamebnloucblqhrwzqtfjfdukageavgagzzplntlfvfnkmuojkkrdlzxfgvefygavjggrxukojflwizsfgnrxvfrixluyutyddpokpxrhowdpfwohxzbemzgtwxvrvylcuqdyhiztiqharlhkbrtqgmvowpxomnpaquyxluyfbcgkzqcacpvexuxrrcoxiivrbqjtwoknyzqdcitpyxjsnsqic"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-register"
+               value=""
+               data-component="body" hidden>
+    <br>
+<p>Must be at least 5 characters.</p>
+        </p>
+        </form>
+
+            <h2 id="authentication-POSTapi-login">Login on application</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://backend.test/api/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-login">
+</span>
+<span id="execution-results-POSTapi-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-login"></code></pre>
+</span>
+<span id="execution-error-POSTapi-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-login"></code></pre>
+</span>
+<form id="form-POSTapi-login" data-method="POST"
+      data-path="api/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-login"
+                    onclick="tryItOut('POSTapi-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-login"
+                    onclick="cancelTryOut('POSTapi-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-login" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/login</code></b>
+        </p>
+                    </form>
+
+            <h2 id="authentication-POSTapi-kreirajNalog">Creating new account without getting access token</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-kreirajNalog">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://backend.test/api/kreirajNalog" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"username\": \"hkpuhphaparsfxqpxnuwdnqsaxjamllmyduxalhriodsoaytcsadeftqfoitj\",
+    \"ime\": \"mfbjkmqhbbwntjmgopyzzribgxqlbfdl\",
+    \"prezime\": \"hxgelqmdfoheujoswkwmtfkkzlfdupjaojytwfvnxarpfgkbbdmgeccwuvqjnncqctdyclmuimgzeyhwyltz\",
+    \"datumRodjenja\": \"2022-08-21T22:53:19\",
+    \"adresa\": \"aryfumwbxwrzieszgtasnohiomsvqgselwsajxemrtrgnitlbjncbzikgrqfehkkjmsjpzoikzxxvzdeyrjofityemezobvhldaqgfrhrjixvyccylljjfocvoywixwvndnoydbclnnegbstjipqzkfbsbhdxminbphjqamnollqibllketyiwfyidukjlempykztnxrjkrgdrlrqzfhsezrgbngt\",
+    \"password\": \"cdkij\",
+    \"userRole\": 14
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/kreirajNalog"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "username": "hkpuhphaparsfxqpxnuwdnqsaxjamllmyduxalhriodsoaytcsadeftqfoitj",
+    "ime": "mfbjkmqhbbwntjmgopyzzribgxqlbfdl",
+    "prezime": "hxgelqmdfoheujoswkwmtfkkzlfdupjaojytwfvnxarpfgkbbdmgeccwuvqjnncqctdyclmuimgzeyhwyltz",
+    "datumRodjenja": "2022-08-21T22:53:19",
+    "adresa": "aryfumwbxwrzieszgtasnohiomsvqgselwsajxemrtrgnitlbjncbzikgrqfehkkjmsjpzoikzxxvzdeyrjofityemezobvhldaqgfrhrjixvyccylljjfocvoywixwvndnoydbclnnegbstjipqzkfbsbhdxminbphjqamnollqibllketyiwfyidukjlempykztnxrjkrgdrlrqzfhsezrgbngt",
+    "password": "cdkij",
+    "userRole": 14
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-kreirajNalog">
+</span>
+<span id="execution-results-POSTapi-kreirajNalog" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-kreirajNalog"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-kreirajNalog"></code></pre>
+</span>
+<span id="execution-error-POSTapi-kreirajNalog" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-kreirajNalog"></code></pre>
+</span>
+<form id="form-POSTapi-kreirajNalog" data-method="POST"
+      data-path="api/kreirajNalog"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-kreirajNalog', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-kreirajNalog"
+                    onclick="tryItOut('POSTapi-kreirajNalog');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-kreirajNalog"
+                    onclick="cancelTryOut('POSTapi-kreirajNalog');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-kreirajNalog" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/kreirajNalog</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="username"
+               data-endpoint="POSTapi-kreirajNalog"
+               value="hkpuhphaparsfxqpxnuwdnqsaxjamllmyduxalhriodsoaytcsadeftqfoitj"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>ime</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="ime"
+               data-endpoint="POSTapi-kreirajNalog"
+               value="mfbjkmqhbbwntjmgopyzzribgxqlbfdl"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>prezime</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="prezime"
+               data-endpoint="POSTapi-kreirajNalog"
+               value="hxgelqmdfoheujoswkwmtfkkzlfdupjaojytwfvnxarpfgkbbdmgeccwuvqjnncqctdyclmuimgzeyhwyltz"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>datumRodjenja</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="datumRodjenja"
+               data-endpoint="POSTapi-kreirajNalog"
+               value="2022-08-21T22:53:19"
+               data-component="body" hidden>
+    <br>
+<p>Must be a valid date.</p>
+        </p>
+                <p>
+            <b><code>adresa</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="adresa"
+               data-endpoint="POSTapi-kreirajNalog"
+               value="aryfumwbxwrzieszgtasnohiomsvqgselwsajxemrtrgnitlbjncbzikgrqfehkkjmsjpzoikzxxvzdeyrjofityemezobvhldaqgfrhrjixvyccylljjfocvoywixwvndnoydbclnnegbstjipqzkfbsbhdxminbphjqamnollqibllketyiwfyidukjlempykztnxrjkrgdrlrqzfhsezrgbngt"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-kreirajNalog"
+               value="cdkij"
+               data-component="body" hidden>
+    <br>
+<p>Must be at least 5 characters.</p>
+        </p>
+                <p>
+            <b><code>userRole</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+                <input type="number"
+               name="userRole"
+               data-endpoint="POSTapi-kreirajNalog"
+               value="14"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="authentication-POSTapi-logout">Logout</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-logout">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://backend.test/api/logout" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/logout"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-logout">
+</span>
+<span id="execution-results-POSTapi-logout" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-logout"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-logout"></code></pre>
+</span>
+<span id="execution-error-POSTapi-logout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-logout"></code></pre>
+</span>
+<form id="form-POSTapi-logout" data-method="POST"
+      data-path="api/logout"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-logout', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-logout"
+                    onclick="tryItOut('POSTapi-logout');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-logout"
+                    onclick="cancelTryOut('POSTapi-logout');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-logout" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/logout</code></b>
+        </p>
+                    </form>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-GETapi-user">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://backend.test/api/user" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://backend.test/api/user"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user"></code></pre>
+</span>
+<span id="execution-error-GETapi-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user"></code></pre>
+</span>
+<form id="form-GETapi-user" data-method="GET"
+      data-path="api/user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user"
+                    onclick="tryItOut('GETapi-user');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user"
+                    onclick="cancelTryOut('GETapi-user');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-restoran--id-">Prikaz restorana</h2>
 
 <p>
 </p>
@@ -2454,102 +4005,7 @@ access-control-allow-origin: *
             </p>
                     </form>
 
-            <h2 id="endpoints-GETapi-rezervacija">Display a listing of the resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-rezervacija">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://backend.test/api/rezervacija" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/rezervacija"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-rezervacija">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary>
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre>
-        </details>         <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-rezervacija" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-rezervacija"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-rezervacija"></code></pre>
-</span>
-<span id="execution-error-GETapi-rezervacija" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-rezervacija"></code></pre>
-</span>
-<form id="form-GETapi-rezervacija" data-method="GET"
-      data-path="api/rezervacija"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-rezervacija', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-rezervacija"
-                    onclick="tryItOut('GETapi-rezervacija');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-rezervacija"
-                    onclick="cancelTryOut('GETapi-rezervacija');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-rezervacija" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/rezervacija</code></b>
-        </p>
-                    </form>
-
-            <h2 id="endpoints-GETapi-rezervacija--id-">Display the specified resource.</h2>
+            <h2 id="endpoints-GETapi-rezervacija--id-">Prikaz rezervacije</h2>
 
 <p>
 </p>
@@ -2750,1034 +4206,7 @@ access-control-allow-origin: *
         </p>
                     </form>
 
-            <h2 id="endpoints-GETapi-moje-rezervacije">GET api/moje-rezervacije</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-moje-rezervacije">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://backend.test/api/moje-rezervacije" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/moje-rezervacije"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-moje-rezervacije">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary>
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre>
-        </details>         <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-moje-rezervacije" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-moje-rezervacije"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-moje-rezervacije"></code></pre>
-</span>
-<span id="execution-error-GETapi-moje-rezervacije" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-moje-rezervacije"></code></pre>
-</span>
-<form id="form-GETapi-moje-rezervacije" data-method="GET"
-      data-path="api/moje-rezervacije"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-moje-rezervacije', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-moje-rezervacije"
-                    onclick="tryItOut('GETapi-moje-rezervacije');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-moje-rezervacije"
-                    onclick="cancelTryOut('GETapi-moje-rezervacije');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-moje-rezervacije" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/moje-rezervacije</code></b>
-        </p>
-                    </form>
-
-            <h2 id="endpoints-POSTapi-mesto">Store a newly created resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-mesto">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://backend.test/api/mesto" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"naziv\": \"hgsbtnvxjkzhjhlsfaagkrgyhvprkruhkysxwravcbomiqogxushteaugkrefbvgnnqhytkqxowuvgpgcpruxwzeybauvbzufrwhnhfwvbczxcjmynphrnxmsloqkxbshyodwhiahpyosclrclvlcznmirvvpcovltuplngtpvnlspbtzrtoylscuaipbwb\",
-    \"brojStolica\": \"evgzgjtiafyqiegbmyedqbnqgbdgduiuiddtpifvsyhafyuqpmbieucvatbyaycntcjxatztgiliywotmonmzncalzzfqqkdbqmaqsyotklnuaekbmrmnpaqgjiabqiyqxhddizoijlvszpysimjmcjhhfvtyjrvihokindcclipwvwkpbqjh\",
-    \"opis\": \"prlqkfgplsgxcajglzusppkphtwknqyxvcsbocxagtomkixownrktkdyfrmzfsvgplfgmpdjvjeeaehozycacruaoqlqlfwhsyenrqmnzleygbvahcdteemokpujpegkvaddqarwistxxskwgevj\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/mesto"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "naziv": "hgsbtnvxjkzhjhlsfaagkrgyhvprkruhkysxwravcbomiqogxushteaugkrefbvgnnqhytkqxowuvgpgcpruxwzeybauvbzufrwhnhfwvbczxcjmynphrnxmsloqkxbshyodwhiahpyosclrclvlcznmirvvpcovltuplngtpvnlspbtzrtoylscuaipbwb",
-    "brojStolica": "evgzgjtiafyqiegbmyedqbnqgbdgduiuiddtpifvsyhafyuqpmbieucvatbyaycntcjxatztgiliywotmonmzncalzzfqqkdbqmaqsyotklnuaekbmrmnpaqgjiabqiyqxhddizoijlvszpysimjmcjhhfvtyjrvihokindcclipwvwkpbqjh",
-    "opis": "prlqkfgplsgxcajglzusppkphtwknqyxvcsbocxagtomkixownrktkdyfrmzfsvgplfgmpdjvjeeaehozycacruaoqlqlfwhsyenrqmnzleygbvahcdteemokpujpegkvaddqarwistxxskwgevj"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-mesto">
-</span>
-<span id="execution-results-POSTapi-mesto" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-mesto"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-mesto"></code></pre>
-</span>
-<span id="execution-error-POSTapi-mesto" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-mesto"></code></pre>
-</span>
-<form id="form-POSTapi-mesto" data-method="POST"
-      data-path="api/mesto"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-mesto', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-mesto"
-                    onclick="tryItOut('POSTapi-mesto');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-mesto"
-                    onclick="cancelTryOut('POSTapi-mesto');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-mesto" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/mesto</code></b>
-        </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>naziv</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="naziv"
-               data-endpoint="POSTapi-mesto"
-               value="hgsbtnvxjkzhjhlsfaagkrgyhvprkruhkysxwravcbomiqogxushteaugkrefbvgnnqhytkqxowuvgpgcpruxwzeybauvbzufrwhnhfwvbczxcjmynphrnxmsloqkxbshyodwhiahpyosclrclvlcznmirvvpcovltuplngtpvnlspbtzrtoylscuaipbwb"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>brojStolica</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="brojStolica"
-               data-endpoint="POSTapi-mesto"
-               value="evgzgjtiafyqiegbmyedqbnqgbdgduiuiddtpifvsyhafyuqpmbieucvatbyaycntcjxatztgiliywotmonmzncalzzfqqkdbqmaqsyotklnuaekbmrmnpaqgjiabqiyqxhddizoijlvszpysimjmcjhhfvtyjrvihokindcclipwvwkpbqjh"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>opis</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="opis"
-               data-endpoint="POSTapi-mesto"
-               value="prlqkfgplsgxcajglzusppkphtwknqyxvcsbocxagtomkixownrktkdyfrmzfsvgplfgmpdjvjeeaehozycacruaoqlqlfwhsyenrqmnzleygbvahcdteemokpujpegkvaddqarwistxxskwgevj"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>restoranID</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-                <input type="text"
-               name="restoranID"
-               data-endpoint="POSTapi-mesto"
-               value=""
-               data-component="body" hidden>
-    <br>
-
-        </p>
-        </form>
-
-            <h2 id="endpoints-PUTapi-mesto--id-">Update the specified resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-PUTapi-mesto--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PUT \
-    "http://backend.test/api/mesto/2" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"naziv\": \"pycqrojloampfiooluvnbyypmgavtrsbezokpdlkrxxjhbaftzhleonfqqebesfpxrmewafymwrbigyylakkvqimlwfpoxbuzucnlmrgdomewueaczjpqbcrmowzkvnrxakamlpd\",
-    \"brojStolica\": \"opgonwbbxeommsxluobnzqucfzljbazzjzcapbozjpkwadxotxuweosalbkcqrfgamytrubyjgxqknohuuhfcwgemelaordizxazddmghnqipucvvigruqbukzebjvzfsrtlhwtafnczufwf\",
-    \"opis\": \"ylhcqpvuyepswfilmsxlvpuyrtnfpavcjunxikxwoaksuqumuzyqbbonaehrokeeovnkywbglaurqmvpcxczxlsjpwjvcvbeumpcnyyfkhmrecqtvaukipamjua\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/mesto/2"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "naziv": "pycqrojloampfiooluvnbyypmgavtrsbezokpdlkrxxjhbaftzhleonfqqebesfpxrmewafymwrbigyylakkvqimlwfpoxbuzucnlmrgdomewueaczjpqbcrmowzkvnrxakamlpd",
-    "brojStolica": "opgonwbbxeommsxluobnzqucfzljbazzjzcapbozjpkwadxotxuweosalbkcqrfgamytrubyjgxqknohuuhfcwgemelaordizxazddmghnqipucvvigruqbukzebjvzfsrtlhwtafnczufwf",
-    "opis": "ylhcqpvuyepswfilmsxlvpuyrtnfpavcjunxikxwoaksuqumuzyqbbonaehrokeeovnkywbglaurqmvpcxczxlsjpwjvcvbeumpcnyyfkhmrecqtvaukipamjua"
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PUTapi-mesto--id-">
-</span>
-<span id="execution-results-PUTapi-mesto--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-mesto--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-mesto--id-"></code></pre>
-</span>
-<span id="execution-error-PUTapi-mesto--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-mesto--id-"></code></pre>
-</span>
-<form id="form-PUTapi-mesto--id-" data-method="PUT"
-      data-path="api/mesto/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-mesto--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-mesto--id-"
-                    onclick="tryItOut('PUTapi-mesto--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-mesto--id-"
-                    onclick="cancelTryOut('PUTapi-mesto--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-mesto--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/mesto/{id}</code></b>
-        </p>
-            <p>
-            <small class="badge badge-purple">PATCH</small>
-            <b><code>api/mesto/{id}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="PUTapi-mesto--id-"
-               value="2"
-               data-component="url" hidden>
-    <br>
-<p>The ID of the mesto.</p>
-            </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>naziv</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="naziv"
-               data-endpoint="PUTapi-mesto--id-"
-               value="pycqrojloampfiooluvnbyypmgavtrsbezokpdlkrxxjhbaftzhleonfqqebesfpxrmewafymwrbigyylakkvqimlwfpoxbuzucnlmrgdomewueaczjpqbcrmowzkvnrxakamlpd"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>brojStolica</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="brojStolica"
-               data-endpoint="PUTapi-mesto--id-"
-               value="opgonwbbxeommsxluobnzqucfzljbazzjzcapbozjpkwadxotxuweosalbkcqrfgamytrubyjgxqknohuuhfcwgemelaordizxazddmghnqipucvvigruqbukzebjvzfsrtlhwtafnczufwf"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>opis</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="opis"
-               data-endpoint="PUTapi-mesto--id-"
-               value="ylhcqpvuyepswfilmsxlvpuyrtnfpavcjunxikxwoaksuqumuzyqbbonaehrokeeovnkywbglaurqmvpcxczxlsjpwjvcvbeumpcnyyfkhmrecqtvaukipamjua"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>restoranID</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-                <input type="text"
-               name="restoranID"
-               data-endpoint="PUTapi-mesto--id-"
-               value=""
-               data-component="body" hidden>
-    <br>
-
-        </p>
-        </form>
-
-            <h2 id="endpoints-DELETEapi-mesto--id-">Remove the specified resource from storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-DELETEapi-mesto--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request DELETE \
-    "http://backend.test/api/mesto/2" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/mesto/2"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-DELETEapi-mesto--id-">
-</span>
-<span id="execution-results-DELETEapi-mesto--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-mesto--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-mesto--id-"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-mesto--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-mesto--id-"></code></pre>
-</span>
-<form id="form-DELETEapi-mesto--id-" data-method="DELETE"
-      data-path="api/mesto/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-mesto--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-mesto--id-"
-                    onclick="tryItOut('DELETEapi-mesto--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-mesto--id-"
-                    onclick="cancelTryOut('DELETEapi-mesto--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-mesto--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/mesto/{id}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="DELETEapi-mesto--id-"
-               value="2"
-               data-component="url" hidden>
-    <br>
-<p>The ID of the mesto.</p>
-            </p>
-                    </form>
-
-            <h2 id="endpoints-POSTapi-restoran">Store a newly created resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-restoran">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://backend.test/api/restoran" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"naziv\": \"tvkzodrqgvfjvrdtrvoonhtfxrjiftyowthtpihdgkbbplhumgryirednqdocnnsrmezkzbaoxnmuqzeuopblbhflncpjufujtopskzzyfmuuupihkydjwrihwzuyirfstznvvyufvqpxwbmwtedsfdfsfwsmhcihzmhldhzzkikbqpcqowitisddqpiyvjwhajjiijstbrefqmwvxiouhjnjfchmodycgjixclyfcxiykt\",
-    \"adresa\": \"lciqxzxucokrjabkamklvmzyhghmjnai\",
-    \"radnoVreme\": \"gzgatczqelsutrbjnytytdpunbvnsunvdvheoflnosymatoudklkmxcxocgvvtwlvhnkfxfhqkmqffdvxmecmzfvqnpsmzhpmnaamszvuloknpxlgkidvksvydptdjifathwebyudhssgwqvwsamyjlkxivakgazszdwnhhxawyglwqxqdgsukdtmeeimgcimzjrtfimxqaovsucotldwsmg\",
-    \"telefon\": \"quia\",
-    \"email\": \"cnfrwjbzyroxnpuycsfrisetkbtpiusdlqevzrfcnuoxbdplt\",
-    \"brojZvezdica\": 17,
-    \"opis\": \"bgwdniiewcadlgbixpvmqnowwggdyfiznuqrrivffgiqpwbmqnuovldjpqkfjnfjjlwqgqyqsadxzksjipiunddqicokhuarrmjgrocygtmngsfvfugfqpxzuquolq\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/restoran"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "naziv": "tvkzodrqgvfjvrdtrvoonhtfxrjiftyowthtpihdgkbbplhumgryirednqdocnnsrmezkzbaoxnmuqzeuopblbhflncpjufujtopskzzyfmuuupihkydjwrihwzuyirfstznvvyufvqpxwbmwtedsfdfsfwsmhcihzmhldhzzkikbqpcqowitisddqpiyvjwhajjiijstbrefqmwvxiouhjnjfchmodycgjixclyfcxiykt",
-    "adresa": "lciqxzxucokrjabkamklvmzyhghmjnai",
-    "radnoVreme": "gzgatczqelsutrbjnytytdpunbvnsunvdvheoflnosymatoudklkmxcxocgvvtwlvhnkfxfhqkmqffdvxmecmzfvqnpsmzhpmnaamszvuloknpxlgkidvksvydptdjifathwebyudhssgwqvwsamyjlkxivakgazszdwnhhxawyglwqxqdgsukdtmeeimgcimzjrtfimxqaovsucotldwsmg",
-    "telefon": "quia",
-    "email": "cnfrwjbzyroxnpuycsfrisetkbtpiusdlqevzrfcnuoxbdplt",
-    "brojZvezdica": 17,
-    "opis": "bgwdniiewcadlgbixpvmqnowwggdyfiznuqrrivffgiqpwbmqnuovldjpqkfjnfjjlwqgqyqsadxzksjipiunddqicokhuarrmjgrocygtmngsfvfugfqpxzuquolq"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-restoran">
-</span>
-<span id="execution-results-POSTapi-restoran" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-restoran"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-restoran"></code></pre>
-</span>
-<span id="execution-error-POSTapi-restoran" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-restoran"></code></pre>
-</span>
-<form id="form-POSTapi-restoran" data-method="POST"
-      data-path="api/restoran"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-restoran', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-restoran"
-                    onclick="tryItOut('POSTapi-restoran');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-restoran"
-                    onclick="cancelTryOut('POSTapi-restoran');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-restoran" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/restoran</code></b>
-        </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>naziv</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="naziv"
-               data-endpoint="POSTapi-restoran"
-               value="tvkzodrqgvfjvrdtrvoonhtfxrjiftyowthtpihdgkbbplhumgryirednqdocnnsrmezkzbaoxnmuqzeuopblbhflncpjufujtopskzzyfmuuupihkydjwrihwzuyirfstznvvyufvqpxwbmwtedsfdfsfwsmhcihzmhldhzzkikbqpcqowitisddqpiyvjwhajjiijstbrefqmwvxiouhjnjfchmodycgjixclyfcxiykt"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>adresa</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="adresa"
-               data-endpoint="POSTapi-restoran"
-               value="lciqxzxucokrjabkamklvmzyhghmjnai"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>radnoVreme</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="radnoVreme"
-               data-endpoint="POSTapi-restoran"
-               value="gzgatczqelsutrbjnytytdpunbvnsunvdvheoflnosymatoudklkmxcxocgvvtwlvhnkfxfhqkmqffdvxmecmzfvqnpsmzhpmnaamszvuloknpxlgkidvksvydptdjifathwebyudhssgwqvwsamyjlkxivakgazszdwnhhxawyglwqxqdgsukdtmeeimgcimzjrtfimxqaovsucotldwsmg"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>telefon</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="telefon"
-               data-endpoint="POSTapi-restoran"
-               value="quia"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="email"
-               data-endpoint="POSTapi-restoran"
-               value="cnfrwjbzyroxnpuycsfrisetkbtpiusdlqevzrfcnuoxbdplt"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>brojZvezdica</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-                <input type="number"
-               name="brojZvezdica"
-               data-endpoint="POSTapi-restoran"
-               value="17"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>opis</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-                <input type="text"
-               name="opis"
-               data-endpoint="POSTapi-restoran"
-               value="bgwdniiewcadlgbixpvmqnowwggdyfiznuqrrivffgiqpwbmqnuovldjpqkfjnfjjlwqgqyqsadxzksjipiunddqicokhuarrmjgrocygtmngsfvfugfqpxzuquolq"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-        </form>
-
-            <h2 id="endpoints-PUTapi-restoran--id-">Update the specified resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-PUTapi-restoran--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PUT \
-    "http://backend.test/api/restoran/2" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"naziv\": \"ynivpzmjntqnjlyymbgckidlgvzbvpdtclsddanqmdovhourtsvqwtoi\",
-    \"adresa\": \"hnenlzymocnmyfctzguocpfeyzmikebzpcu\",
-    \"radnoVreme\": \"jiutqccynqiwrvaowpcayjumlcoexmukkoucemycasfartqeexoocsiqsrcfqjbkfyhednongbrrykuxzwfgcjzujqczjuhbfcacrgvjqqouwguxjoyglyfapnzdhrjsmpghwqakedregvlcawpi\",
-    \"telefon\": \"2022-08-21T22:35:14\",
-    \"email\": \"ggahwmcltnithzndapziqghpsvwjzroumgdryhghwgptdyzhxbflxsftivwhgjsvzbzmrzbrrqyimmhafujpvlchmtowlshgquwaprolygxapszdvgwcbmyoyzluxhwfeparpydtgxetcfjlceluzwknvidohzdipdxsvpnxfbwnzsyhgjnlznvtsfesmtrueaspgwbgkmkiurajvrmdicxjke\",
-    \"brojZvezdica\": 3,
-    \"opis\": \"xpjiswisjabvizgcfkekdxqlmsdjlauhyrsdfksksgaztkihnpqphnnujypglpydbfxiusgqqwrtwvvkfooptwxmosgxustnkbpvvoyxxendzlioqklmxnnxhiashjxeqbmsydedanknokwhjrhdpmfndtfqdkntvlafpsbwkfytnjkhukzhsizutfwrhwxtthuru\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/restoran/2"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "naziv": "ynivpzmjntqnjlyymbgckidlgvzbvpdtclsddanqmdovhourtsvqwtoi",
-    "adresa": "hnenlzymocnmyfctzguocpfeyzmikebzpcu",
-    "radnoVreme": "jiutqccynqiwrvaowpcayjumlcoexmukkoucemycasfartqeexoocsiqsrcfqjbkfyhednongbrrykuxzwfgcjzujqczjuhbfcacrgvjqqouwguxjoyglyfapnzdhrjsmpghwqakedregvlcawpi",
-    "telefon": "2022-08-21T22:35:14",
-    "email": "ggahwmcltnithzndapziqghpsvwjzroumgdryhghwgptdyzhxbflxsftivwhgjsvzbzmrzbrrqyimmhafujpvlchmtowlshgquwaprolygxapszdvgwcbmyoyzluxhwfeparpydtgxetcfjlceluzwknvidohzdipdxsvpnxfbwnzsyhgjnlznvtsfesmtrueaspgwbgkmkiurajvrmdicxjke",
-    "brojZvezdica": 3,
-    "opis": "xpjiswisjabvizgcfkekdxqlmsdjlauhyrsdfksksgaztkihnpqphnnujypglpydbfxiusgqqwrtwvvkfooptwxmosgxustnkbpvvoyxxendzlioqklmxnnxhiashjxeqbmsydedanknokwhjrhdpmfndtfqdkntvlafpsbwkfytnjkhukzhsizutfwrhwxtthuru"
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PUTapi-restoran--id-">
-</span>
-<span id="execution-results-PUTapi-restoran--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-restoran--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-restoran--id-"></code></pre>
-</span>
-<span id="execution-error-PUTapi-restoran--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-restoran--id-"></code></pre>
-</span>
-<form id="form-PUTapi-restoran--id-" data-method="PUT"
-      data-path="api/restoran/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-restoran--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-restoran--id-"
-                    onclick="tryItOut('PUTapi-restoran--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-restoran--id-"
-                    onclick="cancelTryOut('PUTapi-restoran--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-restoran--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/restoran/{id}</code></b>
-        </p>
-            <p>
-            <small class="badge badge-purple">PATCH</small>
-            <b><code>api/restoran/{id}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="PUTapi-restoran--id-"
-               value="2"
-               data-component="url" hidden>
-    <br>
-<p>The ID of the restoran.</p>
-            </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>naziv</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="naziv"
-               data-endpoint="PUTapi-restoran--id-"
-               value="ynivpzmjntqnjlyymbgckidlgvzbvpdtclsddanqmdovhourtsvqwtoi"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>adresa</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="adresa"
-               data-endpoint="PUTapi-restoran--id-"
-               value="hnenlzymocnmyfctzguocpfeyzmikebzpcu"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>radnoVreme</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="radnoVreme"
-               data-endpoint="PUTapi-restoran--id-"
-               value="jiutqccynqiwrvaowpcayjumlcoexmukkoucemycasfartqeexoocsiqsrcfqjbkfyhednongbrrykuxzwfgcjzujqczjuhbfcacrgvjqqouwguxjoyglyfapnzdhrjsmpghwqakedregvlcawpi"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>telefon</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="telefon"
-               data-endpoint="PUTapi-restoran--id-"
-               value="2022-08-21T22:35:14"
-               data-component="body" hidden>
-    <br>
-<p>Must be a valid date.</p>
-        </p>
-                <p>
-            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="email"
-               data-endpoint="PUTapi-restoran--id-"
-               value="ggahwmcltnithzndapziqghpsvwjzroumgdryhghwgptdyzhxbflxsftivwhgjsvzbzmrzbrrqyimmhafujpvlchmtowlshgquwaprolygxapszdvgwcbmyoyzluxhwfeparpydtgxetcfjlceluzwknvidohzdipdxsvpnxfbwnzsyhgjnlznvtsfesmtrueaspgwbgkmkiurajvrmdicxjke"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>brojZvezdica</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-                <input type="number"
-               name="brojZvezdica"
-               data-endpoint="PUTapi-restoran--id-"
-               value="3"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>opis</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-                <input type="text"
-               name="opis"
-               data-endpoint="PUTapi-restoran--id-"
-               value="xpjiswisjabvizgcfkekdxqlmsdjlauhyrsdfksksgaztkihnpqphnnujypglpydbfxiusgqqwrtwvvkfooptwxmosgxustnkbpvvoyxxendzlioqklmxnnxhiashjxeqbmsydedanknokwhjrhdpmfndtfqdkntvlafpsbwkfytnjkhukzhsizutfwrhwxtthuru"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-        </form>
-
-            <h2 id="endpoints-DELETEapi-restoran--id-">Remove the specified resource from storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-DELETEapi-restoran--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request DELETE \
-    "http://backend.test/api/restoran/2" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/restoran/2"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-DELETEapi-restoran--id-">
-</span>
-<span id="execution-results-DELETEapi-restoran--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-restoran--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-restoran--id-"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-restoran--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-restoran--id-"></code></pre>
-</span>
-<form id="form-DELETEapi-restoran--id-" data-method="DELETE"
-      data-path="api/restoran/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-restoran--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-restoran--id-"
-                    onclick="tryItOut('DELETEapi-restoran--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-restoran--id-"
-                    onclick="cancelTryOut('DELETEapi-restoran--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-restoran--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/restoran/{id}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="DELETEapi-restoran--id-"
-               value="2"
-               data-component="url" hidden>
-    <br>
-<p>The ID of the restoran.</p>
-            </p>
-                    </form>
-
-            <h2 id="endpoints-POSTapi-rezervacija">Store a newly created resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-rezervacija">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://backend.test/api/rezervacija" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"datumIVreme\": \"quae\",
-    \"komentar\": \"facere\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/rezervacija"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "datumIVreme": "quae",
-    "komentar": "facere"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-rezervacija">
-</span>
-<span id="execution-results-POSTapi-rezervacija" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-rezervacija"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-rezervacija"></code></pre>
-</span>
-<span id="execution-error-POSTapi-rezervacija" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-rezervacija"></code></pre>
-</span>
-<form id="form-POSTapi-rezervacija" data-method="POST"
-      data-path="api/rezervacija"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-rezervacija', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-rezervacija"
-                    onclick="tryItOut('POSTapi-rezervacija');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-rezervacija"
-                    onclick="cancelTryOut('POSTapi-rezervacija');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-rezervacija" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/rezervacija</code></b>
-        </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>mestoID</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-                <input type="text"
-               name="mestoID"
-               data-endpoint="POSTapi-rezervacija"
-               value=""
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>datumIVreme</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="datumIVreme"
-               data-endpoint="POSTapi-rezervacija"
-               value="quae"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>komentar</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="komentar"
-               data-endpoint="POSTapi-rezervacija"
-               value="facere"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-        </form>
-
-            <h2 id="endpoints-PUTapi-rezervacija--id-">Update the specified resource in storage.</h2>
+            <h2 id="endpoints-PUTapi-rezervacija--id-">PUT api/rezervacija/{id}</h2>
 
 <p>
 </p>
@@ -3863,95 +4292,6 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-rezervacija--id-"
-               value="4"
-               data-component="url" hidden>
-    <br>
-<p>The ID of the rezervacija.</p>
-            </p>
-                    </form>
-
-            <h2 id="endpoints-DELETEapi-rezervacija--id-">Remove the specified resource from storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-DELETEapi-rezervacija--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request DELETE \
-    "http://backend.test/api/rezervacija/4" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/rezervacija/4"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-DELETEapi-rezervacija--id-">
-</span>
-<span id="execution-results-DELETEapi-rezervacija--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-rezervacija--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-rezervacija--id-"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-rezervacija--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-rezervacija--id-"></code></pre>
-</span>
-<form id="form-DELETEapi-rezervacija--id-" data-method="DELETE"
-      data-path="api/rezervacija/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-rezervacija--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-rezervacija--id-"
-                    onclick="tryItOut('DELETEapi-rezervacija--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-rezervacija--id-"
-                    onclick="cancelTryOut('DELETEapi-rezervacija--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-rezervacija--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/rezervacija/{id}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="DELETEapi-rezervacija--id-"
                value="4"
                data-component="url" hidden>
     <br>
@@ -4283,11 +4623,11 @@ access-control-allow-origin: *
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"ime\": \"mrsxptqwowaizn\",
-    \"prezime\": \"ruftnwaushregdwgyqfijagycihmmnddjrnespvvjucnfzjefnzfqfgqbvjdepimdyudvexsllcuuviamfiuyzwcjldlusqahhfppnpytnxkoqhpzqdovldlzbizywsdyntxrjwddrewsdfobcszmqhtusjnvnirvtlle\",
-    \"datumRodjenja\": \"2022-08-21T22:35:14\",
-    \"adresa\": \"hwfsyayralpgkykhusbtthoyyyglodaqluzqscvhpsonoluwsjnixhacfsmxxiby\",
-    \"password\": \"wxak\"
+    \"ime\": \"pgqhelndmtvwsveuwvytcckozjhjyyhfttwdzxtmwrqyowqihdsgieblbuldehhjnxknhwcunjvryralcqmnhpjmbogytotepeyekkvhxagjdkakiihsafbccazwtrqmgjhobgeyxsxfbwcplsxpewlsmoavtv\",
+    \"prezime\": \"sfwzrqyhhwouwpnohywsyyxociepozxysmspsveyrgpbdbsjtsibxqcvuoegkgjlsgafcbaxxwyhdknygukzzszahwjydgqikcuerbnbtmqhvzpo\",
+    \"datumRodjenja\": \"2022-08-21T22:53:20\",
+    \"adresa\": \"tqpxkoxhnchuslagqdhzvrxeakbmozsjtvjeogcgjnwifjdsiddxvzlrudjjxrjrxsztrsngudryulyptkrpxxlrxhhcplddijetratwkknqzjaupvcgmpskzezzkowylpvzbxjrhenfuquofjoldegajzkcibvmvpnkiiyulvmpyrnhrxuwlfoobucyfczofacqyujdukgfljiurqqguhjfjtgsvnqghdzqdeoxxkx\",
+    \"password\": \"ct\"
 }"
 </code></pre></div>
 
@@ -4303,11 +4643,11 @@ const headers = {
 };
 
 let body = {
-    "ime": "mrsxptqwowaizn",
-    "prezime": "ruftnwaushregdwgyqfijagycihmmnddjrnespvvjucnfzjefnzfqfgqbvjdepimdyudvexsllcuuviamfiuyzwcjldlusqahhfppnpytnxkoqhpzqdovldlzbizywsdyntxrjwddrewsdfobcszmqhtusjnvnirvtlle",
-    "datumRodjenja": "2022-08-21T22:35:14",
-    "adresa": "hwfsyayralpgkykhusbtthoyyyglodaqluzqscvhpsonoluwsjnixhacfsmxxiby",
-    "password": "wxak"
+    "ime": "pgqhelndmtvwsveuwvytcckozjhjyyhfttwdzxtmwrqyowqihdsgieblbuldehhjnxknhwcunjvryralcqmnhpjmbogytotepeyekkvhxagjdkakiihsafbccazwtrqmgjhobgeyxsxfbwcplsxpewlsmoavtv",
+    "prezime": "sfwzrqyhhwouwpnohywsyyxociepozxysmspsveyrgpbdbsjtsibxqcvuoegkgjlsgafcbaxxwyhdknygukzzszahwjydgqikcuerbnbtmqhvzpo",
+    "datumRodjenja": "2022-08-21T22:53:20",
+    "adresa": "tqpxkoxhnchuslagqdhzvrxeakbmozsjtvjeogcgjnwifjdsiddxvzlrudjjxrjrxsztrsngudryulyptkrpxxlrxhhcplddijetratwkknqzjaupvcgmpskzezzkowylpvzbxjrhenfuquofjoldegajzkcibvmvpnkiiyulvmpyrnhrxuwlfoobucyfczofacqyujdukgfljiurqqguhjfjtgsvnqghdzqdeoxxkx",
+    "password": "ct"
 };
 
 fetch(url, {
@@ -4390,7 +4730,7 @@ fetch(url, {
                 <input type="text"
                name="ime"
                data-endpoint="PUTapi-user--id-"
-               value="mrsxptqwowaizn"
+               value="pgqhelndmtvwsveuwvytcckozjhjyyhfttwdzxtmwrqyowqihdsgieblbuldehhjnxknhwcunjvryralcqmnhpjmbogytotepeyekkvhxagjdkakiihsafbccazwtrqmgjhobgeyxsxfbwcplsxpewlsmoavtv"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -4400,7 +4740,7 @@ fetch(url, {
                 <input type="text"
                name="prezime"
                data-endpoint="PUTapi-user--id-"
-               value="ruftnwaushregdwgyqfijagycihmmnddjrnespvvjucnfzjefnzfqfgqbvjdepimdyudvexsllcuuviamfiuyzwcjldlusqahhfppnpytnxkoqhpzqdovldlzbizywsdyntxrjwddrewsdfobcszmqhtusjnvnirvtlle"
+               value="sfwzrqyhhwouwpnohywsyyxociepozxysmspsveyrgpbdbsjtsibxqcvuoegkgjlsgafcbaxxwyhdknygukzzszahwjydgqikcuerbnbtmqhvzpo"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -4410,7 +4750,7 @@ fetch(url, {
                 <input type="text"
                name="datumRodjenja"
                data-endpoint="PUTapi-user--id-"
-               value="2022-08-21T22:35:14"
+               value="2022-08-21T22:53:20"
                data-component="body" hidden>
     <br>
 <p>Must be a valid date.</p>
@@ -4420,7 +4760,7 @@ fetch(url, {
                 <input type="text"
                name="adresa"
                data-endpoint="PUTapi-user--id-"
-               value="hwfsyayralpgkykhusbtthoyyyglodaqluzqscvhpsonoluwsjnixhacfsmxxiby"
+               value="tqpxkoxhnchuslagqdhzvrxeakbmozsjtvjeogcgjnwifjdsiddxvzlrudjjxrjrxsztrsngudryulyptkrpxxlrxhhcplddijetratwkknqzjaupvcgmpskzezzkowylpvzbxjrhenfuquofjoldegajzkcibvmvpnkiiyulvmpyrnhrxuwlfoobucyfczofacqyujdukgfljiurqqguhjfjtgsvnqghdzqdeoxxkx"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -4430,7 +4770,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="PUTapi-user--id-"
-               value="wxak"
+               value="ct"
                data-component="body" hidden>
     <br>
 <p>Must be at least 5 characters.</p>
@@ -4523,302 +4863,6 @@ fetch(url, {
                data-component="url" hidden>
     <br>
 <p>The ID of the user.</p>
-            </p>
-                    </form>
-
-            <h2 id="endpoints-GETapi-adminData">GET api/adminData</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-adminData">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://backend.test/api/adminData" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/adminData"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-adminData">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary>
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre>
-        </details>         <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-adminData" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-adminData"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-adminData"></code></pre>
-</span>
-<span id="execution-error-GETapi-adminData" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-adminData"></code></pre>
-</span>
-<form id="form-GETapi-adminData" data-method="GET"
-      data-path="api/adminData"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-adminData', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-adminData"
-                    onclick="tryItOut('GETapi-adminData');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-adminData"
-                    onclick="cancelTryOut('GETapi-adminData');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-adminData" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/adminData</code></b>
-        </p>
-                    </form>
-
-            <h2 id="endpoints-GETapi-getReport">GET api/getReport</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-getReport">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://backend.test/api/getReport" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/getReport"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-getReport">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary>
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre>
-        </details>         <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-getReport" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-getReport"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-getReport"></code></pre>
-</span>
-<span id="execution-error-GETapi-getReport" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-getReport"></code></pre>
-</span>
-<form id="form-GETapi-getReport" data-method="GET"
-      data-path="api/getReport"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-getReport', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-getReport"
-                    onclick="tryItOut('GETapi-getReport');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-getReport"
-                    onclick="cancelTryOut('GETapi-getReport');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-getReport" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/getReport</code></b>
-        </p>
-                    </form>
-
-            <h2 id="endpoints-GETapi-printRezervacija--id-">GET api/printRezervacija/{id}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-printRezervacija--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://backend.test/api/printRezervacija/consequatur" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://backend.test/api/printRezervacija/consequatur"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-printRezervacija--id-">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary>
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre>
-        </details>         <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-printRezervacija--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-printRezervacija--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-printRezervacija--id-"></code></pre>
-</span>
-<span id="execution-error-GETapi-printRezervacija--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-printRezervacija--id-"></code></pre>
-</span>
-<form id="form-GETapi-printRezervacija--id-" data-method="GET"
-      data-path="api/printRezervacija/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-printRezervacija--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-printRezervacija--id-"
-                    onclick="tryItOut('GETapi-printRezervacija--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-printRezervacija--id-"
-                    onclick="cancelTryOut('GETapi-printRezervacija--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-printRezervacija--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/printRezervacija/{id}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="id"
-               data-endpoint="GETapi-printRezervacija--id-"
-               value="consequatur"
-               data-component="url" hidden>
-    <br>
-<p>The ID of the printRezervacija.</p>
             </p>
                     </form>
 

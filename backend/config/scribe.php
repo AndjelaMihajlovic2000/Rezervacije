@@ -9,12 +9,12 @@ return [
     /*
      * The HTML <title> for the generated documentation. If this is empty, Scribe will infer it from config('app.name').
      */
-    'title' => null,
+    'title' => "Rezervacija mesta",
 
     /*
      * A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
      */
-    'description' => '',
+    'description' => 'Aplikacija za rezervisanje mesta u restoranima',
 
     /*
      * The base URL displayed in the docs. If this is empty, Scribe will use the value of config('app.url').
@@ -254,10 +254,8 @@ return [
      * Text to place in the "Introduction" section, right after the `description`. Markdown and HTML are supported.
      */
     'intro_text' => <<<INTRO
-This documentation aims to provide all the information you need to work with our API.
-
-<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
-You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+Dokumentacija obezbeđuje neophodne informacije za ispravno korišćenje API-ja
+<aside>U nastavku dokumenta, nalaze se opisi ruta koje Rezervacija mesta API nudi</aside>
 INTRO
     ,
 

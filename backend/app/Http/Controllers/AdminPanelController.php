@@ -14,6 +14,13 @@ use PhpOffice\PhpWord\PhpWord;
 
 class AdminPanelController extends Controller {
 
+
+    /**
+     * @param Request $request
+     * Podaci potrebni za admin panel
+     * @return \Illuminate\Http\JsonResponse
+     * @group AdminPanel
+     */
     public function adminPanelData(Request $request) {
 
         $ukupanBrojRestorana = count(Restoran::all());
@@ -58,6 +65,11 @@ class AdminPanelController extends Controller {
 
     }
 
+    /**
+     * @group AdminPanel
+     * Kreiranje izvestaja
+     * @return \Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
     public function kreirajIzvestaj() {
 
         $ukupanBrojRestorana = count(Restoran::all());
@@ -96,6 +108,12 @@ class AdminPanelController extends Controller {
         }
     }
 
+    /**
+     * @param Request $request
+     * Stampanje rezervacije
+     * @return \Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\BinaryFileResponse
+     * @group AdminPanel
+     */
     public function printRezervacija(Request $request) {
 
         $rezervacija = Rezervacija::find($request->id);

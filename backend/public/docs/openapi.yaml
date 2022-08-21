@@ -1,185 +1,15 @@
 openapi: 3.0.3
 info:
-  title: RestoranRezervacije
-  description: ''
+  title: 'Rezervacija mesta'
+  description: 'Aplikacija za rezervisanje mesta u restoranima'
   version: 1.0.0
 servers:
   -
     url: 'http://backend.test'
 paths:
-  /api/register:
-    post:
-      summary: 'Creating new account'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Authentication
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                username:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: wznwnezgfxzvaolkaznmhwtxilaoyeewxebxqghezzmkaker
-                ime:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: ppuilzouhpttkuxkzrolsjpyuwebokxioujlzmyvzjrwcxwznmfldelsr
-                prezime:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: qevbuyhbcdscqhtgoupfhqdiufsbcupmofeparjzwfaipaxbnkfmcuhftkwfesxadkoqcmkbtebhoyhjjdssdmhdndcxmzegjbvszlgxuwvyaqlotzbnfqqnpftkefnipsssfiwsjtpkkczqgkunfzcsohdawoy
-                datumRodjenja:
-                  type: string
-                  description: 'Must be a valid date.'
-                  example: '2022-08-21T22:35:14'
-                adresa:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: mtlqgszhlfcba
-                password:
-                  type: string
-                  description: 'Must be at least 5 characters.'
-                  example: ''
-              required:
-                - username
-                - ime
-                - prezime
-                - datumRodjenja
-                - adresa
-      security: []
-  /api/login:
-    post:
-      summary: 'Login on application'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Authentication
-      security: []
-  /api/kreirajNalog:
-    post:
-      summary: 'Creating new account without getting access token'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Authentication
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                username:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: mdmlmwhlkzmtixeuyaczztibzoaviqmrnuqmhstjqmqergaedmajiwuletppvomuxvaypujkemkkbumsuwvcbpvsghyqxyseehkqvwpozilalyygontfqlzjbhhgpsylhfuhrimqfccuxjtodxgj
-                ime:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: atutmmkstnqmtwqt
-                prezime:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: tcomoljlxuwqzoklvnjmvcqwyqmekamraauwtnmflsorytokotwconeuakrrrfkliuvmszwyilawfardnigttcielsejdjuwxaphramgeqazofqnsbtqyrjntxnakmcpsdvgqyycknhxxtqzkoqiazzaqxaujszpqunjgiyevpdjsdmjfrmxkauirqlmbffgffqxqohxrskerbwlxzvdwyopftscrqunxfpqbhumhkrqlknfjofmaxzw
-                datumRodjenja:
-                  type: string
-                  description: 'Must be a valid date.'
-                  example: '2022-08-21T22:35:14'
-                adresa:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: sddw
-                password:
-                  type: string
-                  description: 'Must be at least 5 characters.'
-                  example: iow
-                userRole:
-                  type: integer
-                  description: ''
-                  example: 12
-              required:
-                - username
-                - ime
-                - prezime
-                - datumRodjenja
-                - adresa
-      security: []
-  /api/logout:
-    post:
-      summary: Logout
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Authentication
-      security: []
-  /api/user:
+  /api/adminData:
     get:
-      summary: 'Display a listing of the resource.'
+      summary: ''
       description: ''
       parameters:
         -
@@ -210,11 +40,90 @@ paths:
                     type: string
                     example: Unauthenticated.
       tags:
-        - Endpoints
+        - AdminPanel
       security: []
+  /api/getReport:
+    get:
+      summary: 'Kreiranje izvestaja'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - AdminPanel
+      security: []
+  '/api/printRezervacija/{id}':
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - AdminPanel
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the printRezervacija.'
+        example: omnis
+        required: true
+        schema:
+          type: string
   /api/mesto:
     get:
-      summary: 'Display a listing of the resource.'
+      summary: 'Prikaz svih mesta u sistemu'
       description: ''
       parameters:
         -
@@ -655,10 +564,10 @@ paths:
                     items:
                       type: object
       tags:
-        - Endpoints
+        - Mesto
       security: []
     post:
-      summary: 'Store a newly created resource in storage.'
+      summary: 'Kreiranje mesta.'
       description: ''
       parameters:
         -
@@ -677,7 +586,7 @@ paths:
             type: string
       responses: {  }
       tags:
-        - Endpoints
+        - Mesto
       requestBody:
         required: true
         content:
@@ -688,15 +597,15 @@ paths:
                 naziv:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: hgsbtnvxjkzhjhlsfaagkrgyhvprkruhkysxwravcbomiqogxushteaugkrefbvgnnqhytkqxowuvgpgcpruxwzeybauvbzufrwhnhfwvbczxcjmynphrnxmsloqkxbshyodwhiahpyosclrclvlcznmirvvpcovltuplngtpvnlspbtzrtoylscuaipbwb
+                  example: auqhhesqbemquscisjlzogkhmmomcmtuoyuaigteqwxlbtfhoginsmqdfahchasaleclyfwujjyjfmjlroeuthgwfxif
                 brojStolica:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: evgzgjtiafyqiegbmyedqbnqgbdgduiuiddtpifvsyhafyuqpmbieucvatbyaycntcjxatztgiliywotmonmzncalzzfqqkdbqmaqsyotklnuaekbmrmnpaqgjiabqiyqxhddizoijlvszpysimjmcjhhfvtyjrvihokindcclipwvwkpbqjh
+                  example: tlqohfisdcaqjtmrcyjzrydmdmdpuouoyyygcgjqbzzungyqlftadrmobogmgmaxjjukcighhcembxmnadaribbvrwzmuzwiugotlwnzsbpeeuspbgbonlwnnbzruvbyirhnfdigjlfaetfkflppyjdejojnrynnavicdfjbjrhdsjqbkre
                 opis:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: prlqkfgplsgxcajglzusppkphtwknqyxvcsbocxagtomkixownrktkdyfrmzfsvgplfgmpdjvjeeaehozycacruaoqlqlfwhsyenrqmnzleygbvahcdteemokpujpegkvaddqarwistxxskwgevj
+                  example: ejgurgtjoluqabwsbicxbzdrwbvdxzviriqrtureoquqjkssoxernrfxxueqibgorqmopcsrrvjqzendxjkrcnrfhtdhyaefgvzlbrwwvjw
                 restoranID:
                   type: string
                   description: ''
@@ -708,7 +617,7 @@ paths:
       security: []
   '/api/mesto/{id}':
     get:
-      summary: 'Display the specified resource.'
+      summary: 'Prikaz mesta sa prosledjenim ID-jem'
       description: ''
       parameters:
         -
@@ -1453,10 +1362,10 @@ paths:
                     items:
                       type: object
       tags:
-        - Endpoints
+        - Mesto
       security: []
     put:
-      summary: 'Update the specified resource in storage.'
+      summary: 'Azuriranje mesta'
       description: ''
       parameters:
         -
@@ -1475,7 +1384,7 @@ paths:
             type: string
       responses: {  }
       tags:
-        - Endpoints
+        - Mesto
       requestBody:
         required: true
         content:
@@ -1486,15 +1395,15 @@ paths:
                 naziv:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: pycqrojloampfiooluvnbyypmgavtrsbezokpdlkrxxjhbaftzhleonfqqebesfpxrmewafymwrbigyylakkvqimlwfpoxbuzucnlmrgdomewueaczjpqbcrmowzkvnrxakamlpd
+                  example: cugfrlvtgzcnrmtdljqqrbhzxdhq
                 brojStolica:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: opgonwbbxeommsxluobnzqucfzljbazzjzcapbozjpkwadxotxuweosalbkcqrfgamytrubyjgxqknohuuhfcwgemelaordizxazddmghnqipucvvigruqbukzebjvzfsrtlhwtafnczufwf
+                  example: xhzhvmdqglvnquvainchxxfmkzpuxnbhlxwgmsytslmdrenhjlhxfcnqvtklrvgtngaujpmskormtkhkcvovajerltkmgqsabciiomwbckqztkx
                 opis:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ylhcqpvuyepswfilmsxlvpuyrtnfpavcjunxikxwoaksuqumuzyqbbonaehrokeeovnkywbglaurqmvpcxczxlsjpwjvcvbeumpcnyyfkhmrecqtvaukipamjua
+                  example: jovozqqpvafcnajorakxoqfqwaxelflvstchrtvskxfiyculicmewqhmbalkruxextdbppgaanubhswsfr
                 restoranID:
                   type: string
                   description: ''
@@ -1505,7 +1414,7 @@ paths:
                 - opis
       security: []
     delete:
-      summary: 'Remove the specified resource from storage.'
+      summary: 'Brisanje mesta'
       description: ''
       parameters:
         -
@@ -1524,7 +1433,7 @@ paths:
             type: string
       responses: {  }
       tags:
-        - Endpoints
+        - Mesto
       security: []
     parameters:
       -
@@ -1537,7 +1446,7 @@ paths:
           type: integer
   /api/restoran:
     get:
-      summary: 'Display a listing of the resource.'
+      summary: 'Prikaz svih restorana u sistemu'
       description: ''
       parameters:
         -
@@ -1934,10 +1843,10 @@ paths:
                     items:
                       type: object
       tags:
-        - Endpoints
+        - Restoran
       security: []
     post:
-      summary: 'Store a newly created resource in storage.'
+      summary: 'Kreiranje novog restorana'
       description: ''
       parameters:
         -
@@ -1956,7 +1865,7 @@ paths:
             type: string
       responses: {  }
       tags:
-        - Endpoints
+        - Restoran
       requestBody:
         required: true
         content:
@@ -1967,31 +1876,31 @@ paths:
                 naziv:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: tvkzodrqgvfjvrdtrvoonhtfxrjiftyowthtpihdgkbbplhumgryirednqdocnnsrmezkzbaoxnmuqzeuopblbhflncpjufujtopskzzyfmuuupihkydjwrihwzuyirfstznvvyufvqpxwbmwtedsfdfsfwsmhcihzmhldhzzkikbqpcqowitisddqpiyvjwhajjiijstbrefqmwvxiouhjnjfchmodycgjixclyfcxiykt
+                  example: ryqiwhtrqkwiufvwqjjeqmfgylmfibrlelngtjujmwuhqragaxwdyhatbkulunecrsppwvrfieapctrhayeqtaroyhok
                 adresa:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: lciqxzxucokrjabkamklvmzyhghmjnai
+                  example: tqghqjsacxuvozbptyhiirxgdnmopkgxmsfptgunmfqvbamldfxczbajabiemcgc
                 radnoVreme:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: gzgatczqelsutrbjnytytdpunbvnsunvdvheoflnosymatoudklkmxcxocgvvtwlvhnkfxfhqkmqffdvxmecmzfvqnpsmzhpmnaamszvuloknpxlgkidvksvydptdjifathwebyudhssgwqvwsamyjlkxivakgazszdwnhhxawyglwqxqdgsukdtmeeimgcimzjrtfimxqaovsucotldwsmg
+                  example: vktgwvvvppvttrpzilhtfumngwqerykxydfadsqrhmkydkelwbabocnjjjagwvqhuvnamnpmpjfwxlkckyjlxmixikamjalgdcppsqbaxdlwhktwgniaryoxcuyfxymwyylvwyqlnvhoettlmuinsfrltkmuutwkbuencncbpedllopeqrckkhtmptvktolmpblznqzxtcsxcfhm
                 telefon:
                   type: string
                   description: ''
-                  example: quia
+                  example: deserunt
                 email:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: cnfrwjbzyroxnpuycsfrisetkbtpiusdlqevzrfcnuoxbdplt
+                  example: wmvxvlbazzyrftzzdyqcuvqhexiirsfvfownnrjsprvsxvkewostvtsvmsjuaqkxpuyrgmttmdddvcwvenmushbxfazytkxcvexyyfaikqruvauaiukqgpibnibylgiacngzlqlmhqbzrlsrtflgmsdfpgyyowsynjvjdwyitbnjfmzyzqjvgzfteywcqjlbldrhjwidupdswfiuvrnvwgjyaxcrwfdskceygupfksbvfkl
                 brojZvezdica:
                   type: integer
                   description: ''
-                  example: 17
+                  example: 14
                 opis:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: bgwdniiewcadlgbixpvmqnowwggdyfiznuqrrivffgiqpwbmqnuovldjpqkfjnfjjlwqgqyqsadxzksjipiunddqicokhuarrmjgrocygtmngsfvfugfqpxzuquolq
+                  example: vorzyiqayzvgapgecekaauzfbpzhmqfqvdmelrfblukgymdhdzmidlubhwimhaihjhyukxmkqaiwhahfcerhkyzkkpbzldvirlzbrhkdbaxpwldsqmspqzygglyaorooxuogr
               required:
                 - naziv
                 - adresa
@@ -2000,8 +1909,93 @@ paths:
                 - email
       security: []
   '/api/restoran/{id}':
+    put:
+      summary: 'Azuriranje restorana'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Restoran
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                naziv:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: hgsdztlzdconicuf
+                adresa:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: uwagbryzfasmqqccwhfgsfburkjfyxfaxhyzhxruoweqcvrrzlfi
+                radnoVreme:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: jqniqighebrwawemqjjfoitlmiogqgliiwukofhwvjynznrflvhqtoykmryhszihwwgielgwphuwlzeeykrlthdqfwollreawwiobubcupvmmvuawwtpyznhoxkepsgtfgzzuuyghbnphgcmlgitbhdtdqhqsdaoflzqyoptedjdmhkwcpvxotilsxzthkljbpjavdih
+                telefon:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2022-08-21T22:53:19'
+                email:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: iprzfvymteoczjqlviuufrazamvpdbhnzbzaabjwerncfqoizcsrnczxinwaaectzrqlfsqzvcpjxrydb
+                brojZvezdica:
+                  type: integer
+                  description: ''
+                  example: 9
+                opis:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: pkfynbfbfkfwseyzsdeaxccr
+              required:
+                - naziv
+                - adresa
+                - radnoVreme
+                - telefon
+                - email
+      security: []
+    delete:
+      summary: 'Brisanje restorana'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Restoran
+      security: []
     get:
-      summary: 'Display the specified resource.'
+      summary: 'Prikaz restorana'
       description: ''
       parameters:
         -
@@ -2748,8 +2742,52 @@ paths:
       tags:
         - Endpoints
       security: []
-    put:
-      summary: 'Update the specified resource in storage.'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the restoran.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  /api/rezervacija:
+    get:
+      summary: 'Prikaz svih restorana'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Rezervacija
+      security: []
+    post:
+      summary: 'Kreiranje rezervacije'
       description: ''
       parameters:
         -
@@ -2768,7 +2806,7 @@ paths:
             type: string
       responses: {  }
       tags:
-        - Endpoints
+        - Rezervacija
       requestBody:
         required: true
         content:
@@ -2776,43 +2814,116 @@ paths:
             schema:
               type: object
               properties:
-                naziv:
+                mestoID:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: ynivpzmjntqnjlyymbgckidlgvzbvpdtclsddanqmdovhourtsvqwtoi
-                adresa:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: hnenlzymocnmyfctzguocpfeyzmikebzpcu
-                radnoVreme:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: jiutqccynqiwrvaowpcayjumlcoexmukkoucemycasfartqeexoocsiqsrcfqjbkfyhednongbrrykuxzwfgcjzujqczjuhbfcacrgvjqqouwguxjoyglyfapnzdhrjsmpghwqakedregvlcawpi
-                telefon:
-                  type: string
-                  description: 'Must be a valid date.'
-                  example: '2022-08-21T22:35:14'
-                email:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: ggahwmcltnithzndapziqghpsvwjzroumgdryhghwgptdyzhxbflxsftivwhgjsvzbzmrzbrrqyimmhafujpvlchmtowlshgquwaprolygxapszdvgwcbmyoyzluxhwfeparpydtgxetcfjlceluzwknvidohzdipdxsvpnxfbwnzsyhgjnlznvtsfesmtrueaspgwbgkmkiurajvrmdicxjke
-                brojZvezdica:
-                  type: integer
                   description: ''
-                  example: 3
-                opis:
+                  example: null
+                datumIVreme:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: xpjiswisjabvizgcfkekdxqlmsdjlauhyrsdfksksgaztkihnpqphnnujypglpydbfxiusgqqwrtwvvkfooptwxmosgxustnkbpvvoyxxendzlioqklmxnnxhiashjxeqbmsydedanknokwhjrhdpmfndtfqdkntvlafpsbwkfytnjkhukzhsizutfwrhwxtthuru
+                  description: ''
+                  example: doloribus
+                komentar:
+                  type: string
+                  description: ''
+                  example: et
               required:
-                - naziv
-                - adresa
-                - radnoVreme
-                - telefon
-                - email
+                - datumIVreme
+                - komentar
       security: []
+  /api/moje-rezervacije:
+    get:
+      summary: 'Lista korisnikovih rezervacija'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Rezervacija
+      security: []
+  '/api/rezervacija/{id}':
     delete:
-      summary: 'Remove the specified resource from storage.'
+      summary: 'Brisanje rezervacije'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Rezervacija
+      security: []
+    get:
+      summary: 'Prikaz rezervacije'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
       description: ''
       parameters:
         -
@@ -2837,12 +2948,182 @@ paths:
       -
         in: path
         name: id
-        description: 'The ID of the restoran.'
-        example: 2
+        description: 'The ID of the rezervacija.'
+        example: 4
         required: true
         schema:
           type: integer
-  /api/rezervacija:
+  /api/register:
+    post:
+      summary: 'Creating new account'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: dskfxzupqjldzfrrmbomiddpssljtkzcgyjykzmnqnngtryqqhjwlybhbdhykbsvmnthfhdnwkbtjceokbabsmophoynwzpcoanuhzgvyhnodswrxskifakyyflpzhwfcxnmnrmpxbsckuyqcwtcxgojgadibinpqpuyflzplaxgpwuivb
+                ime:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: qguhwkaoyqegxxoywalqcujpanyyekrrlvgihzucptlpcswgumgxlainnqkucljrzmrczmrbacwhfkqmezdsctrrjwqbteqsztaoekdegaquwgclzcofnexzusmaqzvnpsvilnlseofkmgwdidfivqzrdlzcaflnnkdhhnv
+                prezime:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: aqbjzvnpopxfgrwsccxqiuptfgmuqjuadivubfpyuvjzrormewkjpokaeuknhcsghxuahdqgvqetyakpxqcaovowoeqimgdywkprtkqnogpnsjmuuuzyutqhfwrcjctalkiqqnkhpanypfggyaseqbbplolagoftrsodlokkgpfxzvdmoschpbvmeyovs
+                datumRodjenja:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2022-08-21T22:53:19'
+                adresa:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: wvnltpxcnxmubobdbhvvbubbslxfeamebnloucblqhrwzqtfjfdukageavgagzzplntlfvfnkmuojkkrdlzxfgvefygavjggrxukojflwizsfgnrxvfrixluyutyddpokpxrhowdpfwohxzbemzgtwxvrvylcuqdyhiztiqharlhkbrtqgmvowpxomnpaquyxluyfbcgkzqcacpvexuxrrcoxiivrbqjtwoknyzqdcitpyxjsnsqic
+                password:
+                  type: string
+                  description: 'Must be at least 5 characters.'
+                  example: ''
+              required:
+                - username
+                - ime
+                - prezime
+                - datumRodjenja
+                - adresa
+      security: []
+  /api/login:
+    post:
+      summary: 'Login on application'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Authentication
+      security: []
+  /api/kreirajNalog:
+    post:
+      summary: 'Creating new account without getting access token'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: hkpuhphaparsfxqpxnuwdnqsaxjamllmyduxalhriodsoaytcsadeftqfoitj
+                ime:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: mfbjkmqhbbwntjmgopyzzribgxqlbfdl
+                prezime:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: hxgelqmdfoheujoswkwmtfkkzlfdupjaojytwfvnxarpfgkbbdmgeccwuvqjnncqctdyclmuimgzeyhwyltz
+                datumRodjenja:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2022-08-21T22:53:19'
+                adresa:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: aryfumwbxwrzieszgtasnohiomsvqgselwsajxemrtrgnitlbjncbzikgrqfehkkjmsjpzoikzxxvzdeyrjofityemezobvhldaqgfrhrjixvyccylljjfocvoywixwvndnoydbclnnegbstjipqzkfbsbhdxminbphjqamnollqibllketyiwfyidukjlempykztnxrjkrgdrlrqzfhsezrgbngt
+                password:
+                  type: string
+                  description: 'Must be at least 5 characters.'
+                  example: cdkij
+                userRole:
+                  type: integer
+                  description: ''
+                  example: 14
+              required:
+                - username
+                - ime
+                - prezime
+                - datumRodjenja
+                - adresa
+      security: []
+  /api/logout:
+    post:
+      summary: Logout
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Authentication
+      security: []
+  /api/user:
     get:
       summary: 'Display a listing of the resource.'
       description: ''
@@ -2877,174 +3158,7 @@ paths:
       tags:
         - Endpoints
       security: []
-    post:
-      summary: 'Store a newly created resource in storage.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                mestoID:
-                  type: string
-                  description: ''
-                  example: null
-                datumIVreme:
-                  type: string
-                  description: ''
-                  example: quae
-                komentar:
-                  type: string
-                  description: ''
-                  example: facere
-              required:
-                - datumIVreme
-                - komentar
-      security: []
-  '/api/rezervacija/{id}':
-    get:
-      summary: 'Display the specified resource.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-    put:
-      summary: 'Update the specified resource in storage.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the rezervacija.'
-        example: 4
-        required: true
-        schema:
-          type: integer
   /api/profile:
-    get:
-      summary: ''
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-  /api/moje-rezervacije:
     get:
       summary: ''
       description: ''
@@ -3228,23 +3342,23 @@ paths:
                 ime:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: mrsxptqwowaizn
+                  example: pgqhelndmtvwsveuwvytcckozjhjyyhfttwdzxtmwrqyowqihdsgieblbuldehhjnxknhwcunjvryralcqmnhpjmbogytotepeyekkvhxagjdkakiihsafbccazwtrqmgjhobgeyxsxfbwcplsxpewlsmoavtv
                 prezime:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ruftnwaushregdwgyqfijagycihmmnddjrnespvvjucnfzjefnzfqfgqbvjdepimdyudvexsllcuuviamfiuyzwcjldlusqahhfppnpytnxkoqhpzqdovldlzbizywsdyntxrjwddrewsdfobcszmqhtusjnvnirvtlle
+                  example: sfwzrqyhhwouwpnohywsyyxociepozxysmspsveyrgpbdbsjtsibxqcvuoegkgjlsgafcbaxxwyhdknygukzzszahwjydgqikcuerbnbtmqhvzpo
                 datumRodjenja:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2022-08-21T22:35:14'
+                  example: '2022-08-21T22:53:20'
                 adresa:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: hwfsyayralpgkykhusbtthoyyyglodaqluzqscvhpsonoluwsjnixhacfsmxxiby
+                  example: tqpxkoxhnchuslagqdhzvrxeakbmozsjtvjeogcgjnwifjdsiddxvzlrudjjxrjrxsztrsngudryulyptkrpxxlrxhhcplddijetratwkknqzjaupvcgmpskzezzkowylpvzbxjrhenfuquofjoldegajzkcibvmvpnkiiyulvmpyrnhrxuwlfoobucyfczofacqyujdukgfljiurqqguhjfjtgsvnqghdzqdeoxxkx
                 password:
                   type: string
                   description: 'Must be at least 5 characters.'
-                  example: wxak
+                  example: ct
               required:
                 - ime
                 - prezime
@@ -3282,121 +3396,19 @@ paths:
         required: true
         schema:
           type: integer
-  /api/adminData:
-    get:
-      summary: ''
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-  /api/getReport:
-    get:
-      summary: ''
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-  '/api/printRezervacija/{id}':
-    get:
-      summary: ''
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the printRezervacija.'
-        example: consequatur
-        required: true
-        schema:
-          type: string
 tags:
+  -
+    name: AdminPanel
+    description: ''
+  -
+    name: Mesto
+    description: ''
+  -
+    name: Restoran
+    description: ''
+  -
+    name: Rezervacija
+    description: ''
   -
     name: Authentication
     description: ''

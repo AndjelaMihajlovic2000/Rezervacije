@@ -14,25 +14,22 @@ use Illuminate\Support\Facades\Validator;
 
 class RestoranController extends Controller {
     /**
-     * Display a listing of the resource.
-     *
+     * Prikaz svih restorana u sistemu
+     *@group Restoran
      * @return \Illuminate\Http\Response
      */
     public function index() {
         return new RestoranCollection(Restoran::all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create() {
         //
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Kreiranje novog restorana
+     * @group Restoran
      *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
@@ -73,7 +70,7 @@ class RestoranController extends Controller {
     }
 
     /**
-     * Display the specified resource.
+     * Prikaz restorana
      *
      * @param \App\Models\Restoran $restoran
      * @return \Illuminate\Http\Response
@@ -83,18 +80,13 @@ class RestoranController extends Controller {
         return response()->json(['restoran' => $restoran, 'mesta' => $mesta]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Models\Restoran $restoran
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Restoran $restoran) {
         //
     }
 
     /**
-     * Update the specified resource in storage.
+     * Azuriranje restorana
+     * @group Restoran
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Models\Restoran $restoran
@@ -137,7 +129,8 @@ class RestoranController extends Controller {
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Brisanje restorana
+     * @group Restoran
      *
      * @param \App\Models\Restoran $restoran
      * @return \Illuminate\Http\Response

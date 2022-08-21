@@ -1,12 +1,12 @@
-name: AdminPanel
+name: Rezervacija
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/adminData
+    uri: api/rezervacija
     metadata:
-      title: ''
+      title: 'Prikaz svih restorana'
       description: ''
       authenticated: false
       custom: []
@@ -29,9 +29,9 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/getReport
+    uri: api/moje-rezervacije
     metadata:
-      title: 'Kreiranje izvestaja'
+      title: 'Lista korisnikovih rezervacija'
       description: ''
       authenticated: false
       custom: []
@@ -53,10 +53,48 @@ endpoints:
     responseFields: []
   -
     httpMethods:
-      - GET
-    uri: 'api/printRezervacija/{id}'
+      - POST
+    uri: api/rezervacija
     metadata:
-      title: ''
+      title: 'Kreiranje rezervacije'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      mestoID:
+        name: mestoID
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      datumIVreme:
+        name: datumIVreme
+        description: ''
+        required: true
+        example: doloribus
+        type: string
+        custom: []
+      komentar:
+        name: komentar
+        description: ''
+        required: true
+        example: et
+        type: string
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/rezervacija/{id}'
+    metadata:
+      title: 'Brisanje rezervacije'
       description: ''
       authenticated: false
       custom: []
@@ -66,20 +104,12 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the printRezervacija.'
+        description: 'The ID of the rezervacija.'
         required: true
-        example: omnis
-        type: string
+        example: 4
+        type: integer
         custom: []
     queryParameters: []
     bodyParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+    responses: []
     responseFields: []

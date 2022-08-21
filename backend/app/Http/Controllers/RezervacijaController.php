@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Validator;
 
 class RezervacijaController extends Controller {
     /**
-     * Display a listing of the resource.
+     * Prikaz svih restorana
+     * @group Rezervacija
      *
      * @return \Illuminate\Http\Response
      */
@@ -21,17 +22,13 @@ class RezervacijaController extends Controller {
         return new RezervacijaCollection(Rezervacija::all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create() {
         //
     }
 
     /**
-     * Store a newly created resource in storage.
+     *Kreiranje rezervacije
+     * @group Rezervacija
      *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
@@ -68,7 +65,7 @@ class RezervacijaController extends Controller {
     }
 
     /**
-     * Display the specified resource.
+     * Prikaz rezervacije
      *
      * @param \App\Models\Rezervacija $rezervacija
      * @return \Illuminate\Http\Response
@@ -77,6 +74,11 @@ class RezervacijaController extends Controller {
         return new RezervacijaResource($rezervacija);
     }
 
+    /**
+     * @group Rezervacija
+     * Lista korisnikovih rezervacija
+     * @return RezervacijaCollection
+     */
     public function mojeRezervacije() {
 
         $currentUser = auth()->user();
@@ -86,29 +88,19 @@ class RezervacijaController extends Controller {
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Models\Rezervacija $rezervacija
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Rezervacija $rezervacija) {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Rezervacija $rezervacija
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Rezervacija $rezervacija) {
         //
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Brisanje rezervacije
+     * @group Rezervacija
      *
      * @param \App\Models\Rezervacija $rezervacija
      * @return \Illuminate\Http\Response

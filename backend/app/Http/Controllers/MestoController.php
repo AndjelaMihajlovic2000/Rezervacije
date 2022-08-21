@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Validator;
 
 class MestoController extends Controller {
     /**
-     * Display a listing of the resource.
+     * @group Mesto
+     * Prikaz svih mesta u sistemu
      *
      * @return \Illuminate\Http\Response
      */
@@ -21,17 +22,14 @@ class MestoController extends Controller {
         return new MestoCollection(Mesto::all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create() {
         //
     }
 
     /**
-     * Store a newly created resource in storage.
+     * @group Mesto
+     * Kreiranje mesta.
      *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
@@ -67,7 +65,8 @@ class MestoController extends Controller {
     }
 
     /**
-     * Display the specified resource.
+     * @group Mesto
+     * Prikaz mesta sa prosledjenim ID-jem
      *
      * @param \App\Models\Mesto $mesto
      * @return \Illuminate\Http\Response
@@ -76,18 +75,14 @@ class MestoController extends Controller {
         return new MestoResource($mesto);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Models\Mesto $mesto
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Mesto $mesto) {
         //
     }
 
     /**
-     * Update the specified resource in storage.
+     * @group Mesto
+     * Azuriranje mesta
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Models\Mesto $mesto
@@ -122,8 +117,9 @@ class MestoController extends Controller {
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Brisanje mesta
      *
+     * @group Mesto
      * @param \App\Models\Mesto $mesto
      * @return \Illuminate\Http\Response
      */
