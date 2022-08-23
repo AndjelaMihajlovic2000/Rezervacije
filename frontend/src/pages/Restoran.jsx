@@ -23,6 +23,7 @@ function Restoran() {
                     console.log(res.data)
                     setRestoran(res.data.restoran)
                     setMesta(res.data.mesta)
+                    console.log(res.data.mesta)
                 }).catch((e) => {
                 console.log(e)
             })
@@ -76,9 +77,9 @@ function Restoran() {
                             <h3>Odaberite svoje mesto</h3>
                         </div>
                         <div className="restoranPageBodyContent">
-                            {mesta !== null ? mesta.map((e, index) => (
-                                <MestoCard key={index} mesto={e} prikaziModal={prikaziModal}/>
-                            )) : <></>}
+                            {mesta === null ? <></> : Object.keys(mesta).map(( index) => (
+                                <MestoCard key={index} mesto={mesta[index]} prikaziModal={prikaziModal}/>
+                            ))}
                         </div>
                     </div>
 

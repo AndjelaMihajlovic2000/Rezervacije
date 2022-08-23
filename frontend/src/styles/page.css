@@ -35,9 +35,30 @@
 .pageHeadDivs div input {
     margin-top: 30px;
 }
-.weatherDiv{
+
+.weatherDiv {
     font-size: 1.2em;
 }
+
+.weatherDivInput {
+    width: 70%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 5fr 1fr;
+    grid-column-gap: 10px;
+}
+
+
+.weatherDivInput button {
+    margin-top: 25px;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: white;
+
+}
+
 /*button search and sort*/
 .btn-96,
 .btn-96 *,

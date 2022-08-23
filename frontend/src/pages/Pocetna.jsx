@@ -4,6 +4,7 @@ import "../styles/restoranCard.css"
 import axios from "axios";
 import RestoranCard from "../components/RestoranCard";
 import {Navigate} from "react-router-dom";
+import {FcSearch} from "react-icons/fc"
 
 function Pocetna() {
 
@@ -35,6 +36,9 @@ function Pocetna() {
         }
     }, [vreme])
 
+    const [grad, setGrad] = useState({
+        nazivGrada: ""
+    })
 
     if (window.sessionStorage.getItem('userName') == null) {
         return <Navigate to='/login'/>
@@ -50,6 +54,23 @@ function Pocetna() {
         setRestoraniView(temp);
     }
 
+    function hanleInputGrad(e) {
+        e.persist();
+        setGrad({
+            ...grad,
+            [e.target.name]: e.target.value,
+        });
+    }
+
+    function getVremenskaProgonza() {
+        axios.get('https://api.openweathermap.org/data/2.5/weather?q=' + grad.nazivGrada + '&units=metric&appid=1117016046b7aabe079a554097370528')
+            .then((res) => {
+                // console.log(res.data)
+                setVreme(res.data)
+            }).catch((e) => {
+            alert('Ne mozemo dobiti podatke za trazeni grad!')
+        })
+    }
 
     return (
         <div className="page">
@@ -62,15 +83,22 @@ function Pocetna() {
                         </div>
                         <div className="pageHeadDivs col-10">
                             <div className="input-group mb-3">
-                                <input  type="text" className="form-control" placeholder="Unesi naziv restorana"
+                                <input type="text" className="form-control" placeholder="Unesi naziv restorana"
                                        aria-label="Unesi naziv restorana" aria-describedby="basic-addon2"
                                        onChange={pretraga}/>
                             </div>
                         </div>
                         <div className="pageHeadDivs col-5">
+                            <div className={"weatherDivInput"}>
+                                <input type="text" className="form-control weatherInputField"
+                                       placeholder="Unesi naziv grada"
+                                       aria-label="Unesi naziv grada" aria-describedby="basic-addon2"
+                                       onChange={hanleInputGrad} name={"nazivGrada"}/>
+                                <button onClick={getVremenskaProgonza}><FcSearch/></button>
+                            </div>
                             <div className="weatherDiv">
-                                Grad: {vreme==null?"":vreme.name},
-                                temperatura:{vreme==null?"":vreme.main.temp}C
+                                Grad: {vreme == null ? "" : vreme.name},
+                                temperatura:{vreme == null ? "" : vreme.main.temp}C
                             </div>
                         </div>
                     </div>
@@ -79,7 +107,7 @@ function Pocetna() {
                 <div className="pageContainerBody container">
                     <div className="row g-3 pageBodyContent">
 
-                        {restorani === null ? <></> : restoraniView.map((restoran) => (
+                        {restoraniView === null ? <></> : restoraniView.map((restoran) => (
                             <RestoranCard key={restoran.id} restoran={restoran}/>
                         ))}
 

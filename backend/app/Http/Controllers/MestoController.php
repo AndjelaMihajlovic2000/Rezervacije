@@ -50,7 +50,7 @@ class MestoController extends Controller {
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['success' => false, 'error' => strval($validator->errors())]);
+            return response()->json(['success' => false, 'message' => strval($validator->errors())]);
         }
 
         $mesto = Mesto::create([
