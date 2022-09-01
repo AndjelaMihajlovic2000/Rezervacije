@@ -1,7 +1,14 @@
 import React from 'react';
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 function TabelaMestaRow({mesto}) {
+
+    const navigate = useNavigate();
+
+    function pogledaj(id){
+        navigate("/admin/unos/mesto/"+id)
+    }
 
     function obrisiMesto() {
         axios.delete('http://localhost:8000/api/mesto/' + mesto.id, {
@@ -28,6 +35,9 @@ function TabelaMestaRow({mesto}) {
             <td>{mesto.dostupno}</td>
             <td>{mesto.restoranID.naziv}</td>
             <td>{mesto.restoranID.adresa}</td>
+            <td>
+                <button className="btn btn-primary" onClick={()=>pogledaj(mesto.id)}>Pogledaj</button>
+            </td>
             <td>
                 <button className="btn btn-danger" onClick={obrisiMesto}>Obrisi</button>
             </td>
