@@ -103,7 +103,7 @@ class RestoranController extends Controller {
             'naziv' => 'required|string|max:255',
             'adresa' => 'required|string|max:255',
             'radnoVreme' => 'required|string|max:255',
-            'telefon' => 'required|date',
+            'telefon' => 'required|string',
             'email' => 'required|string|max:255',
             'brojZvezdica' => 'integer',
             'opis' => 'string|max:255'

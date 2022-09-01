@@ -46,6 +46,10 @@ function App() {
                     <UnosP naslovStrane={"Unos mesta"}
                            forma={<MestoForm/>}
                     />}/>
+                <Route path='/admin/unos/mesto/:id' element={
+                    <UnosP naslovStrane={"Unos mesta"}
+                           forma={<MestoForm/>}
+                    />}/>
                 <Route path='/admin/unos/korisnik' element={
                     <UnosP naslovStrane={"Korisnicki nalog"}
                            forma={<KorisnikForm/>}

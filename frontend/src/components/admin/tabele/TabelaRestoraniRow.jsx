@@ -1,7 +1,13 @@
 import React from 'react';
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 function TabelaRestoraniRow({restoran}) {
+    const navigate = useNavigate();
+
+    function pogledaj(id){
+     navigate('/admin/unos/restoran/'+id)
+    }
 
     function obrisiRezervaciju(id) {
         let url = 'http://localhost:8000/api/restoran/' + id;
@@ -29,6 +35,9 @@ function TabelaRestoraniRow({restoran}) {
             <td>{restoran.telefon}</td>
             <td>{restoran.email}</td>
             <td>{restoran.brojZvezdica}</td>
+            <td>
+                <button className="btn  btn-primary" onClick={() => pogledaj(restoran.id)}>Pogledaj</button>
+            </td>
             <td>
                 <button className="btn  btn-danger" onClick={() => obrisiRezervaciju(restoran.id)}>Obrisi</button>
             </td>
