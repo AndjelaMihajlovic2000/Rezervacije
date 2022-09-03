@@ -50,6 +50,10 @@ function MestoForm() {
 
 
     function dodajMesto() {
+        if(mestoInput==null || mestoInput.restoranID==null){
+            alert("Odaberite restoran!");
+            return;
+        }
 
      if(parametri.id!==null && parametri.id!==undefined){
          axios.put('http://localhost:8000/api/mesto/'+parametri.id, mestoInput, {

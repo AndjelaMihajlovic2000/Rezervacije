@@ -7,7 +7,7 @@ function TabelaMesta({mesta}) {
         <table className="aTabele table table-striped table-light table-hover">
             <TabelaHeader header={
                 ["Naziv mesta", "Broj stolica", "Opis",
-                    "Dostupno", "Restoran", "Adresa restorana", ""]
+                    "Dostupno", "Restoran", "Adresa restorana", "",""]
             }/>
             <tbody>
             {mesta == null ? <></> : mesta.map(mesto => (
